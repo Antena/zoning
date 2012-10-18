@@ -1,44 +1,60 @@
 
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <title>Almirante Brown</title>
     <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
     <style type="text/css">
-    	html, body, #map_canvas {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-      }
+        html, body, #map_canvas {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
     </style>
     <script>
-      function initialize() {
+        function initialize() {
+            // Map
+            var mapCenter = new google.maps.LatLng(-34.773204,-58.348633);
+            var mapOptions = {
+                zoom: 9,
+                center: mapCenter,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            }
+            var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
 
-        var center = new google.maps.LatLng(-34.773204,-58.348633);
-        var sw = new google.maps.LatLng(-35.831953,-59.578094);
-        var ne = new google.maps.LatLng(-33.9213,-57.914844);
-        var imageBounds = new google.maps.LatLngBounds(sw,ne);
+            // Overlay: agglomerate (Buenos Aires)
+            var sw = new google.maps.LatLng(-35.831953,-59.578094);
+            var ne = new google.maps.LatLng(-33.9213,-57.914844);
+            var imageBounds = new google.maps.LatLngBounds(sw,ne);
+            var overlayOptions = {
+                opacity: 0.5
+            };
+            var agglomerateOverlay = new google.maps.GroundOverlay('/assets/images/buenos_aires_t0.png',imageBounds, overlayOptions);
+            agglomerateOverlay.setMap(map);
 
-        var mapOptions = {
-          zoom: 9,
-          center: center,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
+            // Shape: municipality limit
+            var municipalityLimit = new google.maps.FusionTablesLayer({
+                query: {
+                    select: "'geometry'",
+                    from: '1bafPqlpIGmtdHRNtIuQYzMpxz3s5BebHx8DLZy8'
+                },
+                map: map
+            });
+
+            // Shape: municipality center
+            var municipalityCenter = new google.maps.FusionTablesLayer({
+                query: {
+                    select: "'geometry'",
+                    from: '1bafPqlpIGmtdHRNtIuQYzMpxz3s5BebHx8DLZy8'
+                },
+                map: map
+            });
         }
-
-        var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
-
-        var oldmap = new google.maps.GroundOverlay(
-            // '/assets//images/BuenosAires_t0.png',
-            '/assets/images/buenos_aires_t0.png',
-            // '/assets//images/buenos_aires_t0.tif',
-            imageBounds, {opacity: 0.5});
-        oldmap.setMap(map);
-      }
     </script>
-  </head>
-  <body onload="initialize()">
-    <div id="map_canvas"></div>
-  </body>
+</head>
+<body onload="initialize()">
+<div id="map_canvas"></div>
+</body>
 </html>
