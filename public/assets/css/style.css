@@ -1,0 +1,21 @@
+html, body, #map_canvas {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: helvetica, Arial, sans-serif;
+    font-size: 10px;
+}
+
+#controls table {
+    width: 100%;
+    padding-left: 10px;
+}
+
+#controls table td {
+    width: 20%;
+}
+
+#controls .slider {
+    width: 100px;
+    margin: 5px 0px 5px 0px;
+}
