@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Zoning</title>
+
+    <!--CSS Styles-->
+    <link rel="stylesheet" href="/assets/css/jquery-ui.css" />
+    <link rel="stylesheet" href="/assets/css/style.css"/>
+
+    <!--JS Scripts-->
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script src="/assets/js/jquery-1.8.2.js"></script>
+    <script src="/assets/js/jquery-ui.js"></script>
+    <script src="/assets/js/FTClient.js"></script>
+
+    <script>
+        var map = null;
+        var agglomerateOverlay = null;
+        var municipalityLimit = null;
+        var urbArea = null;
+        var urbFootprint = null;
+        var newDevelopment = null;
+
+        function initialize() {
+            // Map
+            var mapCenter = new google.maps.LatLng(-34.773204,-58.348633);
+            var mapOptions = {
+                zoom: 9,
+                center: mapCenter,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            }
+            map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+
+            // Overlay: agglomerate (Buenos Aires) -> t0
+            var agglomerateSW = new google.maps.LatLng(-35.831953,-59.578094);
+            var agglomerateNE = new google.maps.LatLng(-33.9213,-57.914844);
+            agglomerateOverlay = new google.maps.GroundOverlay(
+                    '/assets/images/buenos_aires_t0.png',
+                    new google.maps.LatLngBounds(agglomerateSW,agglomerateNE),
+                    { opacity: 0.5 }
+            );
+            agglomerateOverlay.setMap(map);
+
+            // Shape: municipality limit (Almirante Brown)
+            municipalityLimit = new google.maps.FusionTablesLayer({
+                query: {
+                    select: "'geometry'",
+                    from: '1bafPqlpIGmtdHRNtIuQYzMpxz3s5BebHx8DLZy8'
+                },
+                map: map
+            });
+
+            // METRICS
+            var metricSW = new google.maps.LatLng(-34.917523,-58.470864);
+            var metricNE = new google.maps.LatLng(-34.752841,-58.271133);
+            var metricLatLngBounds = new google.maps.LatLngBounds(metricSW,metricNE);
+
+            // Overlay: urbArea (Almirante Brown) -> t0
+            urbArea = new google.maps.GroundOverlay(
+                    '/assets/images/urbArea_t0.png',
+                    metricLatLngBounds,
+                    { opacity: 0.5 }
+            );
+            urbArea.setMap(map);
+
+            // Overlay: urbFootprint (Almirante Brown) -> t0
+            urbFootprint = new google.maps.GroundOverlay(
+                    '/assets/images/urbFootprint_t0.png',
+                    metricLatLngBounds,
+                    { opacity: 0.5 }
+            );
+            urbFootprint.setMap(map);
+
+            // Overlay: newDevelopment (Almirante Brown) -> t0,t1
+            newDevelopment = new google.maps.GroundOverlay(
+                    '/assets/images/newDevelopment_t0_t1.png',
+                    metricLatLngBounds,
+                    { opacity: 0.5 }
+            );
+            newDevelopment.setMap(map);
+        }
+
+        $(function() {
+            $("#slider-agglomerate").slider({
+                max: 100,
+                min: 0,
+                value: 50,
+                slide: function(event, ui) {
+                    agglomerateOverlay.setOpacity(ui.value/100);
+                }
+            });
+
+            $("#slider-limit").slider({
+                max: 1,
+                min: 0,
+                value: 1,
+                slide: function(event, ui) {
+                    if (ui.value == 1)
+                        municipalityLimit.setMap(map);
+                    else
+                        municipalityLimit.setMap(null);
+                }
+            });
+
+            $("#slider-urbArea").slider({
+                max: 100,
+                min: 0,
+                value: 50,
+                slide: function(event, ui) {
+                    urbArea.setOpacity(ui.value/100);
+                }
+            });
+
+            $("#slider-urbFootprint").slider({
+                max: 100,
+                min: 0,
+                value: 50,
+                slide: function(event, ui) {
+                    urbFootprint.setOpacity(ui.value/100);
+                }
+            });
+
+            $("#slider-newDevelopment").slider({
+                max: 100,
+                min: 0,
+                value: 50,
+                slide: function(event, ui) {
+                    newDevelopment.setOpacity(ui.value/100);
+                }
+            });
+        })
+
+    </script>
+</head>
+<body onload="initialize()">
+<div id="controls">
+    <table>
+        <tr>
+            <td>
+                <div class="label">Aglomerado Buenos Aires</div>
+                <div id="slider-agglomerate" class="slider"></div>
+            </td>
+            <td>
+                <div class="label">Almirante Brown</div>
+                <div id="slider-limit" class="slider"></div>
+            </td>
+            <td>
+                <div class="label">urbArea</div>
+                <div id="slider-urbArea" class="slider"></div>
+            </td>
+            <td>
+                <div class="label">urbFootprint</div>
+                <div id="slider-urbFootprint" class="slider"></div>
+            </td>
+            <td>
+                <div class="label">newDevelopment</div>
+                <div id="slider-newDevelopment" class="slider"></div>
+            </td>
+        </tr>
+    </table>
+</div>
+<div id="map_canvas"></div>
+</body>
+</html>

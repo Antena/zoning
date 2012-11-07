@@ -5,7 +5,7 @@ var FTClient = function FTClient(tableId) {
     this._queryUrlHead = 'https://fusiontables.googleusercontent.com/fusiontables/api/query?sql=';
     this._queryUrlTail = '&jsonCallback=?';
 
-    this.query = function(columnArray, whereClause, success) {
+    this.query = function(columnArray, whereClause, success, error) {
         var self = this;
         var query = "SELECT '" + columnArray.join("', '") + "' FROM " + self.tableId;
         if (whereClause) {
