@@ -9,7 +9,7 @@ var FTClient = function FTClient(tableId) {
         var self = this;
         var query = "SELECT '" + columnArray.join("', '") + "' FROM " + self.tableId;
         if (whereClause) {
-            query += + " WHERE " + whereClause;
+            query += " WHERE " + whereClause;
         }
         console.log("query= " + query);     //TODO(gb): Remove trace!!!
         var queryurl = encodeURI(self._queryUrlHead + query + self._queryUrlTail);
