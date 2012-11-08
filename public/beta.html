@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Zoning</title>
+
+    <!--CSS Styles-->
+    <link rel="stylesheet" href="/assets/css/jquery-ui.css" />
+    <link rel="stylesheet" href="/assets/css/style.css"/>
+
+    <!--JS Scripts-->
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script src="/assets/js/jquery-1.8.2.js"></script>
+    <script src="/assets/js/jquery-ui.js"></script>
+    <script src="/assets/js/FTClient.js"></script>
+
+    <script>
+        var map = null;
+
+        // Fusion Table
+        var ftId = "1VLHYFWO4SfUCxbdItivmPZRD905R5cJkD-Tf3T8";
+        var ftLimitColumnName = "'Límite'";
+
+        // Images
+        var urbAreaFilename = "urbArea";
+        var urbFootprintFilename = "urbFootprint";
+        var newDevelopmentFilename = "newDevelopment";
+
+        // Overlays
+        var townshipLimit = null;
+        var urbArea = null;
+        var urbFootprint = null;
+        var newDevelopment = null;
+
+        function initialize() {
+            // Map
+            var mapCenter = new google.maps.LatLng(-34.773204,-58.348633);
+            var mapOptions = {
+                zoom: 9,
+                center: mapCenter,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            }
+            map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+            populateMap();
+        }
+
+        function buildImagesUrlHead(name) {
+            var head = "/assets/images/townships/";
+            head += name.toLowerCase().replace(" ","_") + "/";
+            return head;
+        }
+
+        function populateMap() {
+            var ftClient = new FTClient(ftId);
+
+            // query ft
+            ftClient.query(["Id", "Nombre", "N", "E", "S", "W"], null, function(data) {
+                var rows = data.table.rows;
+
+                for (var i=0; i<rows.length; i++) {
+                    var township = rows[i];
+                    var id = township[0];
+                    var name = township[1];
+                    var imagesUrlHead = buildImagesUrlHead(name);
+
+                    // Fusion Tables  township limit on map
+                    new google.maps.FusionTablesLayer({
+                        query: {
+                            select: ftLimitColumnName,
+                            from: ftId
+                        },
+                        map: map
+                    });
+
+                    // Overlay coordinates
+                    var neCoordinate = new google.maps.LatLng(township[2], township[3]);
+                    var swCoordinate = new google.maps.LatLng(township[4], township[5]);
+                    latLngBounds = new google.maps.LatLngBounds(swCoordinate, neCoordinate);
+
+                    // Overlay: urbArea t0
+                    var urbArea = new google.maps.GroundOverlay(
+                            imagesUrlHead + urbAreaFilename + "_t0.png",
+                            latLngBounds,
+                            { opacity: 0.5 }
+                    );
+                    urbArea.setMap(map);
+
+                    // Overlay: urbFootprint t0
+                    var urbFootprint = new google.maps.GroundOverlay(
+                            imagesUrlHead + urbFootprintFilename + "_t0.png",
+                            latLngBounds,
+                            { opacity: 0.5 }
+                    );
+                    urbFootprint.setMap(map);
+
+                    // Overlay: urbFootprint t0
+                    var newDevelopment = new google.maps.GroundOverlay(
+                            imagesUrlHead + newDevelopmentFilename + ".png",
+                            latLngBounds,
+                            { opacity: 0.5 }
+                    );
+                    newDevelopment.setMap(map);
+                }
+            });
+        }
+    </script>
+</head>
+<body onload="initialize()">
+<div id="map_canvas"></div>
+</body>
+</html>
