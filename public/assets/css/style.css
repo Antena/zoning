@@ -8,16 +8,19 @@ html, body, #map_canvas {
 
 #controls table {
     width: 100%;
-    padding-left: 10px;
 }
 
 #controls table td {
     width: 20%;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 #controls .slider {
     width: 100px;
-    margin: 5px 0px 5px 0px;
+    margin: 10px 0px 5px 0px;
+}
+
+#controls .slider2 {
+    margin: 10px 0px 5px 0px;
 }

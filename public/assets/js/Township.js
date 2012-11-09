@@ -30,10 +30,20 @@ var Township = function Township(options) {
             this.latLngBounds,
             { opacity: 0.5 }
         );
+        this.urbArea_t1 = new google.maps.GroundOverlay(
+            this._buildImagesUrlHead(options.name) + this.urbAreaFilename + "_t1.png",
+            this.latLngBounds,
+            { opacity: 0.5 }
+        );
 
         // Overlay : urbFootprint t0
         this.urbFootprint_t0 = new google.maps.GroundOverlay(
             this._buildImagesUrlHead(options.name) + this.urbFootprintFilename + "_t0.png",
+            this.latLngBounds,
+            { opacity: 0.5 }
+        );
+        this.urbFootprint_t1 = new google.maps.GroundOverlay(
+            this._buildImagesUrlHead(options.name) + this.urbFootprintFilename + "_t1.png",
             this.latLngBounds,
             { opacity: 0.5 }
         );
@@ -46,6 +56,7 @@ var Township = function Township(options) {
         );
     }
 
+    // UrbArea
     this.showUrbArea = function() {
         this.urbArea_t0.setMap(this.map);
     }
@@ -54,12 +65,23 @@ var Township = function Township(options) {
         return this.urbArea_t0;
     }
 
+    this.setUrbAreaOpacity = function(value) {
+        this.urbArea_t0.setOpacity(value);
+        this.urbArea_t1.setOpacity(value);
+    }
+
+    // UrbFootprint
     this.showUrbFootprint = function() {
         this.urbFootprint_t0.setMap(this.map);
     }
 
     this.getUrbFootprint = function() {
         return this.urbFootprint_t0;
+    }
+
+    this.setUrbFootprintOpacity = function(value) {
+        this.urbFootprint_t0.setOpacity(value);
+        this.urbFootprint_t1.setOpacity(value);
     }
 
     this.showNewDevelopment = function() {
@@ -72,8 +94,24 @@ var Township = function Township(options) {
 
     this.hideAll = function() {
         this.urbArea_t0.setMap(null);
+        this.urbArea_t1.setMap(null);
         this.urbFootprint_t0.setMap(null);
+        this.urbFootprint_t1.setMap(null);
         this.newDevelopment.setMap(null);
+    }
+
+    this.showHistoricalTime = function(value) {
+        if (value == 0) {
+            this.urbArea_t0.setMap(this.map);
+            this.urbArea_t1.setMap(null);
+            this.urbFootprint_t0.setMap(this.map);
+            this.urbFootprint_t1.setMap(null);
+        } else {
+            this.urbArea_t0.setMap(null);
+            this.urbArea_t1.setMap(this.map);
+            this.urbFootprint_t0.setMap(null);
+            this.urbFootprint_t1.setMap(this.map);
+        }
     }
 
     this.getLatLngBounds = function() {

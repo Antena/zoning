@@ -47,6 +47,17 @@
         }
 
         function initControls(mapManager) {
+            $("#slider-time").slider({
+                max: 1,
+                min: 0,
+                value: 0,
+                disabled: true,
+                animate: "fast",
+                slide: function(event, ui) {
+                    mapManager.setHistoricalTime(ui.value);
+                }
+            });
+
             $("#slider-limit").slider({
                 max: 1,
                 min: 0,
@@ -67,7 +78,7 @@
                 animate: "fast",
                 slide: function(event, ui) {
                     var township = mapManager.getActiveTownship();
-                    township.getUrbArea().setOpacity(ui.value/100);
+                    township.setUrbAreaOpacity(ui.value/100);
                 }
             });
 
@@ -79,7 +90,7 @@
                 animate: "fast",
                 slide: function(event, ui) {
                     var township = mapManager.getActiveTownship();
-                    township.getUrbFootprint().setOpacity(ui.value/100);
+                    township.setUrbFootprintOpacity(ui.value/100);
                 }
             });
 
@@ -106,6 +117,7 @@
         function resetControls(mapManager) {
             var activeTownship = mapManager.getActiveTownship();
 
+            enableSlider("slider-time");
             enableSlider("slider-limit");
             enableSlider("slider-urbArea");
             enableSlider("slider-urbFootprint");
@@ -123,8 +135,8 @@
     <table>
         <tr>
             <td>
-                <div class="label">Aglomerado Buenos Aires</div>
-                <div id="slider-agglomerate"></div>
+                <div class="label">Año</div>
+                <div id="slider-time"></div>
             </td>
             <td>
                 <div class="label">Límite del municipio</div>
@@ -140,7 +152,7 @@
             </td>
             <td>
                 <div class="label">New Development</div>
-                <div id="slider-newDevelopment"></div>
+                <div id="slider-newDevelopment" class="slider2"></div>
             </td>
         </tr>
     </table>

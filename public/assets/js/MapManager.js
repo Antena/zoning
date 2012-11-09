@@ -12,6 +12,8 @@ var MapManager = function MapManager(options) {
     this.map = new google.maps.Map(document.getElementById(options.containerDivId), googleMapOptions);
     this.ftClient = new FTClient(options.ftId);
 
+    this.historicalTime = 0;
+
     // Fusion Tables Layer
     this.ftQuery = {
         select: options.ftLimitColumnName,
@@ -119,5 +121,10 @@ var MapManager = function MapManager(options) {
 
         this.ftQuery.where = "Nombre IN ('" + visibleTownships.join("', '") + "')";
         this.ftLayer.setOptions( {query:this.ftQuery, styles: this.ftStyles } );
+    }
+
+    this.setHistoricalTime = function(value) {
+        this.historicalTime = value;
+        this.activeTownship.showHistoricalTime(value);
     }
 }
