@@ -32,12 +32,14 @@
                 newDevelopmentFilename : "newDevelopment"
             });
 
-            // Add Almirante Brown
-            mapManager.addTownship("Almirante Brown", function() {
-                this.showLimit();
-                this.showUrbAreaT0();
-                this.showUrbFootprintT0();
-                this.showNewDevelopment();
+            var ftClient = new FTClient("1Jus0SKiGtttLllonNtWEXRvnyHd4rwybZkOYeVQ");
+            ftClient.query(['Nombre'], null, function(data) {
+                var rows = data.table.rows;
+
+                for (var i=0; i<rows.length; i++) {
+                    var name = rows[i][0];
+                    mapManager.addTownship(name);
+                }
             });
         }
     </script>

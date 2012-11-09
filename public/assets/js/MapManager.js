@@ -1,6 +1,8 @@
 var MapManager = function MapManager(options) {
+    var self = this;
 
     this.options = options;
+
 
     // Initialization code
     var googleMapOptions = {
@@ -10,10 +12,24 @@ var MapManager = function MapManager(options) {
     };
     this.map = new google.maps.Map(document.getElementById(options.containerDivId), googleMapOptions);
     this.ftClient = new FTClient(options.ftId);
-    this.ftLayer = new google.maps.FusionTablesLayer();
+
+    // Fusion Tables Layer
+    this.ftLayer = new google.maps.FusionTablesLayer({
+        query: {
+            select: options.ftLimitColumnName,
+            from: options.ftId
+        },
+        suppressInfoWindows: true,
+        map: this.map
+    });
+    google.maps.event.addListener(this.ftLayer, 'click', function(kmlEvent) {
+        self.setActive(kmlEvent.row['Nombre'].value)
+    });
+
     this.ftId = options.ftId;
 
     this.townships = {};
+    this.activeTownship = null;
 
     this.getMap = function() {
         return this.map;
@@ -45,7 +61,22 @@ var MapManager = function MapManager(options) {
             township.init();
             self.townships[name] = township;
 
-            success.call(township);
+            if (success)
+                success.call(township);
         })
+    }
+
+    this.setActive = function(name) {
+        var self = this;
+        var township = self.townships[name];
+
+        if (self.activeTownship) {
+            self.activeTownship.hideAll();
+        }
+
+        // Pan, zoom and display
+        self.activeTownship = township;
+        self.getMap().fitBounds(township.getLatLngBounds());
+        township.showUrbAreaT0();
     }
 }

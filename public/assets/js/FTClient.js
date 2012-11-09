@@ -11,7 +11,6 @@ var FTClient = function FTClient(tableId) {
         if (whereClause) {
             query += " WHERE " + whereClause;
         }
-        console.log("query= " + query);     //TODO(gb): Remove trace!!!
         var queryurl = encodeURI(self._queryUrlHead + query + self._queryUrlTail);
 
         $.ajax({

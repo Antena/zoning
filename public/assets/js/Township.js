@@ -46,17 +46,6 @@ var Township = function Township(options) {
         );
     }
 
-    this.showLimit = function() {
-        var self = this;
-        self.mapManager.ftLayer.setOptions({
-            query: {
-                select: self.ftLimitColumnName,
-                from: self.ftId
-            },
-            map: self.map
-        });
-    }
-
     this.showUrbAreaT0 = function() {
         this.urbArea_t0.setMap(this.map);
     }
@@ -67,6 +56,16 @@ var Township = function Township(options) {
 
     this.showNewDevelopment = function() {
         this.newDevelopment.setMap(this.map);
+    }
+
+    this.hideAll = function() {
+        this.urbArea_t0.setMap(null);
+        this.urbFootprint_t0.setMap(null);
+        this.newDevelopment.setMap(null);
+    }
+
+    this.getLatLngBounds = function() {
+        return this.latLngBounds;
     }
 
     // UTILITY METHODS
