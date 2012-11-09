@@ -23,7 +23,7 @@ var MapManager = function MapManager(options) {
         map: this.map
     });
     google.maps.event.addListener(this.ftLayer, 'click', function(kmlEvent) {
-        self.setActive(kmlEvent.row['Nombre'].value)
+        self.setActiveTownship(kmlEvent.row['Nombre'].value)
     });
 
     this.ftId = options.ftId;
@@ -66,7 +66,7 @@ var MapManager = function MapManager(options) {
         })
     }
 
-    this.setActive = function(name) {
+    this.setActiveTownship = function(name) {
         var self = this;
         var township = self.townships[name];
 
@@ -77,6 +77,13 @@ var MapManager = function MapManager(options) {
         // Pan, zoom and display
         self.activeTownship = township;
         self.getMap().fitBounds(township.getLatLngBounds());
-        township.showUrbAreaT0();
+        township.showUrbArea();
+        township.showUrbFootprint();
+        township.showNewDevelopment();
+        resetControls(this);
+    }
+
+    this.getActiveTownship = function(name) {
+        return this.activeTownship;
     }
 }

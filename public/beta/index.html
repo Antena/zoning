@@ -6,7 +6,7 @@
     <title>Zoning</title>
 
     <!--CSS Styles-->
-    <link rel="stylesheet" href="/assets/css/jquery-ui.css" />
+    <link rel="stylesheet" href="/assets/css/jquery-ui-1.9.1.custom.min.css" />
     <link rel="stylesheet" href="/assets/css/style.css"/>
 
     <!--JS Scripts-->
@@ -41,10 +41,110 @@
                     mapManager.addTownship(name);
                 }
             });
+
+            initControls(mapManager);
+        }
+
+        function initControls(mapManager) {
+            $("#slider-limit").slider({
+                max: 1,
+                min: 0,
+                value: 1,
+                disabled: true,
+                slide: function(event, ui) {
+                    var township = mapManager.getActiveTownship();
+                    if (ui.value == 1)
+                        municipalityLimit.setMap(null);
+                    else
+                        municipalityLimit.setMap(null);
+                }
+            });
+
+            $("#slider-urbArea").slider({
+                max: 100,
+                min: 0,
+                value: 50,
+                disabled: true,
+                animate: "fast",
+                slide: function(event, ui) {
+                    var township = mapManager.getActiveTownship();
+                    township.getUrbArea().setOpacity(ui.value/100);
+                }
+            });
+
+            $("#slider-urbFootprint").slider({
+                max: 100,
+                min: 0,
+                value: 50,
+                disabled: true,
+                animate: "fast",
+                slide: function(event, ui) {
+                    var township = mapManager.getActiveTownship();
+                    township.getUrbFootprint().setOpacity(ui.value/100);
+                }
+            });
+
+            $("#slider-newDevelopment").slider({
+                max: 100,
+                min: 0,
+                value: 50,
+                disabled: true,
+                animate: "fast",
+                slide: function(event, ui) {
+                    var township = mapManager.getActiveTownship();
+                    township.getNewDevelopment().setOpacity(ui.value/100);
+                }
+            });
+        }
+
+        function resetControls(mapManager) {
+            var activeTownship = mapManager.getActiveTownship();
+
+            if ($("#slider-urbArea").slider("option","disabled")) {
+                $("#slider-urbArea").slider("option","disabled", false);
+            }
+
+            if ($("#slider-urbFootprint").slider("option","disabled")) {
+                $("#slider-urbFootprint").slider("option","disabled", false);
+            }
+
+            if ($("#slider-newDevelopment").slider("option","disabled")) {
+                $("#slider-newDevelopment").slider("option","disabled", false);
+            }
+
+            $("#slider-urbArea").slider("value", activeTownship.getUrbArea().getOpacity()*100);
+            $("#slider-urbFootprint").slider("value", activeTownship.getUrbFootprint().getOpacity()*100);
+            $("#slider-newDevelopment").slider("value", activeTownship.getNewDevelopment().getOpacity()*100);
         }
     </script>
 </head>
 <body onload="initialize()">
+<div id="controls">
+    <table>
+        <tr>
+            <td>
+                <div class="label">Aglomerado Buenos Aires</div>
+                <div id="slider-agglomerate"></div>
+            </td>
+            <td>
+                <div class="label">Almirante Brown</div>
+                <div id="slider-limit"></div>
+            </td>
+            <td>
+                <div class="label">urbArea</div>
+                <div id="slider-urbArea"></div>
+            </td>
+            <td>
+                <div class="label">urbFootprint</div>
+                <div id="slider-urbFootprint"></div>
+            </td>
+            <td>
+                <div class="label">newDevelopment</div>
+                <div id="slider-newDevelopment"></div>
+            </td>
+        </tr>
+    </table>
+</div>
 <div id="map_canvas"></div>
 </body>
 </html>

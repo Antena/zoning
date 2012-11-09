@@ -46,16 +46,28 @@ var Township = function Township(options) {
         );
     }
 
-    this.showUrbAreaT0 = function() {
+    this.showUrbArea = function() {
         this.urbArea_t0.setMap(this.map);
     }
 
-    this.showUrbFootprintT0 = function() {
+    this.getUrbArea = function() {
+        return this.urbArea_t0;
+    }
+
+    this.showUrbFootprint = function() {
         this.urbFootprint_t0.setMap(this.map);
+    }
+
+    this.getUrbFootprint = function() {
+        return this.urbFootprint_t0;
     }
 
     this.showNewDevelopment = function() {
         this.newDevelopment.setMap(this.map);
+    }
+
+    this.getNewDevelopment = function() {
+        return this.newDevelopment;
     }
 
     this.hideAll = function() {
