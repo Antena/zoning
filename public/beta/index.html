@@ -29,7 +29,8 @@
                 ftLimitColumnName : "'Límite'",
                 urbAreaFilename : "urbArea",
                 urbFootprintFilename : "urbFootprint",
-                newDevelopmentFilename : "newDevelopment"
+                newDevelopmentFilename : "newDevelopment",
+                activeTownshipColor: "#00FF00"
             });
 
             var ftClient = new FTClient("1Jus0SKiGtttLllonNtWEXRvnyHd4rwybZkOYeVQ");
@@ -51,12 +52,10 @@
                 min: 0,
                 value: 1,
                 disabled: true,
+                animate: "fast",
                 slide: function(event, ui) {
                     var township = mapManager.getActiveTownship();
-                    if (ui.value == 1)
-                        municipalityLimit.setMap(null);
-                    else
-                        municipalityLimit.setMap(null);
+                    mapManager.showHideLimit(township.getName(), ui.value);
                 }
             });
 
@@ -97,21 +96,22 @@
             });
         }
 
+        function enableSlider(sliderDivId) {
+            if ($("#" + sliderDivId).slider("option","disabled")) {
+                $("#" + sliderDivId).slider("option","disabled", false);
+            }
+        }
+
+
         function resetControls(mapManager) {
             var activeTownship = mapManager.getActiveTownship();
 
-            if ($("#slider-urbArea").slider("option","disabled")) {
-                $("#slider-urbArea").slider("option","disabled", false);
-            }
+            enableSlider("slider-limit");
+            enableSlider("slider-urbArea");
+            enableSlider("slider-urbFootprint");
+            enableSlider("slider-newDevelopment");
 
-            if ($("#slider-urbFootprint").slider("option","disabled")) {
-                $("#slider-urbFootprint").slider("option","disabled", false);
-            }
-
-            if ($("#slider-newDevelopment").slider("option","disabled")) {
-                $("#slider-newDevelopment").slider("option","disabled", false);
-            }
-
+            $("#slider-limit").slider("value", 1);
             $("#slider-urbArea").slider("value", activeTownship.getUrbArea().getOpacity()*100);
             $("#slider-urbFootprint").slider("value", activeTownship.getUrbFootprint().getOpacity()*100);
             $("#slider-newDevelopment").slider("value", activeTownship.getNewDevelopment().getOpacity()*100);
@@ -127,19 +127,19 @@
                 <div id="slider-agglomerate"></div>
             </td>
             <td>
-                <div class="label">Almirante Brown</div>
+                <div class="label">Límite del municipio</div>
                 <div id="slider-limit"></div>
             </td>
             <td>
-                <div class="label">urbArea</div>
+                <div class="label">Urban Area</div>
                 <div id="slider-urbArea"></div>
             </td>
             <td>
-                <div class="label">urbFootprint</div>
+                <div class="label">Urban Footprint</div>
                 <div id="slider-urbFootprint"></div>
             </td>
             <td>
-                <div class="label">newDevelopment</div>
+                <div class="label">New Development</div>
                 <div id="slider-newDevelopment"></div>
             </td>
         </tr>

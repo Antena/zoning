@@ -3,7 +3,6 @@ var MapManager = function MapManager(options) {
 
     this.options = options;
 
-
     // Initialization code
     var googleMapOptions = {
         zoom: options.zoom,
@@ -14,13 +13,29 @@ var MapManager = function MapManager(options) {
     this.ftClient = new FTClient(options.ftId);
 
     // Fusion Tables Layer
-    this.ftLayer = new google.maps.FusionTablesLayer({
-        query: {
-            select: options.ftLimitColumnName,
-            from: options.ftId
+    this.ftQuery = {
+        select: options.ftLimitColumnName,
+        from: options.ftId
+    };
+    this.ftStyles = [
+        {
+            polygonOptions: {
+                fillColor: "#FF0000",
+                fillOpacity: 0.5
+            }
         },
+        {
+            where: "Nombre = ''",
+            polygonOptions: {
+                fillColor: options.activeTownshipColor
+            }
+        }
+    ];
+    this.ftLayer = new google.maps.FusionTablesLayer({
+        query: this.ftQuery,
         suppressInfoWindows: true,
-        map: this.map
+        map: this.map,
+        styles: this.ftStyles
     });
     google.maps.event.addListener(this.ftLayer, 'click', function(kmlEvent) {
         self.setActiveTownship(kmlEvent.row['Nombre'].value)
@@ -56,7 +71,8 @@ var MapManager = function MapManager(options) {
                 e : row[3],
                 s : row[4],
                 w : row[5],
-                mapManager: self
+                mapManager: self,
+                showLimit: true
             });
             township.init();
             self.townships[name] = township;
@@ -72,6 +88,7 @@ var MapManager = function MapManager(options) {
 
         if (self.activeTownship) {
             self.activeTownship.hideAll();
+            self.showHideLimit(self.activeTownship.getName(), true);
         }
 
         // Pan, zoom and display
@@ -80,10 +97,27 @@ var MapManager = function MapManager(options) {
         township.showUrbArea();
         township.showUrbFootprint();
         township.showNewDevelopment();
+        this.ftStyles[1].where = "Nombre = '" + township.getName() + "'";
+        this.ftLayer.setOptions( {query:this.ftQuery, styles: this.ftStyles } );
         resetControls(this);
     }
 
     this.getActiveTownship = function(name) {
         return this.activeTownship;
+    }
+
+    this.showHideLimit = function(name, value) {
+        var self = this;
+        var visibleTownships = [];
+
+        this.townships[name].options.showLimit = value;
+        for (var i in self.townships) {
+            if (self.townships[i].options.showLimit) {
+                visibleTownships.push(self.townships[i].getName());
+            }
+        }
+
+        this.ftQuery.where = "Nombre IN ('" + visibleTownships.join("', '") + "')";
+        this.ftLayer.setOptions( {query:this.ftQuery, styles: this.ftStyles } );
     }
 }

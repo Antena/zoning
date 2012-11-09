@@ -80,6 +80,10 @@ var Township = function Township(options) {
         return this.latLngBounds;
     }
 
+    this.getName = function() {
+        return this.options.name;
+    }
+
     // UTILITY METHODS
     this._buildImagesUrlHead = function(name) {
         var head = "/assets/images/townships/";
