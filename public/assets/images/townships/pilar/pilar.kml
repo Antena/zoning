@@ -1,0 +1,32 @@
+
+<kml xmlns="http://www.opengis.net/kml/2.2">
+    <Document>
+        <name>pilar</name>
+        <Schema name="urbArea_t0_Schema" id="urbArea_t0_Schema">
+            <SimpleField name="File" type="string">
+                <displayName>File</displayName>
+            </SimpleField>
+            <SimpleField name="Width" type="double">
+                <displayName>Width</displayName>
+            </SimpleField>
+            <SimpleField name="Height" type="double">
+                <displayName>Height</displayName>
+            </SimpleField>
+        </Schema>
+        <Folder>
+            <name>urbArea_t0</name>
+            <visibility>1</visibility>
+            <GroundOverlay>
+                <Icon>
+                    <href>pilar-Image-0.tif</href>
+                </Icon>
+                <LatLonBox>
+                    <north>-34.316091</north>
+                    <south>-34.585973</south>
+                    <east>-58.732535</east>
+                    <west>-59.063198</west>
+                </LatLonBox>
+            </GroundOverlay>
+        </Folder>
+    </Document>
+</kml>
