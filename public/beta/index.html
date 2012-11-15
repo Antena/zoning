@@ -58,17 +58,16 @@
                 }
             });
 
-            $("#slider-limit").slider({
-                max: 1,
-                min: 0,
-                value: 1,
-                disabled: true,
-                animate: "fast",
-                slide: function(event, ui) {
-                    var township = mapManager.getActiveTownship();
-                    mapManager.showHideLimit(township.getName(), ui.value);
+            $("#limit > input:radio").button({disabled:true}).change(function(event) {
+                var radioId = $("#limit > input:checked").attr("id");
+                var township = mapManager.getActiveTownship();
+                if (radioId == "showLimit") {
+                    mapManager.showHideLimit(township.getName(), 1);
+                } else {
+                    mapManager.showHideLimit(township.getName(), 0);
                 }
             });
+            $("#limit").buttonset();
 
             $("#slider-urbArea").slider({
                 max: 100,
@@ -113,12 +112,18 @@
             }
         }
 
+        function enableButtonset(buttonsetDivId) {
+            $("#" + buttonsetDivId +" > input:radio").button( "option", "disabled", false );
+            $("#showLimit").attr("checked", "checked");
+            $("#hideLimit").removeAttr("checked");
+        }
+
 
         function resetControls(mapManager) {
             var activeTownship = mapManager.getActiveTownship();
 
             enableSlider("slider-time");
-            enableSlider("slider-limit");
+            enableButtonset("limit");
             enableSlider("slider-urbArea");
             enableSlider("slider-urbFootprint");
             enableSlider("slider-newDevelopment");
@@ -132,30 +137,48 @@
 </head>
 <body onload="initialize()">
 <div id="controls">
-    <table>
-        <tr>
-            <td>
-                <div class="label">Año</div>
-                <div id="slider-time"></div>
-            </td>
-            <td>
-                <div class="label">Límite del municipio</div>
-                <div id="slider-limit"></div>
-            </td>
-            <td>
-                <div class="label">Urban Area</div>
-                <div id="slider-urbArea"></div>
-            </td>
-            <td>
-                <div class="label">Urban Footprint</div>
-                <div id="slider-urbFootprint"></div>
-            </td>
-            <td>
-                <div class="label">New Development</div>
-                <div id="slider-newDevelopment" class="slider2"></div>
-            </td>
-        </tr>
-    </table>
+
+    <div class="control">
+        <div class="label">Año</div>
+        <div id="slider-time" class="slider"></div>
+        <div class="range">
+            <span class="left">1990</span><span class="right">2000</span>
+        </div>
+
+    </div>
+
+    <div class="control" style="margin-bottom: 15px;">
+        <div class="label">Límite del municipio:</div>
+        <div id="limit">
+            <input type="radio" id="showLimit" name="radio" checked="checked" /><label for="showLimit">Mostrar</label>
+            <input type="radio" id="hideLimit" name="radio" /><label for="hideLimit">Esconder</label>
+        </div>
+    </div>
+
+    <div class="control">
+        <div class="label">Urban Area:</div>
+        <div id="slider-urbArea" class="slider"></div>
+        <div class="range">
+            <span class="left">0%</span><span class="right">100%</span>
+        </div>
+    </div>
+
+    <div class="control">
+        <div class="label">Urban Footprint:</div>
+        <div id="slider-urbFootprint" class="slider"></div>
+        <div class="range">
+            <span class="left">0%</span><span class="right">100%</span>
+        </div>
+    </div>
+
+    <div class="control">
+        <div class="label">New Development:</div>
+        <div id="slider-newDevelopment" class="slider"></div>
+        <div class="range">
+            <span class="left">0%</span><span class="right">100%</span>
+        </div>
+    </div>
+
 </div>
 <div id="map_canvas"></div>
 </body>

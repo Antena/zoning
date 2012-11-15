@@ -1,4 +1,4 @@
-html, body, #map_canvas {
+html, body {
     margin: 0;
     padding: 0;
     height: 100%;
@@ -6,21 +6,46 @@ html, body, #map_canvas {
     font-size: 10px;
 }
 
-#controls table {
-    width: 100%;
+#map_canvas {
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
-#controls table td {
-    width: 20%;
-    padding-left: 30px;
-    padding-right: 30px;
+#controls {
+    position: absolute;
+    top: 30px;
+    right: 5px;
+    padding: 10px;
+    z-index: 1000;
+    background: #f8f8f8;
+    border: solid 1px #b2b2b2;
+    opacity: 0.9;
+}
+
+#controls .control {
+    margin-bottom: 25px;
 }
 
 #controls .slider {
     width: 100px;
-    margin: 10px 0px 5px 0px;
+    margin: 5px 0px 0px 0px;
 }
 
-#controls .slider2 {
-    margin: 10px 0px 5px 0px;
+#controls .range {
+    margin-top: 2px;
+    color: #509dc0;
+}
+
+#controls .range .left {
+    float: left;
+}
+
+#controls .range .right {
+    float: right;
+    margin-right: 7px;
+}
+
+#limit .ui-button-text-only .ui-button-text {
+    padding: 2px 3px;
 }
