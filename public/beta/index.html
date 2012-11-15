@@ -24,7 +24,7 @@
                 containerDivId : "map_canvas",
                 center : { lat: -34.773204, lng: -58.348633 },
                 zoom : 9,
-                mapTypeId : google.maps.MapTypeId.ROADMAP,
+                mapTypeId : google.maps.MapTypeId.HYBRID,
                 ftId : "1Jus0SKiGtttLllonNtWEXRvnyHd4rwybZkOYeVQ",
                 ftLimitColumnName : "'Límite'",
                 urbAreaFilename : "urbArea",
@@ -137,7 +137,7 @@
 </head>
 <body onload="initialize()">
 <div id="controls">
-
+    <h2 id="township-name"></h2>
     <div class="control">
         <div class="label">Año</div>
         <div id="slider-time" class="slider"></div>
@@ -155,7 +155,7 @@
         </div>
     </div>
 
-    <h2>Layers</h2>
+    <h3>Layers</h3>
     <div class="control">
         <div class="label">Urban Area:</div>
         <div id="slider-urbArea" class="slider"></div>

@@ -12,7 +12,7 @@ html, body {
     padding: 0;
 }
 
-h1, h2 {
+h1, h2, h3 {
     text-rendering: optimizeLegibility;
 }
 
@@ -52,4 +52,9 @@ h1, h2 {
 
 #limit .ui-button-text-only .ui-button-text {
     padding: 2px 3px;
+}
+
+h2#township-name {
+    margin-top: 0px;
+    max-width: 100px;
 }
