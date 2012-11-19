@@ -131,6 +131,7 @@
         function resetControls(mapManager) {
             var activeTownship = mapManager.getActiveTownship();
 
+            $("#controls .control").removeClass("disabled");
             enableSlider("slider-time");
             enableSlider("slider-urbArea");
             enableSlider("slider-urbFootprint");
@@ -149,7 +150,7 @@
 <div id="controls">
     <h2 id="township-name"></h2>
 
-    <div class="control">
+    <div class="control disabled">
         <div class="label">Año</div>
         <div id="slider-time" class="slider"></div>
         <div class="range">
@@ -158,7 +159,7 @@
     </div>
 
     <h3>Layers</h3>
-    <div class="control">
+    <div class="control disabled">
         <div class="label">Urban Area:</div>
         <div id="slider-urbArea" class="slider"></div>
         <div class="range">
@@ -166,7 +167,7 @@
         </div>
     </div>
 
-    <div class="control">
+    <div class="control disabled">
         <div class="label">Urban Footprint:</div>
         <div id="slider-urbFootprint" class="slider"></div>
         <div class="range">
@@ -174,7 +175,7 @@
         </div>
     </div>
 
-    <div class="control">
+    <div class="control disabled">
         <div class="label">New Development:</div>
         <div id="slider-newDevelopment" class="slider"></div>
         <div class="range">
@@ -184,11 +185,11 @@
 
 
     <h3>Límites</h3>
-    <div class="control township-visibility">
+    <div class="control township-visibility disabled">
         <div class="icon current"></div><span class="label">Municipio actual</span>
         <input type="checkbox" id="currentTownship" checked disabled>
     </div>
-    <div class="control township-visibility">
+    <div class="control township-visibility disabled">
         <div class="icon"></div><span class="label">Otros municipios</span>
         <input type="checkbox" id="otherTownship" checked disabled>
     </div>
