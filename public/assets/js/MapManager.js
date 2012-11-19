@@ -29,7 +29,8 @@ var MapManager = function MapManager(options) {
         {
             where: "Nombre = ''",
             polygonOptions: {
-                fillColor: options.activeTownshipColor
+                fillColor: options.activeTownshipColor,
+                fillOpacity: 0.5
             }
         }
     ];
@@ -121,6 +122,12 @@ var MapManager = function MapManager(options) {
         }
 
         this.ftQuery.where = "Nombre IN ('" + visibleTownships.join("', '") + "')";
+        this.ftLayer.setOptions( {query:this.ftQuery, styles: this.ftStyles } );
+    }
+
+    this.showHideNonActiveLimits = function(value) {
+        var self = this;
+        this.ftStyles[0].polygonOptions.fillOpacity = value ? 0.5 : 0.01;
         this.ftLayer.setOptions( {query:this.ftQuery, styles: this.ftStyles } );
     }
 
