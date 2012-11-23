@@ -7,7 +7,31 @@ var MapManager = function MapManager(options) {
     var googleMapOptions = {
         zoom: options.zoom,
         center: new google.maps.LatLng(options.center.lat, options.center.lng),
-        mapTypeId: options.mapTypeId
+        mapTypeId: options.mapTypeId,
+        styles: [
+            {
+                "featureType": "road",
+                "stylers": [
+                    { "visibility": "off" }
+                ]
+            },{
+                "featureType": "poi",
+                "stylers": [
+                    { "visibility": "off" }
+                ]
+            },{
+                "featureType": "administrative",
+                "stylers": [
+                    { "visibility": "off" }
+                ]
+            },{
+                "featureType": "administrative.province",
+                "elementType": "geometry",
+                "stylers": [
+                    { "visibility": "on" }
+                ]
+            }
+        ]
     };
     this.map = new google.maps.Map(document.getElementById(options.containerDivId), googleMapOptions);
     this.ftClient = new FTClient(options.ftId);
@@ -91,7 +115,7 @@ var MapManager = function MapManager(options) {
     this.setActiveTownship = function(name) {
         var self = this;
         var township = self.townships[name];
-        
+
         if (self.activeTownship) {
             self.activeTownship.hideAll();
             self.showHideLimit(self.activeTownship.getName(), true);

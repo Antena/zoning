@@ -21,13 +21,11 @@ h1,h2,h3 {
  **********************************************************************************************************************/
 #search {
 	position: absolute;
-	top: 22px;
+	top: 30px;
 	left: 90px;
-	padding: 10px;
 	z-index: 1000;
 	background: #f8f8f8;
 	border: solid 1px #b2b2b2;
-	opacity: 0.9;
 }
 
 .ui-widget-overlay {
