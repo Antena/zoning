@@ -88,7 +88,7 @@ var MapManager = function MapManager(options) {
     this.setActiveTownship = function(name) {
         var self = this;
         var township = self.townships[name];
-
+        
         if (self.activeTownship) {
             self.activeTownship.hideAll();
             self.showHideLimit(self.activeTownship.getName(), true);

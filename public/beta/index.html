@@ -36,11 +36,15 @@
             var ftClient = new FTClient("1Jus0SKiGtttLllonNtWEXRvnyHd4rwybZkOYeVQ");
             ftClient.query(['Nombre'], null, function(data) {
                 var rows = data.table.rows;
-
+				
+                var townshipNames = new Array();
+                
                 for (var i=0; i<rows.length; i++) {
                     var name = rows[i][0];
                     mapManager.addTownship(name);
+                    townshipNames.push(name);
                 }
+                fillAutoComplete(townshipNames,mapManager);
             });
 
             initControls(mapManager);
@@ -144,9 +148,26 @@
             $("#slider-urbFootprint").slider("value", activeTownship.getUrbFootprint().getOpacity()*100);
             $("#slider-newDevelopment").slider("value", activeTownship.getNewDevelopment().getOpacity()*100);
         }
+        
+        function fillAutoComplete(townshipNames,mapManager){
+        	
+        	$("#municipios").autocomplete({
+                source: townshipNames,
+                select: function(event,ui){
+                	mapManager.setActiveTownship(ui.item.value);
+                }
+        	});
+                
+        }
     </script>
 </head>
 <body onload="initialize()">
+<div id="search" class="ui-widget">
+    <label for="tags">Municipios: </label>
+    <input id="municipios" />
+</div>
+	
+</div>
 <div id="controls">
     <h2 id="township-name"></h2>
 
