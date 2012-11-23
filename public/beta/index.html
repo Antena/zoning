@@ -171,6 +171,7 @@
                 source: townshipNames,
                 select: function(event,ui){
                 	mapManager.setActiveTownship(ui.item.value);
+                    $(this).blur();
                 },
                minLength: 0
         	});
@@ -180,8 +181,8 @@
 </head>
 <body onload="initialize()">
 <div id="search" class="ui-widget">
-    <label for="tags">Municipios: </label>
-    <input id="municipios" />
+    <label for="municipios"></label>
+    <input id="municipios" placeholder="Buscar municipio..." />
 </div>
 	
 </div>
