@@ -34,15 +34,16 @@
             });
 
             var ftClient = new FTClient("1Jus0SKiGtttLllonNtWEXRvnyHd4rwybZkOYeVQ");
-            ftClient.query(['Nombre'], null, function(data) {
+            ftClient.query(['Nombre','Zona'], null, " Zona asc", function(data) {
                 var rows = data.table.rows;
 				
                 var townshipNames = new Array();
                 
                 for (var i=0; i<rows.length; i++) {
                     var name = rows[i][0];
+                    var zone = rows[i][1];
                     mapManager.addTownship(name);
-                    townshipNames.push(name);
+                    townshipNames.push({label: name , category: zone});
                 }
                 fillAutoComplete(townshipNames,mapManager);
             });
@@ -151,11 +152,27 @@
         
         function fillAutoComplete(townshipNames,mapManager){
         	
-        	$("#municipios").autocomplete({
+        	//stuff to draw category menus
+        	$.widget( "custom.catcomplete", $.ui.autocomplete, {
+        	        _renderMenu: function( ul, items ) {
+        	            var that = this,
+        	                currentCategory = "";
+        	            $.each( items, function( index, item ) {
+        	                if ( item.category != currentCategory ) {
+        	                    ul.append( "<li class='ui-autocomplete-category'>" + item.category + "</li>" );
+        	                    currentCategory = item.category;
+        	                }
+        	                that._renderItemData( ul, item );
+        	            });
+        	        }
+        	    });
+        	
+        	$("#municipios").catcomplete({
                 source: townshipNames,
                 select: function(event,ui){
                 	mapManager.setActiveTownship(ui.item.value);
-                }
+                },
+               minLength: 0
         	});
                 
         }

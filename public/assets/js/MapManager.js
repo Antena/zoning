@@ -60,7 +60,7 @@ var MapManager = function MapManager(options) {
     this.addTownship = function(name, success) {
         var self = this;
 
-        self.ftClient.query(["Id", "Nombre", "N", "E", "S", "W"], "Nombre = '" + name + "'", function(data) {
+        self.ftClient.query(["Id", "Nombre", "N", "E", "S", "W"], "Nombre = '" + name + "'",null, function(data) {
 
             if (data.table.rows.length > 1) {
                 throw "ERROR: Query returned more than 1 township";
