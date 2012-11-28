@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document><Folder><name>sanluis</name>
+<Schema name="sanluis" id="sanluis">
+	<SimpleField name="Name" type="string"></SimpleField>
+	<SimpleField name="Description" type="string"></SimpleField>
+	<SimpleField name="LOCALIDAD" type="string"></SimpleField>
+	<SimpleField name="PARTIDO" type="string"></SimpleField>
+	<SimpleField name="PROVINCIA" type="string"></SimpleField>
+	<SimpleField name="PAIS" type="string"></SimpleField>
+	<SimpleField name="TOT_1991" type="float"></SimpleField>
+	<SimpleField name="TOT_2001" type="float"></SimpleField>
+	<SimpleField name="VAR_2001" type="float"></SimpleField>
+	<SimpleField name="MUJ_2001" type="float"></SimpleField>
+	<SimpleField name="ID" type="float"></SimpleField>
+</Schema>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#sanluis">
+		<SimpleData name="LOCALIDAD">SAN LUIS</SimpleData>
+		<SimpleData name="PARTIDO">LA CAPITAL</SimpleData>
+		<SimpleData name="PROVINCIA">SAN LUIS</SimpleData>
+		<SimpleData name="PAIS">ARGENTINA</SimpleData>
+		<SimpleData name="TOT_1991">110136</SimpleData>
+		<SimpleData name="TOT_2001">153322</SimpleData>
+		<SimpleData name="VAR_2001">74682</SimpleData>
+		<SimpleData name="MUJ_2001">78640</SimpleData>
+		<SimpleData name="ID">419</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.28786812,-33.27162102 -66.269773079999979,-33.31987803 -66.29288004,-33.33798702 -66.367257119999977,-33.36032196 -66.40576992,-33.34060296 -66.41588016,-33.31484703 -66.41394012,-33.27768396 -66.40594992,-33.24907098 -66.36942396,-33.22832499 -66.29137596,-33.23940903 -66.28786812,-33.27162102</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+</Folder></Document></kml>

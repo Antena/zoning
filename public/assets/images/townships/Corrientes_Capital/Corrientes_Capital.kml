@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <kml xmlns="http://www.opengis.net/kml/2.2">
-<Document><Folder><name>campana_localidad</name>
-<Schema name="campana_localidad" id="campana_localidad">
+<Document><Folder><name>corrientes_localidad</name>
+<Schema name="corrientes_localidad" id="corrientes_localidad">
 	<SimpleField name="Name" type="string"></SimpleField>
 	<SimpleField name="Description" type="string"></SimpleField>
 	<SimpleField name="PULOC18W_" type="float"></SimpleField>
@@ -30,32 +30,32 @@
 	<SimpleField name="NOMMUNI_01" type="string"></SimpleField>
 </Schema>
   <Placemark>
-	<ExtendedData><SchemaData schemaUrl="#campana_localidad">
-		<SimpleData name="PULOC18W_">0</SimpleData>
-		<SimpleData name="PULOC18W_I">0</SimpleData>
-		<SimpleData name="LATITUD">34 09 46</SimpleData>
-		<SimpleData name="LONGITUD">58 57 32</SimpleData>
-		<SimpleData name="XGK">5596003.000000</SimpleData>
-		<SimpleData name="YGK">6219745.000000</SimpleData>
-		<SimpleData name="CODPCIA">06</SimpleData>
-		<SimpleData name="CODDEP_91">126</SimpleData>
-		<SimpleData name="NOMDEP_91">CAMPANA</SimpleData>
-		<SimpleData name="CODAGLO_91">0040</SimpleData>
-		<SimpleData name="NOMLOC_91">CAMPANA</SimpleData>
+	<ExtendedData><SchemaData schemaUrl="#corrientes_localidad">
+		<SimpleData name="PULOC18W_">1</SimpleData>
+		<SimpleData name="PULOC18W_I">1</SimpleData>
+		<SimpleData name="LATITUD">27 27 50</SimpleData>
+		<SimpleData name="LONGITUD">58 50 19</SimpleData>
+		<SimpleData name="XGK">6318233.000000</SimpleData>
+		<SimpleData name="YGK">6961870.000000</SimpleData>
+		<SimpleData name="CODPCIA">18</SimpleData>
+		<SimpleData name="CODDEP_91">021</SimpleData>
+		<SimpleData name="NOMDEP_91">CAPITAL</SimpleData>
+		<SimpleData name="CODAGLO_91">0013</SimpleData>
+		<SimpleData name="NOMLOC_91">CORRIENTES</SimpleData>
 		<SimpleData name="TIPLOC_91">1</SimpleData>
 		<SimpleData name="AGLO_91">0</SimpleData>
-		<SimpleData name="NOMAGLO_91">CAMPANA</SimpleData>
-		<SimpleData name="CODDEP_01">126</SimpleData>
-		<SimpleData name="NOMDEP_01">CAMPANA</SimpleData>
-		<SimpleData name="CODLOC_01">030</SimpleData>
-		<SimpleData name="CODAGLO_01">0040</SimpleData>
-		<SimpleData name="NOMLOC_01">CAMPANA</SimpleData>
-		<SimpleData name="TIPLOC_01">1</SimpleData>
-		<SimpleData name="AGLO_01">0</SimpleData>
-		<SimpleData name="NOMAGLO_01">CAMPANA</SimpleData>
-		<SimpleData name="PRINEM">0126</SimpleData>
-		<SimpleData name="NOMMUNI_01">CAMPANA</SimpleData>
+		<SimpleData name="NOMAGLO_91">CORRIENTES</SimpleData>
+		<SimpleData name="CODDEP_01">021</SimpleData>
+		<SimpleData name="NOMDEP_01">CAPITAL</SimpleData>
+		<SimpleData name="CODLOC_01">020</SimpleData>
+		<SimpleData name="CODAGLO_01">0013</SimpleData>
+		<SimpleData name="NOMLOC_01">CORRIENTES</SimpleData>
+		<SimpleData name="TIPLOC_01">2</SimpleData>
+		<SimpleData name="AGLO_01">3</SimpleData>
+		<SimpleData name="NOMAGLO_01">GRAN CORRIENTES</SimpleData>
+		<SimpleData name="PRINEM">0021</SimpleData>
+		<SimpleData name="NOMMUNI_01">CORRIENTES</SimpleData>
 	</SchemaData></ExtendedData>
-      <Point><coordinates>-58.958890151022729,-34.16634040855724</coordinates></Point>
+      <Point><coordinates>-58.839198146181296,-27.465807271636489</coordinates></Point>
   </Placemark>
 </Folder></Document></kml>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document><Folder><name>centprj</name>
+<Schema name="centprj" id="centprj">
+	<SimpleField name="Name" type="string"></SimpleField>
+	<SimpleField name="Description" type="string"></SimpleField>
+	<SimpleField name="LOCALIDAD" type="string"></SimpleField>
+	<SimpleField name="PARTIDO" type="string"></SimpleField>
+	<SimpleField name="PROVINCIA" type="string"></SimpleField>
+	<SimpleField name="PAIS" type="string"></SimpleField>
+	<SimpleField name="TOT_1991" type="float"></SimpleField>
+	<SimpleField name="TOT_2001" type="float"></SimpleField>
+	<SimpleField name="VAR_2001" type="float"></SimpleField>
+	<SimpleField name="MUJ_2001" type="float"></SimpleField>
+	<SimpleField name="ID" type="float"></SimpleField>
+</Schema>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#centprj">
+		<SimpleData name="LOCALIDAD">CENTENARIO</SimpleData>
+		<SimpleData name="PARTIDO">CONFLUENCIA</SimpleData>
+		<SimpleData name="PROVINCIA">NEUQUEN</SimpleData>
+		<SimpleData name="PAIS">ARGENTINA</SimpleData>
+		<SimpleData name="TOT_1991">20675</SimpleData>
+		<SimpleData name="TOT_2001">26843</SimpleData>
+		<SimpleData name="VAR_2001">13200</SimpleData>
+		<SimpleData name="MUJ_2001">13643</SimpleData>
+		<SimpleData name="ID">13</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-68.15638512,-38.864530979997475 -68.189006159999977,-38.801030039997514 -68.126445,-38.777907959997506 -68.106087,-38.818436039997479 -68.08968504,-38.83444901999745 -68.095289159999979,-38.853376019997462 -68.15638512,-38.864530979997475</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+</Folder></Document></kml>

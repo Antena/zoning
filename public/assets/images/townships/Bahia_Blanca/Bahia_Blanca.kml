@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document><Folder><name>bahiprj</name>
+<Schema name="bahiprj" id="bahiprj">
+	<SimpleField name="Name" type="string"></SimpleField>
+	<SimpleField name="Description" type="string"></SimpleField>
+	<SimpleField name="LOCALIDAD" type="string"></SimpleField>
+	<SimpleField name="PARTIDO" type="string"></SimpleField>
+	<SimpleField name="PROVINCIA" type="string"></SimpleField>
+	<SimpleField name="PAIS" type="string"></SimpleField>
+	<SimpleField name="TOT_1991" type="float"></SimpleField>
+	<SimpleField name="TOT_2001" type="float"></SimpleField>
+	<SimpleField name="VAR_2001" type="float"></SimpleField>
+	<SimpleField name="MUJ_2001" type="float"></SimpleField>
+	<SimpleField name="ID" type="float"></SimpleField>
+</Schema>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#bahiprj">
+		<SimpleData name="LOCALIDAD">BAHIA BLANCA</SimpleData>
+		<SimpleData name="PARTIDO">BAHIA BLANCA</SimpleData>
+		<SimpleData name="PROVINCIA">BUENOS AIRES</SimpleData>
+		<SimpleData name="PAIS">ARGENTINA</SimpleData>
+		<SimpleData name="TOT_1991">244684</SimpleData>
+		<SimpleData name="TOT_2001">258243</SimpleData>
+		<SimpleData name="VAR_2001">-1</SimpleData>
+		<SimpleData name="MUJ_2001">-1</SimpleData>
+		<SimpleData name="ID">548</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-62.34347196,-38.706074009997565 -62.311662,-38.679653969997567 -62.25082992,-38.630118959997588 -62.148684960000011,-38.69275697999754 -62.19410508,-38.731688009997534 -62.180013960000011,-38.741553989997527 -62.194275,-38.75314202999752 -62.23052088,-38.775318029997514 -62.25801984000001,-38.76120197999753 -62.27636688,-38.762072009997524 -62.29581588,-38.779430039997507 -62.30196792,-38.768561999997516 -62.303484960000013,-38.762648009997527 -62.30909304,-38.741952959997541 -62.31672396,-38.736089009997535 -62.31975804,-38.737916999997537 -62.327619,-38.732003009997541 -62.32885992,-38.73426101999754 -62.33299704,-38.734368029997533 -62.33299704,-38.720819969997542 -62.33462892,-38.714373989997554 -62.34347196,-38.706074009997565</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+</Folder></Document></kml>

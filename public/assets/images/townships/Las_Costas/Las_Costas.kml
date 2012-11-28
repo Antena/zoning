@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document><Folder><name>lascprj</name>
+<Schema name="lascprj" id="lascprj">
+	<SimpleField name="Name" type="string"></SimpleField>
+	<SimpleField name="Description" type="string"></SimpleField>
+	<SimpleField name="LOCALIDAD" type="string"></SimpleField>
+	<SimpleField name="PARTIDO" type="string"></SimpleField>
+	<SimpleField name="PROVINCIA" type="string"></SimpleField>
+	<SimpleField name="PAIS" type="string"></SimpleField>
+	<SimpleField name="TOT_1991" type="float"></SimpleField>
+	<SimpleField name="TOT_2001" type="float"></SimpleField>
+	<SimpleField name="VAR_2001" type="float"></SimpleField>
+	<SimpleField name="MUJ_2001" type="float"></SimpleField>
+	<SimpleField name="ID" type="float"></SimpleField>
+</Schema>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#lascprj">
+		<SimpleData name="LOCALIDAD">LAS COSTAS</SimpleData>
+		<SimpleData name="PARTIDO">CAPITAL</SimpleData>
+		<SimpleData name="PROVINCIA">SALTA</SimpleData>
+		<SimpleData name="PAIS">ARGENTINA</SimpleData>
+		<SimpleData name="TOT_1991">239</SimpleData>
+		<SimpleData name="TOT_2001">422</SimpleData>
+		<SimpleData name="VAR_2001">240</SimpleData>
+		<SimpleData name="MUJ_2001">182</SimpleData>
+		<SimpleData name="ID">398</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-65.437103880007214,-24.758559989996996 -65.475231840007936,-24.772264019996701 -65.474997840007916,-24.7716659699967 -65.488050000008187,-24.753888989996607 -65.487486960008184,-24.747554969996617 -65.485011960008123,-24.745001039996648 -65.460594960007654,-24.751847969996824 -65.437103880007214,-24.758559989996996</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+</Folder></Document></kml>

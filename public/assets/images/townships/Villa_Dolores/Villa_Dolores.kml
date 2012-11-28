@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document><Folder><name>vdoloprj</name>
+<Schema name="vdoloprj" id="vdoloprj">
+	<SimpleField name="Name" type="string"></SimpleField>
+	<SimpleField name="Description" type="string"></SimpleField>
+	<SimpleField name="LOCALIDAD" type="string"></SimpleField>
+	<SimpleField name="PARTIDO" type="string"></SimpleField>
+	<SimpleField name="PROVINCIA" type="string"></SimpleField>
+	<SimpleField name="PAIS" type="string"></SimpleField>
+	<SimpleField name="TOT_1991" type="float"></SimpleField>
+	<SimpleField name="TOT_2001" type="float"></SimpleField>
+	<SimpleField name="VAR_2001" type="float"></SimpleField>
+	<SimpleField name="MUJ_2001" type="float"></SimpleField>
+	<SimpleField name="ID" type="float"></SimpleField>
+</Schema>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#vdoloprj">
+		<SimpleData name="LOCALIDAD">VILLA DOLORES</SimpleData>
+		<SimpleData name="PARTIDO">VALLE VIEJO</SimpleData>
+		<SimpleData name="PROVINCIA">CATAMARCA</SimpleData>
+		<SimpleData name="PAIS">ARGENTINA</SimpleData>
+		<SimpleData name="TOT_1991">1106</SimpleData>
+		<SimpleData name="TOT_2001">1538</SimpleData>
+		<SimpleData name="VAR_2001">-1</SimpleData>
+		<SimpleData name="MUJ_2001">-1</SimpleData>
+		<SimpleData name="ID">430</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-65.735186039956929,-28.428803999971265 -65.725979039956144,-28.428850979970768 -65.719941119955635,-28.429100009970448 -65.712979079955034,-28.430537039970059 -65.70971711995476,-28.431298979969885 -65.715608159955281,-28.447210979970137 -65.721166919955763,-28.450572029970434 -65.721219119955762,-28.450544039970438 -65.739035159957254,-28.444502969971413 -65.735216999956904,-28.429236989971265 -65.735186039956929,-28.428803999971265</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+</Folder></Document></kml>

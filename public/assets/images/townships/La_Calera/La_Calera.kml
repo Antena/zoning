@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document><Folder><name>lacalera_prj</name>
+<Schema name="lacalera_prj" id="lacalera_prj">
+	<SimpleField name="Name" type="string"></SimpleField>
+	<SimpleField name="Description" type="string"></SimpleField>
+	<SimpleField name="LOCALIDAD" type="string"></SimpleField>
+	<SimpleField name="PARTIDO" type="string"></SimpleField>
+	<SimpleField name="PROVINCIA" type="string"></SimpleField>
+	<SimpleField name="PAIS" type="string"></SimpleField>
+	<SimpleField name="TOT_1991" type="float"></SimpleField>
+	<SimpleField name="TOT_2001" type="float"></SimpleField>
+	<SimpleField name="VAR_2001" type="float"></SimpleField>
+	<SimpleField name="MUJ_2001" type="float"></SimpleField>
+	<SimpleField name="ID" type="float"></SimpleField>
+</Schema>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#lacalera_prj">
+		<SimpleData name="LOCALIDAD">LA CALERA</SimpleData>
+		<SimpleData name="PARTIDO">COLON</SimpleData>
+		<SimpleData name="PROVINCIA">CORDOBA</SimpleData>
+		<SimpleData name="PAIS">ARGENTINA</SimpleData>
+		<SimpleData name="TOT_1991">14993</SimpleData>
+		<SimpleData name="TOT_2001">21946</SimpleData>
+		<SimpleData name="VAR_2001">-1</SimpleData>
+		<SimpleData name="MUJ_2001">-1</SimpleData>
+		<SimpleData name="ID">588</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-64.35331308000012,-31.344468029999287 -64.341088920000118,-31.347565019999294 -64.339391880000122,-31.348067039999297 -64.333445040000115,-31.349988 -64.324685880000104,-31.351155029999305 -64.317507120000116,-31.354490969999315 -64.317220920000096,-31.365007019999318 -64.331354160000103,-31.366520999999299 -64.353876120000123,-31.372875989999283 -64.35331308000012,-31.344468029999287</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+</Folder></Document></kml>

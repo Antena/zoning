@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document><Folder><name>barranqueras_prj</name>
+<Schema name="barranqueras_prj" id="barranqueras_prj">
+	<SimpleField name="Name" type="string"></SimpleField>
+	<SimpleField name="Description" type="string"></SimpleField>
+	<SimpleField name="LOCALIDAD" type="string"></SimpleField>
+	<SimpleField name="PARTIDO" type="string"></SimpleField>
+	<SimpleField name="PROVINCIA" type="string"></SimpleField>
+	<SimpleField name="PAIS" type="string"></SimpleField>
+	<SimpleField name="TOT_1991" type="float"></SimpleField>
+	<SimpleField name="TOT_2001" type="float"></SimpleField>
+	<SimpleField name="VAR_2001" type="float"></SimpleField>
+	<SimpleField name="MUJ_2001" type="float"></SimpleField>
+	<SimpleField name="ID" type="float"></SimpleField>
+</Schema>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#barranqueras_prj">
+		<SimpleData name="LOCALIDAD">BARRANQUERAS</SimpleData>
+		<SimpleData name="PARTIDO">SAN FERNANDO</SimpleData>
+		<SimpleData name="PROVINCIA">CHACO</SimpleData>
+		<SimpleData name="PAIS">ARGENTINA</SimpleData>
+		<SimpleData name="TOT_1991">42572</SimpleData>
+		<SimpleData name="TOT_2001">50738</SimpleData>
+		<SimpleData name="VAR_2001">24619</SimpleData>
+		<SimpleData name="MUJ_2001">26119</SimpleData>
+		<SimpleData name="ID">389</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-58.994476920001986,-27.508674959998519 -58.890560040001439,-27.411780959998897 -58.867620120001341,-27.431745029998961 -58.872150000001355,-27.436671989998946 -58.878578880001378,-27.439653959998928 -58.890268080001448,-27.453140009998886 -58.891583880001455,-27.471340979998885 -58.931330040001633,-27.507462029998745 -58.941088920001683,-27.499246019998722 -58.972681080001863,-27.528011009998593 -58.994476920001986,-27.508674959998519</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+</Folder></Document></kml>

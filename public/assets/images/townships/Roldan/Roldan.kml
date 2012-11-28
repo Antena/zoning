@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document><Folder><name>roldan_prj</name>
+<Schema name="roldan_prj" id="roldan_prj">
+	<SimpleField name="Name" type="string"></SimpleField>
+	<SimpleField name="Description" type="string"></SimpleField>
+	<SimpleField name="LOCALIDAD" type="string"></SimpleField>
+	<SimpleField name="PARTIDO" type="string"></SimpleField>
+	<SimpleField name="PROVINCIA" type="string"></SimpleField>
+	<SimpleField name="PAIS" type="string"></SimpleField>
+	<SimpleField name="TOT_1991" type="float"></SimpleField>
+	<SimpleField name="TOT_2001" type="float"></SimpleField>
+	<SimpleField name="VAR_2001" type="float"></SimpleField>
+	<SimpleField name="MUJ_2001" type="float"></SimpleField>
+	<SimpleField name="ID" type="float"></SimpleField>
+</Schema>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#roldan_prj">
+		<SimpleData name="LOCALIDAD">ROLDAN</SimpleData>
+		<SimpleData name="PARTIDO">SAN LORENZO</SimpleData>
+		<SimpleData name="PROVINCIA">SANTA FE</SimpleData>
+		<SimpleData name="PAIS">ARGENTINA</SimpleData>
+		<SimpleData name="TOT_1991">9013</SimpleData>
+		<SimpleData name="TOT_2001">11252</SimpleData>
+		<SimpleData name="VAR_2001">5504</SimpleData>
+		<SimpleData name="MUJ_2001">5748</SimpleData>
+		<SimpleData name="ID">52</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-60.962914079998235,-32.864873039996525 -60.898697999997829,-32.874996959995968 -60.891303959997771,-32.849524979995905 -60.874179839997659,-32.852464019995722 -60.882352919997722,-32.886754019995799 -60.846936839997468,-32.892305039995435 -60.851903039997495,-32.909861969995475 -60.852071879997496,-32.912769959995494 -60.851999159997504,-32.915225969995461 -60.852035159997492,-32.916342959995468 -60.852095999997516,-32.919053039995475 -60.852052079997513,-32.920196039995481 -60.852002039997515,-32.921322029995466 -60.851951999997503,-32.922451979995472 -60.851906999997517,-32.923585979995472 -60.851864879997493,-32.924669039995479 -60.852040919997506,-32.930522999995461 -60.851838959997515,-32.933360969995469 -60.85189187999751,-32.933712959995468 -60.851873159997517,-32.933996999995458 -60.85189007999751,-32.934322979995464 -60.856666919997544,-32.9403110399955 -60.974588879998294,-32.915492009996591 -60.962914079998235,-32.864873039996525</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+</Folder></Document></kml>

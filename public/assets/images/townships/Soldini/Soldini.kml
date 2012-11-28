@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document><Folder><name>soldini_prj</name>
+<Schema name="soldini_prj" id="soldini_prj">
+	<SimpleField name="Name" type="string"></SimpleField>
+	<SimpleField name="Description" type="string"></SimpleField>
+	<SimpleField name="LOCALIDAD" type="string"></SimpleField>
+	<SimpleField name="PARTIDO" type="string"></SimpleField>
+	<SimpleField name="PROVINCIA" type="string"></SimpleField>
+	<SimpleField name="PAIS" type="string"></SimpleField>
+	<SimpleField name="TOT_1991" type="float"></SimpleField>
+	<SimpleField name="TOT_2001" type="float"></SimpleField>
+	<SimpleField name="VAR_2001" type="float"></SimpleField>
+	<SimpleField name="MUJ_2001" type="float"></SimpleField>
+	<SimpleField name="ID" type="float"></SimpleField>
+</Schema>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#soldini_prj">
+		<SimpleData name="LOCALIDAD">SOLDINI</SimpleData>
+		<SimpleData name="PARTIDO">ROSARIO</SimpleData>
+		<SimpleData name="PROVINCIA">SANTA FE</SimpleData>
+		<SimpleData name="PAIS">ARGENTINA</SimpleData>
+		<SimpleData name="TOT_1991">1583</SimpleData>
+		<SimpleData name="TOT_2001">1990</SimpleData>
+		<SimpleData name="VAR_2001">980</SimpleData>
+		<SimpleData name="MUJ_2001">1010</SimpleData>
+		<SimpleData name="ID">42</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-60.770374919996854,-33.025686029994439 -60.770496959996855,-33.01718903999447 -60.770572919996845,-33.012161009994465 -60.770585159996855,-33.011103959994465 -60.770607119996846,-33.010082999994452 -60.770617919996845,-33.009117029994471 -60.769717919996836,-33.009082019994452 -60.762971879996776,-33.008888969994381 -60.761300039996755,-33.008841989994352 -60.757508159996725,-33.008744969994311 -60.752072159996679,-33.008562989994225 -60.74882891999664,-33.00848000999418 -60.730809119996465,-33.007897979993921 -60.726863879996429,-33.00777602999387 -60.721287119996362,-33.00760295999379 -60.721013879996363,-33.007728959993798 -60.719401079996352,-33.011017019993766 -60.716918879996328,-33.016079969993726 -60.715010159996304,-33.019527959993695 -60.712836839996292,-33.021981989993662 -60.710816159996256,-33.024264029993638 -60.709178159996242,-33.024858029993602 -60.708932999996236,-33.025012019993603 -60.707324159996233,-33.026642999993577 -60.701885999996172,-33.034508009993495 -60.701912999996175,-33.034685039993491 -60.699332879996156,-33.039168029993469 -60.76048607999676,-33.040032029994329 -60.7643499599968,-33.036955019994373 -60.769204919996831,-33.028976969994446 -60.770374919996854,-33.025686029994439</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+</Folder></Document></kml>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document><Folder><name>mendiolaza_prj</name>
+<Schema name="mendiolaza_prj" id="mendiolaza_prj">
+	<SimpleField name="Name" type="string"></SimpleField>
+	<SimpleField name="Description" type="string"></SimpleField>
+	<SimpleField name="LOCALIDAD" type="string"></SimpleField>
+	<SimpleField name="PARTIDO" type="string"></SimpleField>
+	<SimpleField name="PROVINCIA" type="string"></SimpleField>
+	<SimpleField name="PAIS" type="string"></SimpleField>
+	<SimpleField name="TOT_1991" type="float"></SimpleField>
+	<SimpleField name="TOT_2001" type="float"></SimpleField>
+	<SimpleField name="VAR_2001" type="float"></SimpleField>
+	<SimpleField name="MUJ_2001" type="float"></SimpleField>
+	<SimpleField name="ID" type="float"></SimpleField>
+</Schema>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#mendiolaza_prj">
+		<SimpleData name="LOCALIDAD">MENDIOLAZA</SimpleData>
+		<SimpleData name="PARTIDO">COLON</SimpleData>
+		<SimpleData name="PROVINCIA">CORDOBA</SimpleData>
+		<SimpleData name="PAIS">ARGENTINA</SimpleData>
+		<SimpleData name="TOT_1991">1536</SimpleData>
+		<SimpleData name="TOT_2001">4204</SimpleData>
+		<SimpleData name="VAR_2001">2120</SimpleData>
+		<SimpleData name="MUJ_2001">2084</SimpleData>
+		<SimpleData name="ID">596</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-64.320459120000109,-31.276304999999319 -64.329575040000108,-31.259831039999316 -64.326939120000105,-31.256694989999318 -64.324905840000113,-31.249564019999323 -64.315901160000109,-31.244286959999322 -64.311422040000096,-31.246424999999331 -64.305515880000101,-31.250085029999337 -64.30066992000009,-31.252113989999344 -64.294610040000094,-31.254074999999347 -64.294554960000099,-31.240151999999345 -64.274042880000081,-31.248279989999343 -64.247077080000068,-31.245765029999372 -64.242024120000067,-31.254989039999391 -64.276616160000074,-31.259801969999348 -64.276295040000079,-31.262965019999353 -64.282970880000079,-31.264477019999354 -64.287154080000079,-31.264751969999349 -64.287798120000076,-31.268672009999342 -64.288361160000079,-31.271354009999325 -64.297035,-31.275118979999341 -64.30348512000009,-31.278367979999338 -64.306783080000088,-31.279123979999319 -64.31227884000009,-31.276794959999314 -64.320459120000109,-31.276304999999319</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+</Folder></Document></kml>

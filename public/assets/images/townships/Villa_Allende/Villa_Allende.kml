@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document><Folder><name>vallende_prj</name>
+<Schema name="vallende_prj" id="vallende_prj">
+	<SimpleField name="Name" type="string"></SimpleField>
+	<SimpleField name="Description" type="string"></SimpleField>
+	<SimpleField name="LOCALIDAD" type="string"></SimpleField>
+	<SimpleField name="PARTIDO" type="string"></SimpleField>
+	<SimpleField name="PROVINCIA" type="string"></SimpleField>
+	<SimpleField name="PAIS" type="string"></SimpleField>
+	<SimpleField name="TOT_1991" type="float"></SimpleField>
+	<SimpleField name="TOT_2001" type="float"></SimpleField>
+	<SimpleField name="VAR_2001" type="float"></SimpleField>
+	<SimpleField name="MUJ_2001" type="float"></SimpleField>
+	<SimpleField name="ID" type="float"></SimpleField>
+</Schema>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#vallende_prj">
+		<SimpleData name="LOCALIDAD">VILLA ALLENDE</SimpleData>
+		<SimpleData name="PARTIDO">COLON</SimpleData>
+		<SimpleData name="PROVINCIA">CORDOBA</SimpleData>
+		<SimpleData name="PAIS">ARGENTINA</SimpleData>
+		<SimpleData name="TOT_1991">16025</SimpleData>
+		<SimpleData name="TOT_2001">21683</SimpleData>
+		<SimpleData name="VAR_2001">10504</SimpleData>
+		<SimpleData name="MUJ_2001">11179</SimpleData>
+		<SimpleData name="ID">404</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-64.263681,-31.307723009999361 -64.316360880000104,-31.307778989999324 -64.3150328400001,-31.305475979999322 -64.320459120000109,-31.276304999999319 -64.31227884000009,-31.276794959999314 -64.306783080000088,-31.279123979999319 -64.30348512000009,-31.278367979999338 -64.297209960000089,-31.273073009999329 -64.288361160000079,-31.271354009999325 -64.287798120000076,-31.268672009999342 -64.287154080000079,-31.264751969999349 -64.282970880000079,-31.264477019999354 -64.282970880000079,-31.272729029999351 -64.272432960000074,-31.272317009999355 -64.27055916000009,-31.29501401999935 -64.263681,-31.307723009999361</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+</Folder></Document></kml>

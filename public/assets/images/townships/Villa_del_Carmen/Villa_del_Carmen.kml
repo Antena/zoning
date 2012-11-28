@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document><Folder><name>villprj</name>
+<Schema name="villprj" id="villprj">
+	<SimpleField name="Name" type="string"></SimpleField>
+	<SimpleField name="Description" type="string"></SimpleField>
+	<SimpleField name="LOCALIDAD" type="string"></SimpleField>
+	<SimpleField name="PARTIDO" type="string"></SimpleField>
+	<SimpleField name="PROVINCIA" type="string"></SimpleField>
+	<SimpleField name="PAIS" type="string"></SimpleField>
+	<SimpleField name="TOT_1991" type="float"></SimpleField>
+	<SimpleField name="TOT_2001" type="float"></SimpleField>
+	<SimpleField name="VAR_2001" type="float"></SimpleField>
+	<SimpleField name="MUJ_2001" type="float"></SimpleField>
+	<SimpleField name="ID" type="float"></SimpleField>
+</Schema>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#villprj">
+		<SimpleData name="LOCALIDAD">VILLA DEL CARMEN</SimpleData>
+		<SimpleData name="PARTIDO">FORMOSA</SimpleData>
+		<SimpleData name="PROVINCIA">FORMOSA</SimpleData>
+		<SimpleData name="PAIS">ARGENTINA</SimpleData>
+		<SimpleData name="TOT_1991">-1</SimpleData>
+		<SimpleData name="TOT_2001">2570</SimpleData>
+		<SimpleData name="VAR_2001">1331</SimpleData>
+		<SimpleData name="MUJ_2001">1239</SimpleData>
+		<SimpleData name="ID">390</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-58.272428880000142,-26.207657009999789 -58.203712080000109,-26.243094959999819 -58.227805080000124,-26.275951979999814 -58.291710840000157,-26.301158009999796 -58.320285120000179,-26.245499039999782 -58.266234000000146,-26.223533999999795 -58.272428880000142,-26.207657009999789</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+</Folder></Document></kml>

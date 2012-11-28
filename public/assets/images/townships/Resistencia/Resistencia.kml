@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document><Folder><name>resistencia_prj</name>
+<Schema name="resistencia_prj" id="resistencia_prj">
+	<SimpleField name="Name" type="string"></SimpleField>
+	<SimpleField name="Description" type="string"></SimpleField>
+	<SimpleField name="LOCALIDAD" type="string"></SimpleField>
+	<SimpleField name="PARTIDO" type="string"></SimpleField>
+	<SimpleField name="PROVINCIA" type="string"></SimpleField>
+	<SimpleField name="PAIS" type="string"></SimpleField>
+	<SimpleField name="TOT_1991" type="float"></SimpleField>
+	<SimpleField name="TOT_2001" type="float"></SimpleField>
+	<SimpleField name="VAR_2001" type="float"></SimpleField>
+	<SimpleField name="MUJ_2001" type="float"></SimpleField>
+	<SimpleField name="ID" type="float"></SimpleField>
+</Schema>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#resistencia_prj">
+		<SimpleData name="LOCALIDAD">RESISTENCIA</SimpleData>
+		<SimpleData name="PARTIDO">SAN FERNANDO</SimpleData>
+		<SimpleData name="PROVINCIA">CHACO</SimpleData>
+		<SimpleData name="PAIS">ARGENTINA</SimpleData>
+		<SimpleData name="TOT_1991">229212</SimpleData>
+		<SimpleData name="TOT_2001">274490</SimpleData>
+		<SimpleData name="VAR_2001">132332</SimpleData>
+		<SimpleData name="MUJ_2001">142158</SimpleData>
+		<SimpleData name="ID">388</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-59.053584960002382,-27.456237989998296 -59.003610840002054,-27.414429029998502 -58.970373120001867,-27.345724019998649 -58.890560040001439,-27.411780959998897 -58.994476920001986,-27.508674959998519 -59.053584960002382,-27.456237989998296</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+</Folder></Document></kml>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document><Folder><name>capifprj</name>
+<Schema name="capifprj" id="capifprj">
+	<SimpleField name="Name" type="string"></SimpleField>
+	<SimpleField name="Description" type="string"></SimpleField>
+	<SimpleField name="LOCALIDAD" type="string"></SimpleField>
+	<SimpleField name="PARTIDO" type="string"></SimpleField>
+	<SimpleField name="PROVINCIA" type="string"></SimpleField>
+	<SimpleField name="PAIS" type="string"></SimpleField>
+	<SimpleField name="TOT_1991" type="float"></SimpleField>
+	<SimpleField name="TOT_2001" type="float"></SimpleField>
+	<SimpleField name="VAR_2001" type="float"></SimpleField>
+	<SimpleField name="MUJ_2001" type="float"></SimpleField>
+	<SimpleField name="ID" type="float"></SimpleField>
+</Schema>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#capifprj">
+		<SimpleData name="LOCALIDAD">FORMOSA</SimpleData>
+		<SimpleData name="PARTIDO">FORMOSA</SimpleData>
+		<SimpleData name="PROVINCIA">FORMOSA</SimpleData>
+		<SimpleData name="PAIS">ARGENTINA</SimpleData>
+		<SimpleData name="TOT_1991">147636</SimpleData>
+		<SimpleData name="TOT_2001">198074</SimpleData>
+		<SimpleData name="VAR_2001">95746</SimpleData>
+		<SimpleData name="MUJ_2001">102328</SimpleData>
+		<SimpleData name="ID">391</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-58.260075840000141,-26.108817029999813 -58.185754920000093,-26.08860095999983 -58.171739040000091,-26.12779298999984 -58.167974160000092,-26.128017989999833 -58.161948840000086,-26.123514029999836 -58.149901080000085,-26.121261959999835 -58.133955960000087,-26.12397995999984 -58.135579920000076,-26.130371039999837 -58.143301920000091,-26.131970969999834 -58.135844160000083,-26.163149039999833 -58.139106840000089,-26.168328989999843 -58.133333880000087,-26.173734029999835 -58.135811040000078,-26.18098397999983 -58.141743120000079,-26.180102969999833 -58.14671004000008,-26.17905995999984 -58.153439880000086,-26.177640029999836 -58.158249120000079,-26.179873019999835 -58.156890120000078,-26.185120019999832 -58.153199040000075,-26.189346959999828 -58.148264880000077,-26.192530979999834 -58.137720840000078,-26.214396029999833 -58.1969138400001,-26.233823969999825 -58.203712080000109,-26.243094959999819 -58.272428880000142,-26.207657009999789 -58.280028120000161,-26.188180019999802 -58.245033960000129,-26.177030999999818 -58.250608920000133,-26.157743999999809 -58.243853160000128,-26.155722959999814 -58.260075840000141,-26.108817029999813</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+</Folder></Document></kml>

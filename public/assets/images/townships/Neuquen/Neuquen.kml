@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document><Folder><name>confprj</name>
+<Schema name="confprj" id="confprj">
+	<SimpleField name="Name" type="string"></SimpleField>
+	<SimpleField name="Description" type="string"></SimpleField>
+	<SimpleField name="LOCALIDAD" type="string"></SimpleField>
+	<SimpleField name="PARTIDO" type="string"></SimpleField>
+	<SimpleField name="PROVINCIA" type="string"></SimpleField>
+	<SimpleField name="PAIS" type="string"></SimpleField>
+	<SimpleField name="TOT_1991" type="float"></SimpleField>
+	<SimpleField name="TOT_2001" type="float"></SimpleField>
+	<SimpleField name="VAR_2001" type="float"></SimpleField>
+	<SimpleField name="MUJ_2001" type="float"></SimpleField>
+	<SimpleField name="ID" type="float"></SimpleField>
+</Schema>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#confprj">
+		<SimpleData name="LOCALIDAD">NEUQUEN</SimpleData>
+		<SimpleData name="PARTIDO">CONFLUENCIA</SimpleData>
+		<SimpleData name="PROVINCIA">NEUQUEN</SimpleData>
+		<SimpleData name="PAIS">ARGENTINA</SimpleData>
+		<SimpleData name="TOT_1991">167296</SimpleData>
+		<SimpleData name="TOT_2001">201868</SimpleData>
+		<SimpleData name="VAR_2001">98185</SimpleData>
+		<SimpleData name="MUJ_2001">103683</SimpleData>
+		<SimpleData name="ID">11</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-68.03163,-38.944259999997399 -68.026077,-38.943305009997403 -68.01584688,-38.944987019997406 -68.00721696,-38.955941009997389 -68.004808919999988,-38.96108900999738 -68.00340492,-38.970449009997381 -67.99517784,-38.978249039997372 -68.01042708,-38.977937009997383 -68.030691839999989,-38.979964979997391 -68.04674388,-38.979809009997403 -68.04814788,-38.974816979997399 -68.05216116,-38.975441039997392 -68.05216116,-38.980277009997387 -68.05737792,-38.981836979997396 -68.068413,-38.983708979997388 -68.07382992,-38.9874529799974 -68.08867812,-38.989169009997404 -68.10553188,-38.984644979997398 -68.10593292,-38.978405009997395 -68.10693588,-38.975129009997403 -68.11737012,-38.980900979997401 -68.12258616,-38.980432979997403 -68.12659908,-38.975752979997409 -68.13181584,-38.973101039997417 -68.13462492,-38.976065009997413 -68.13221688,-38.980900979997408 -68.137434,-38.982304979997394 -68.142852,-38.980751039997401 -68.208261839999977,-38.929876019997444 -68.20665588,-38.926441979997456 -68.18137488,-38.909899979997448 -68.15087784,-38.932685009997435 -68.14686492,-38.926754999997442 -68.131215,-38.925818009997442 -68.12078112,-38.923009019997437 -68.11235388,-38.926441979997435 -68.10713712,-38.92893902999743 -68.08988196,-38.931748019997428 -68.08667184,-38.920511969997428 -68.07984984,-38.912708969997439 -68.06540412,-38.917702979997415 -68.06259504,-38.928003029997434 -68.060187,-38.931435989997418 -68.05296396,-38.937990959997414 -68.04935208,-38.939551019997403 -68.03163,-38.944259999997399</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+</Folder></Document></kml>

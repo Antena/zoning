@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document><Folder><name>vaqprj</name>
+<Schema name="vaqprj" id="vaqprj">
+	<SimpleField name="Name" type="string"></SimpleField>
+	<SimpleField name="Description" type="string"></SimpleField>
+	<SimpleField name="LOCALIDAD" type="string"></SimpleField>
+	<SimpleField name="PARTIDO" type="string"></SimpleField>
+	<SimpleField name="PROVINCIA" type="string"></SimpleField>
+	<SimpleField name="PAIS" type="string"></SimpleField>
+	<SimpleField name="TOT_1991" type="float"></SimpleField>
+	<SimpleField name="TOT_2001" type="float"></SimpleField>
+	<SimpleField name="VAR_2001" type="float"></SimpleField>
+	<SimpleField name="MUJ_2001" type="float"></SimpleField>
+	<SimpleField name="ID" type="float"></SimpleField>
+</Schema>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#vaqprj">
+		<SimpleData name="LOCALIDAD">VAQUEROS</SimpleData>
+		<SimpleData name="PARTIDO">LA CALDERA</SimpleData>
+		<SimpleData name="PROVINCIA">SALTA</SimpleData>
+		<SimpleData name="PAIS">ARGENTINA</SimpleData>
+		<SimpleData name="TOT_1991">1877</SimpleData>
+		<SimpleData name="TOT_2001">2980</SimpleData>
+		<SimpleData name="VAR_2001">1515</SimpleData>
+		<SimpleData name="MUJ_2001">1465</SimpleData>
+		<SimpleData name="ID">392</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-65.403748080006636,-24.707517029997252 -65.39506200000649,-24.710927039997308 -65.389192920006394,-24.714336959997354 -65.392068960006441,-24.725953979997335 -65.393124840006465,-24.733576979997313 -65.386611000006354,-24.736562009997364 -65.385320040006334,-24.739388009997374 -65.384790840006318,-24.742745999997364 -65.382149880006281,-24.745517999997382 -65.384908920006325,-24.746797979997357 -65.388254040006387,-24.743332979997344 -65.391657840006431,-24.743706029997327 -65.391656040006438,-24.745130009997315 -65.420294040006922,-24.73687700999713 -65.420444880006912,-24.735336029997132 -65.41314084000679,-24.707600999997194 -65.403748080006636,-24.707517029997252</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+</Folder></Document></kml>

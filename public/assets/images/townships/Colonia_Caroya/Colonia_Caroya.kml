@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document><Folder><name>coloniac_prj</name>
+<Schema name="coloniac_prj" id="coloniac_prj">
+	<SimpleField name="Name" type="string"></SimpleField>
+	<SimpleField name="Description" type="string"></SimpleField>
+	<SimpleField name="LOCALIDAD" type="string"></SimpleField>
+	<SimpleField name="PARTIDO" type="string"></SimpleField>
+	<SimpleField name="PROVINCIA" type="string"></SimpleField>
+	<SimpleField name="PAIS" type="string"></SimpleField>
+	<SimpleField name="TOT_1991" type="float"></SimpleField>
+	<SimpleField name="TOT_2001" type="float"></SimpleField>
+	<SimpleField name="VAR_2001" type="float"></SimpleField>
+	<SimpleField name="MUJ_2001" type="float"></SimpleField>
+	<SimpleField name="ID" type="float"></SimpleField>
+</Schema>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#coloniac_prj">
+		<SimpleData name="LOCALIDAD">COLONIA CAROYA</SimpleData>
+		<SimpleData name="PARTIDO">COLON</SimpleData>
+		<SimpleData name="PROVINCIA">CORDOBA</SimpleData>
+		<SimpleData name="PAIS">ARGENTINA</SimpleData>
+		<SimpleData name="TOT_1991">9294</SimpleData>
+		<SimpleData name="TOT_2001">13806</SimpleData>
+		<SimpleData name="VAR_2001">6748</SimpleData>
+		<SimpleData name="MUJ_2001">7058</SimpleData>
+		<SimpleData name="ID">409</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-64.11859092,-31.032046979999468 -64.10198988,-30.993812009999473 -64.096266960000023,-30.990447989999474 -64.08977292000003,-30.99411098999947 -64.043299080000011,-30.993818039999496 -64.015408080000014,-31.015447019999502 -64.03132584,-31.029119009999491 -64.077401880000025,-31.068695969999471 -64.11859092,-31.032046979999468</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+</Folder></Document></kml>

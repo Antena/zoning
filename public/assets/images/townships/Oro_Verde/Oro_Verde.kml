@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document><Folder><name>oro_verde</name>
+<Schema name="oro_verde" id="oro_verde">
+	<SimpleField name="Name" type="string"></SimpleField>
+	<SimpleField name="Description" type="string"></SimpleField>
+	<SimpleField name="LOCALIDAD" type="string"></SimpleField>
+	<SimpleField name="PARTIDO" type="string"></SimpleField>
+	<SimpleField name="PROVINCIA" type="string"></SimpleField>
+	<SimpleField name="PAIS" type="string"></SimpleField>
+	<SimpleField name="TOT_1991" type="float"></SimpleField>
+	<SimpleField name="TOT_2001" type="float"></SimpleField>
+	<SimpleField name="VAR_2001" type="float"></SimpleField>
+	<SimpleField name="MUJ_2001" type="float"></SimpleField>
+	<SimpleField name="ID" type="float"></SimpleField>
+</Schema>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#oro_verde">
+		<SimpleData name="LOCALIDAD">ORO VERDE</SimpleData>
+		<SimpleData name="PARTIDO">PARANA</SimpleData>
+		<SimpleData name="PROVINCIA">ENTRE RIOS</SimpleData>
+		<SimpleData name="PAIS">ARGENTINA</SimpleData>
+		<SimpleData name="TOT_1991">804</SimpleData>
+		<SimpleData name="TOT_2001">2403</SimpleData>
+		<SimpleData name="VAR_2001">1307</SimpleData>
+		<SimpleData name="MUJ_2001">1096</SimpleData>
+		<SimpleData name="ID">385</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-60.52533012,-31.797099 -60.50647404,-31.79878596 -60.49880496,-31.802778 -60.50237904,-31.80203298 -60.50737692,-31.80721401 -60.508839959999989,-31.81146201 -60.50957112,-31.82441202 -60.48543492,-31.82834898 -60.487507079999986,-31.83373701 -60.50847384,-31.82969601 -60.50847384,-31.83311502 -60.51664116,-31.83290802 -60.525784079999987,-31.83777801 -60.52724712,-31.84275096 -60.51761604,-31.843476 -60.51932316,-31.85622 -60.54504408,-31.85404398 -60.54419088,-31.83839901 -60.554307959999988,-31.83632703 -60.55443,-31.830111 -60.56332884,-31.82907501 -60.56174412,-31.82213304 -60.55333308,-31.82327298 -60.55126092,-31.81156497 -60.57149616,-31.80700602 -60.57125208,-31.80110103 -60.54492204,-31.80638502 -60.54809112,-31.82420502 -60.541143119999987,-31.82503401 -60.539193,-31.81778199 -60.53797404,-31.80990699 -60.53517,-31.80990699 -60.53492592,-31.81353399 -60.52261392,-31.81478004 -60.52261392,-31.81104999 -60.52533012,-31.797099</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+</Folder></Document></kml>

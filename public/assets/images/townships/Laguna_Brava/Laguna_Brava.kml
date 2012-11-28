@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document><Folder><name>laguna_brava_prj</name>
+<Schema name="laguna_brava_prj" id="laguna_brava_prj">
+	<SimpleField name="Name" type="string"></SimpleField>
+	<SimpleField name="Description" type="string"></SimpleField>
+	<SimpleField name="LOCALIDAD" type="string"></SimpleField>
+	<SimpleField name="PARTIDO" type="string"></SimpleField>
+	<SimpleField name="PROVINCIA" type="string"></SimpleField>
+	<SimpleField name="PAIS" type="string"></SimpleField>
+	<SimpleField name="TOT_1991" type="float"></SimpleField>
+	<SimpleField name="TOT_2001" type="float"></SimpleField>
+	<SimpleField name="VAR_2001" type="float"></SimpleField>
+	<SimpleField name="MUJ_2001" type="float"></SimpleField>
+	<SimpleField name="ID" type="float"></SimpleField>
+	<SimpleField name="contador" type="int"></SimpleField>
+	<SimpleField name="contador_1" type="int"></SimpleField>
+</Schema>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#laguna_brava_prj">
+		<SimpleData name="LOCALIDAD">LAGUNA BRAVA</SimpleData>
+		<SimpleData name="PARTIDO">CAPITAL</SimpleData>
+		<SimpleData name="PROVINCIA">CORRIENTES</SimpleData>
+		<SimpleData name="PAIS">ARGENTINA</SimpleData>
+		<SimpleData name="TOT_1991">2094</SimpleData>
+		<SimpleData name="TOT_2001">3025</SimpleData>
+		<SimpleData name="VAR_2001">1478</SimpleData>
+		<SimpleData name="MUJ_2001">1547</SimpleData>
+		<SimpleData name="ID">383</SimpleData>
+		<SimpleData name="contador">0</SimpleData>
+		<SimpleData name="contador_1">0</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-58.725992159902212,-27.483236999993885 -58.708376999899819,-27.486032039993766 -58.712559119900426,-27.506330999993811 -58.731220079902947,-27.502972019993937 -58.725992159902212,-27.483236999993885</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+</Folder></Document></kml>

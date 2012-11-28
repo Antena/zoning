@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document><Folder><name>aldao_prj</name>
+<Schema name="aldao_prj" id="aldao_prj">
+	<SimpleField name="Name" type="string"></SimpleField>
+	<SimpleField name="Description" type="string"></SimpleField>
+	<SimpleField name="LOCALIDAD" type="string"></SimpleField>
+	<SimpleField name="PARTIDO" type="string"></SimpleField>
+	<SimpleField name="PROVINCIA" type="string"></SimpleField>
+	<SimpleField name="PAIS" type="string"></SimpleField>
+	<SimpleField name="TOT_1991" type="float"></SimpleField>
+	<SimpleField name="TOT_2001" type="float"></SimpleField>
+	<SimpleField name="VAR_2001" type="float"></SimpleField>
+	<SimpleField name="MUJ_2001" type="float"></SimpleField>
+	<SimpleField name="ID" type="float"></SimpleField>
+</Schema>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#aldao_prj">
+		<SimpleData name="LOCALIDAD">ALDAO</SimpleData>
+		<SimpleData name="PARTIDO">SAN LORENZO</SimpleData>
+		<SimpleData name="PROVINCIA">SANTA FE</SimpleData>
+		<SimpleData name="PAIS">ARGENTINA</SimpleData>
+		<SimpleData name="TOT_1991">449</SimpleData>
+		<SimpleData name="TOT_2001">441</SimpleData>
+		<SimpleData name="VAR_2001">227</SimpleData>
+		<SimpleData name="MUJ_2001">214</SimpleData>
+		<SimpleData name="ID">47</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-60.800651999997065,-32.723631989995006 -60.806519999997121,-32.71610303999509 -60.830026919997302,-32.709672989995354 -60.832193039997321,-32.694345989995391 -60.810752159997143,-32.672323979995156 -60.810198839997135,-32.671918979995148 -60.806509919997104,-32.676001019995105 -60.799439159997043,-32.683888979995011 -60.794818919997006,-32.68899098999497 -60.774981119996831,-32.713738019994722 -60.772924079996805,-32.716648979994687 -60.77640887999685,-32.716122029994722 -60.779445119996886,-32.716175039994759 -60.790084919996964,-32.718338009994888 -60.796474919997024,-32.721168959994955 -60.800651999997065,-32.723631989995006</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+</Folder></Document></kml>

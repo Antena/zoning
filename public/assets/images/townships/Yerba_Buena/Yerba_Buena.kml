@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document><Folder><name>villalfprj</name>
+<Schema name="villalfprj" id="villalfprj">
+	<SimpleField name="Name" type="string"></SimpleField>
+	<SimpleField name="Description" type="string"></SimpleField>
+	<SimpleField name="LOCALIDAD" type="string"></SimpleField>
+	<SimpleField name="PARTIDO" type="string"></SimpleField>
+	<SimpleField name="PROVINCIA" type="string"></SimpleField>
+	<SimpleField name="PAIS" type="string"></SimpleField>
+	<SimpleField name="TOT_1991" type="float"></SimpleField>
+	<SimpleField name="TOT_2001" type="float"></SimpleField>
+	<SimpleField name="VAR_2001" type="float"></SimpleField>
+	<SimpleField name="MUJ_2001" type="float"></SimpleField>
+	<SimpleField name="ID" type="float"></SimpleField>
+</Schema>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#villalfprj">
+		<SimpleData name="LOCALIDAD">VILLA LAS FLORES</SimpleData>
+		<SimpleData name="PARTIDO">TAFI VIEJO</SimpleData>
+		<SimpleData name="PROVINCIA">TUCUMAN</SimpleData>
+		<SimpleData name="PAIS">ARGENTINA</SimpleData>
+		<SimpleData name="TOT_1991">256</SimpleData>
+		<SimpleData name="TOT_2001">500</SimpleData>
+		<SimpleData name="VAR_2001">237</SimpleData>
+		<SimpleData name="MUJ_2001">263</SimpleData>
+		<SimpleData name="ID">335</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-65.249359920004252,-26.784059039997437 -65.246187960004221,-26.77928102999746 -65.24028684000416,-26.770736969997493 -65.235695040004103,-26.764386029997532 -65.225347920003983,-26.762135039997602 -65.217598920003908,-26.761374989997641 -65.221014960003927,-26.781499979997612 -65.220891840003929,-26.782530029997616 -65.220950160003923,-26.783549999997607 -65.222085960003938,-26.788280039997602 -65.222255880003942,-26.789187959997601 -65.22230916000396,-26.789474969997602 -65.222277120003952,-26.789643989997604 -65.222587080003947,-26.78958098999761 -65.223393120003962,-26.7894179999976 -65.224503000003978,-26.78919803999759 -65.226048120003995,-26.788911029997578 -65.226687120003987,-26.78878601999757 -65.232456840004076,-26.787722039997547 -65.240190000004148,-26.786348009997493 -65.240975160004155,-26.786178989997484 -65.241245880004143,-26.785997999997491 -65.249359920004252,-26.784059039997437</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+</Folder></Document></kml>

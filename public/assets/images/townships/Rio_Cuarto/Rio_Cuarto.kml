@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document><Folder><name>rio_cuarto</name>
+<Schema name="rio_cuarto" id="rio_cuarto">
+	<SimpleField name="Name" type="string"></SimpleField>
+	<SimpleField name="Description" type="string"></SimpleField>
+	<SimpleField name="LOCALIDAD" type="string"></SimpleField>
+	<SimpleField name="PARTIDO" type="string"></SimpleField>
+	<SimpleField name="PROVINCIA" type="string"></SimpleField>
+	<SimpleField name="PAIS" type="string"></SimpleField>
+	<SimpleField name="TOT_1991" type="float"></SimpleField>
+	<SimpleField name="TOT_2001" type="float"></SimpleField>
+	<SimpleField name="VAR_2001" type="float"></SimpleField>
+	<SimpleField name="MUJ_2001" type="float"></SimpleField>
+	<SimpleField name="ID" type="float"></SimpleField>
+</Schema>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#rio_cuarto">
+		<SimpleData name="LOCALIDAD">RIO CUARTO</SimpleData>
+		<SimpleData name="PARTIDO">RIO CUARTO</SimpleData>
+		<SimpleData name="PROVINCIA">CORDOBA</SimpleData>
+		<SimpleData name="PAIS">ARGENTINA</SimpleData>
+		<SimpleData name="TOT_1991">134355</SimpleData>
+		<SimpleData name="TOT_2001">144021</SimpleData>
+		<SimpleData name="VAR_2001">68765</SimpleData>
+		<SimpleData name="MUJ_2001">75256</SimpleData>
+		<SimpleData name="ID">555</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-64.360752839999989,-33.085631969999987 -64.35518184,-33.07091904 -64.30700592,-33.07134402 -64.30619988,-33.10427196 -64.27172988,-33.10434504 -64.30315608,-33.12032103 -64.30310892,-33.14834199 -64.32175188,-33.15866004 -64.35051912,-33.171386039999987 -64.40817816,-33.171386039999987 -64.40871492,-33.08649399 -64.360752839999989,-33.085631969999987</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+</Folder></Document></kml>

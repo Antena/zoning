@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document><Folder><name>malvargent_prj</name>
+<Schema name="malvargent_prj" id="malvargent_prj">
+	<SimpleField name="Name" type="string"></SimpleField>
+	<SimpleField name="Description" type="string"></SimpleField>
+	<SimpleField name="LOCALIDAD" type="string"></SimpleField>
+	<SimpleField name="PARTIDO" type="string"></SimpleField>
+	<SimpleField name="PROVINCIA" type="string"></SimpleField>
+	<SimpleField name="PAIS" type="string"></SimpleField>
+	<SimpleField name="TOT_1991" type="float"></SimpleField>
+	<SimpleField name="TOT_2001" type="float"></SimpleField>
+	<SimpleField name="VAR_2001" type="float"></SimpleField>
+	<SimpleField name="MUJ_2001" type="float"></SimpleField>
+	<SimpleField name="ID" type="float"></SimpleField>
+</Schema>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#malvargent_prj">
+		<SimpleData name="LOCALIDAD">MALVINAS ARGENTINAS</SimpleData>
+		<SimpleData name="PARTIDO">COLON</SimpleData>
+		<SimpleData name="PROVINCIA">CORDOBA</SimpleData>
+		<SimpleData name="PAIS">ARGENTINA</SimpleData>
+		<SimpleData name="TOT_1991">5160</SimpleData>
+		<SimpleData name="TOT_2001">8628</SimpleData>
+		<SimpleData name="VAR_2001">4322</SimpleData>
+		<SimpleData name="MUJ_2001">4306</SimpleData>
+		<SimpleData name="ID">618</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-64.06999092,-31.374016019999438 -64.057978080000012,-31.371118019999422 -64.05531912,-31.362398999999428 -64.051800840000013,-31.359377969999429 -64.05013008,-31.306249979999443 -64.024092,-31.306284989999448 -64.02418812,-31.322548979999457 -64.02452508,-31.379410979999442 -64.02473892,-31.415442029999447 -64.054594080000015,-31.415732009999431 -64.071263160000015,-31.415531039999422 -64.06999092,-31.374016019999438</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+</Folder></Document></kml>

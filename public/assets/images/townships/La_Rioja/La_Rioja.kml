@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document><Folder><name>capital_prj</name>
+<Schema name="capital_prj" id="capital_prj">
+	<SimpleField name="Name" type="string"></SimpleField>
+	<SimpleField name="Description" type="string"></SimpleField>
+	<SimpleField name="LOCALIDAD" type="string"></SimpleField>
+	<SimpleField name="PARTIDO" type="string"></SimpleField>
+	<SimpleField name="PROVINCIA" type="string"></SimpleField>
+	<SimpleField name="PAIS" type="string"></SimpleField>
+	<SimpleField name="TOT_1991" type="float"></SimpleField>
+	<SimpleField name="TOT_2001" type="float"></SimpleField>
+	<SimpleField name="VAR_2001" type="float"></SimpleField>
+	<SimpleField name="MUJ_2001" type="float"></SimpleField>
+	<SimpleField name="ID" type="float"></SimpleField>
+</Schema>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#capital_prj">
+		<SimpleData name="LOCALIDAD">LA RIOJA</SimpleData>
+		<SimpleData name="PARTIDO">CAPITAL</SimpleData>
+		<SimpleData name="PROVINCIA">LA RIOJA</SimpleData>
+		<SimpleData name="PAIS">ARGENTINA</SimpleData>
+		<SimpleData name="TOT_1991">103727</SimpleData>
+		<SimpleData name="TOT_2001">143684</SimpleData>
+		<SimpleData name="VAR_2001">70601</SimpleData>
+		<SimpleData name="MUJ_2001">73083</SimpleData>
+		<SimpleData name="ID">10</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.926764079997611,-29.404667969997611 -66.918552839997545,-29.399963039997562 -66.907748879997484,-29.401091999997483 -66.904401959997458,-29.39330501999747 -66.895257959997366,-29.393019989997413 -66.890359079997339,-29.40155495999737 -66.873947039997205,-29.399777009997269 -66.868721999997163,-29.358669959997254 -66.777275159996307,-29.323775969996564 -66.785603039996403,-29.368484009996617 -66.788543159996408,-29.384700029996633 -66.771885959996254,-29.385552959996485 -66.734654039995846,-29.390104979996142 -66.732857999995829,-29.406223979996124 -66.771069119996241,-29.40679196999648 -66.765844079996199,-29.448300959996406 -66.797687159996528,-29.450413979996672 -66.794583959996501,-29.478152969996636 -66.875906879997217,-29.503740959997245 -66.883582079997282,-29.462362019997304 -66.871879919997198,-29.457737009997228 -66.881819879997266,-29.446633979997312 -66.896512919997377,-29.449645019997401 -66.916392119997539,-29.434212989997544 -66.978375839997966,-29.39202098999791 -66.977070119997947,-29.380641029997896 -66.926764079997611,-29.404667969997611</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+</Folder></Document></kml>

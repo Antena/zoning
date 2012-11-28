@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document><Folder><name>lacieprj</name>
+<Schema name="lacieprj" id="lacieprj">
+	<SimpleField name="Name" type="string"></SimpleField>
+	<SimpleField name="Description" type="string"></SimpleField>
+	<SimpleField name="LOCALIDAD" type="string"></SimpleField>
+	<SimpleField name="PARTIDO" type="string"></SimpleField>
+	<SimpleField name="PROVINCIA" type="string"></SimpleField>
+	<SimpleField name="PAIS" type="string"></SimpleField>
+	<SimpleField name="TOT_1991" type="float"></SimpleField>
+	<SimpleField name="TOT_2001" type="float"></SimpleField>
+	<SimpleField name="VAR_2001" type="float"></SimpleField>
+	<SimpleField name="MUJ_2001" type="float"></SimpleField>
+	<SimpleField name="ID" type="float"></SimpleField>
+</Schema>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#lacieprj">
+		<SimpleData name="LOCALIDAD">LA CIENAGA - SAN RAFAEL</SimpleData>
+		<SimpleData name="PARTIDO">CAPITAL</SimpleData>
+		<SimpleData name="PROVINCIA">SALTA</SimpleData>
+		<SimpleData name="PAIS">ARGENTINA</SimpleData>
+		<SimpleData name="TOT_1991">368</SimpleData>
+		<SimpleData name="TOT_2001">1773</SimpleData>
+		<SimpleData name="VAR_2001">861</SimpleData>
+		<SimpleData name="MUJ_2001">912</SimpleData>
+		<SimpleData name="ID">396</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-65.479592880008013,-24.795070019996651 -65.466924840007749,-24.796745009996755 -65.456134920007571,-24.799607999996841 -65.451237120007477,-24.803601029996873 -65.434637160007171,-24.80608700999699 -65.423266920006952,-24.809930009997075 -65.422603080006951,-24.812943029997083 -65.433096000007126,-24.831003959996991 -65.433393000007143,-24.830560979996996 -65.446673040007383,-24.836889959996885 -65.47405500000788,-24.838993979996669 -65.464767000007711,-24.831359999996746 -65.464601040007707,-24.811461989996761 -65.480965920008032,-24.803985959996648 -65.480172840008009,-24.803318969996642 -65.479592880008013,-24.795070019996651</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+</Folder></Document></kml>

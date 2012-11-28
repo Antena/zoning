@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document><Folder><name>villabprj</name>
+<Schema name="villabprj" id="villabprj">
+	<SimpleField name="Name" type="string"></SimpleField>
+	<SimpleField name="Description" type="string"></SimpleField>
+	<SimpleField name="LOCALIDAD" type="string"></SimpleField>
+	<SimpleField name="PARTIDO" type="string"></SimpleField>
+	<SimpleField name="PROVINCIA" type="string"></SimpleField>
+	<SimpleField name="PAIS" type="string"></SimpleField>
+	<SimpleField name="TOT_1991" type="float"></SimpleField>
+	<SimpleField name="TOT_2001" type="float"></SimpleField>
+	<SimpleField name="VAR_2001" type="float"></SimpleField>
+	<SimpleField name="MUJ_2001" type="float"></SimpleField>
+	<SimpleField name="ID" type="float"></SimpleField>
+</Schema>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#villabprj">
+		<SimpleData name="LOCALIDAD">VILLA  BORDEAU</SimpleData>
+		<SimpleData name="PARTIDO">BAHIA BLANCA</SimpleData>
+		<SimpleData name="PROVINCIA">BUENOS AIRES</SimpleData>
+		<SimpleData name="PAIS">ARGENTINA</SimpleData>
+		<SimpleData name="TOT_1991">930</SimpleData>
+		<SimpleData name="TOT_2001">982</SimpleData>
+		<SimpleData name="VAR_2001">-1</SimpleData>
+		<SimpleData name="MUJ_2001">-1</SimpleData>
+		<SimpleData name="ID">547</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-62.311662,-38.679653969997567 -62.34347196,-38.706074009997565 -62.37069192,-38.70100799999755 -62.32731588,-38.667700979997569 -62.311662,-38.679653969997567</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+</Folder></Document></kml>

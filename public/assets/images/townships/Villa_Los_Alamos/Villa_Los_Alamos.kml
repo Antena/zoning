@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document><Folder><name>vlosprj</name>
+<Schema name="vlosprj" id="vlosprj">
+	<SimpleField name="Name" type="string"></SimpleField>
+	<SimpleField name="Description" type="string"></SimpleField>
+	<SimpleField name="LOCALIDAD" type="string"></SimpleField>
+	<SimpleField name="PARTIDO" type="string"></SimpleField>
+	<SimpleField name="PROVINCIA" type="string"></SimpleField>
+	<SimpleField name="PAIS" type="string"></SimpleField>
+	<SimpleField name="TOT_1991" type="float"></SimpleField>
+	<SimpleField name="TOT_2001" type="float"></SimpleField>
+	<SimpleField name="VAR_2001" type="float"></SimpleField>
+	<SimpleField name="MUJ_2001" type="float"></SimpleField>
+	<SimpleField name="ID" type="float"></SimpleField>
+</Schema>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#vlosprj">
+		<SimpleData name="LOCALIDAD">VILLA LOS ALAMOS</SimpleData>
+		<SimpleData name="PARTIDO">CERRILLOS</SimpleData>
+		<SimpleData name="PROVINCIA">SALTA</SimpleData>
+		<SimpleData name="PAIS">ARGENTINA</SimpleData>
+		<SimpleData name="TOT_1991">1109</SimpleData>
+		<SimpleData name="TOT_2001">1779</SimpleData>
+		<SimpleData name="VAR_2001">887</SimpleData>
+		<SimpleData name="MUJ_2001">892</SimpleData>
+		<SimpleData name="ID">395</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-65.501781120008445,-24.850964969996443 -65.487507840008163,-24.850052999996556 -65.47405500000788,-24.838993979996669 -65.446673040007383,-24.836889959996885 -65.433393000007143,-24.830560979996996 -65.416191840006846,-24.8562060299971 -65.422001160006928,-24.856857989997064 -65.427288840007023,-24.870912029997022 -65.432689920007121,-24.871320989996974 -65.437191000007203,-24.862334039996956 -65.445204960007359,-24.86912102999689 -65.453886000007515,-24.879923009996819 -65.504638080008519,-24.880033979996409 -65.501784000008456,-24.873335999996428 -65.501781120008445,-24.850964969996443</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+</Folder></Document></kml>

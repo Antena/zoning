@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document><Folder><name>carmendepat_prj</name>
+<Schema name="carmendepat_prj" id="carmendepat_prj">
+	<SimpleField name="Name" type="string"></SimpleField>
+	<SimpleField name="Description" type="string"></SimpleField>
+	<SimpleField name="LOCALIDAD" type="string"></SimpleField>
+	<SimpleField name="PARTIDO" type="string"></SimpleField>
+	<SimpleField name="PROVINCIA" type="string"></SimpleField>
+	<SimpleField name="PAIS" type="string"></SimpleField>
+	<SimpleField name="TOT_1991" type="float"></SimpleField>
+	<SimpleField name="TOT_2001" type="float"></SimpleField>
+	<SimpleField name="VAR_2001" type="float"></SimpleField>
+	<SimpleField name="MUJ_2001" type="float"></SimpleField>
+	<SimpleField name="ID" type="float"></SimpleField>
+</Schema>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#carmendepat_prj">
+		<SimpleData name="LOCALIDAD">CARMEN DE PATAGONES</SimpleData>
+		<SimpleData name="PARTIDO">PATAGONES</SimpleData>
+		<SimpleData name="PROVINCIA">BUENOS AIRES</SimpleData>
+		<SimpleData name="PAIS">ARGENTINA</SimpleData>
+		<SimpleData name="TOT_1991">17075</SimpleData>
+		<SimpleData name="TOT_2001">18189</SimpleData>
+		<SimpleData name="VAR_2001">8676</SimpleData>
+		<SimpleData name="MUJ_2001">9513</SimpleData>
+		<SimpleData name="ID">7</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-62.931564,-40.759883009996514 -62.925771959999985,-40.760699039996517 -62.954870039999989,-40.782831029996501 -62.960387039999979,-40.787216009996499 -62.96162796,-40.788782009996496 -62.962800119999976,-40.793009039996491 -62.963352,-40.796089019996487 -62.960730839999982,-40.797341999996497 -62.95887,-40.796453969996485 -62.957765879999982,-40.797080999996503 -62.962317,-40.800107969996489 -62.960523839999979,-40.801203989996502 -62.958593159999971,-40.802561009996481 -62.960523839999979,-40.803397019996481 -62.962868879999981,-40.802247989996495 -62.96424804,-40.804127009996485 -62.966729879999981,-40.803813989996485 -62.968385159999976,-40.802666039996488 -62.970590879999982,-40.804963019996478 -62.970590879999982,-40.807050029996496 -62.968799159999989,-40.811016959996486 -62.96990184,-40.817071979996484 -62.971584119999974,-40.81668101999648 -62.976809159999981,-40.815845009996472 -62.982516959999984,-40.813776989996484 -62.985933,-40.804505009996483 -62.993041919999982,-40.800125969996479 -63.001343879999979,-40.796297999996497 -63.00283104,-40.795430039996496 -63.006033959999982,-40.787639009996504 -63.003276,-40.786387019996504 -63.002172959999982,-40.782421979996492 -62.996932079999972,-40.766769989996511 -62.980935119999977,-40.758631019996507 -62.96852304,-40.758631019996514 -62.951146919999971,-40.760090999996507 -62.937079919999988,-40.762178009996504 -62.931564,-40.759883009996514</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+</Folder></Document></kml>
