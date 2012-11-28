@@ -134,7 +134,7 @@ h1 {
 	margin-bottom: 25px;
 }
 
-#controls .disabled {
+#controls.disabled {
 	color: #999;
 }
 
