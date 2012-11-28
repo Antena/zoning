@@ -41,17 +41,13 @@ h1 {
  * SEARCH
  **********************************************************************************************************************/
 #search {
-	position: absolute;
-	top: 110px;
-	left: 90px;
 	z-index: 1000;
 	background: #f8f8f8;
-	border: solid 1px #b2b2b2;
+    margin-bottom: 4px;
 }
 
 #search input {
-    width: 122px;
-    margin: 2px;
+    width: 129px;
 }
 
 .ui-widget-overlay {
@@ -79,7 +75,7 @@ h1 {
 #map-key {
     width: 127px;
     position: absolute;
-    top: 150px;
+    top: 100px;
     left: 90px;
     z-index: 1000;
     background: #f8f8f8;
@@ -131,7 +127,7 @@ h1 {
 	z-index: 1000;
 	background: #f8f8f8;
 	border: solid 1px #b2b2b2;
-    width: 120px;
+    width: 135px;
 }
 
 .control {
@@ -142,9 +138,8 @@ h1 {
 	color: #999;
 }
 
-h2#township-name {
+#township-name {
     margin-top: 0px;
-    text-align: center;
 }
 
 /***********************************************************************************************************************
