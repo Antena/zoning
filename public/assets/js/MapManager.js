@@ -7,7 +7,31 @@ var MapManager = function MapManager(options) {
     var googleMapOptions = {
         zoom: options.zoom,
         center: new google.maps.LatLng(options.center.lat, options.center.lng),
-        mapTypeId: options.mapTypeId
+        mapTypeId: options.mapTypeId,
+        styles: [
+            {
+                "featureType": "road",
+                "stylers": [
+                    { "visibility": "off" }
+                ]
+            },{
+                "featureType": "poi",
+                "stylers": [
+                    { "visibility": "off" }
+                ]
+            },{
+                "featureType": "administrative",
+                "stylers": [
+                    { "visibility": "off" }
+                ]
+            },{
+                "featureType": "administrative.province",
+                "elementType": "geometry",
+                "stylers": [
+                    { "visibility": "on" }
+                ]
+            }
+        ]
     };
     this.map = new google.maps.Map(document.getElementById(options.containerDivId), googleMapOptions);
     this.ftClient = new FTClient(options.ftId);
@@ -41,6 +65,9 @@ var MapManager = function MapManager(options) {
         styles: this.ftStyles
     });
     google.maps.event.addListener(this.ftLayer, 'click', function(kmlEvent) {
+        if ($("#municipios").attr("value")) {
+            $("#municipios").attr("value", "");
+        }
         self.setActiveTownship(kmlEvent.row['Nombre'].value)
     });
 
@@ -60,7 +87,7 @@ var MapManager = function MapManager(options) {
     this.addTownship = function(name, success) {
         var self = this;
 
-        self.ftClient.query(["Id", "Nombre", "N", "E", "S", "W"], "Nombre = '" + name + "'", function(data) {
+        self.ftClient.query(["Id", "Nombre", "N", "E", "S", "W"], "Nombre = '" + name + "'",null, function(data) {
 
             if (data.table.rows.length > 1) {
                 throw "ERROR: Query returned more than 1 township";

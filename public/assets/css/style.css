@@ -1,100 +1,128 @@
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    font-family: "Helvetica Neue", Helvetica, sans-serif;
-    font-size: 10px;
+html,body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 10px;
 }
 
 #map_canvas {
-    height: 100%;
-    margin: 0;
-    padding: 0;
+	height: 100%;
+	margin: 0;
+	padding: 0;
 }
 
-h1, h2, h3 {
-    text-rendering: optimizeLegibility;
+h1,h2,h3 {
+	text-rendering: optimizeLegibility;
+}
+
+/***********************************************************************************************************************
+ * SEARCH
+ **********************************************************************************************************************/
+#search {
+	position: absolute;
+	top: 30px;
+	left: 90px;
+	z-index: 1000;
+	background: #f8f8f8;
+	border: solid 1px #b2b2b2;
+}
+
+.ui-widget-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.ui-autocomplete-category {
+	font-weight: bold;
+	padding: .2em .4em;
+	margin: .8em 0 .2em;
+	line-height: 1.5;
 }
 
 /***********************************************************************************************************************
  * CONTROLS
  **********************************************************************************************************************/
 #controls {
-    position: absolute;
-    top: 30px;
-    right: 5px;
-    padding: 10px;
-    z-index: 1000;
-    background: #f8f8f8;
-    border: solid 1px #b2b2b2;
-    opacity: 0.9;
+	position: absolute;
+	top: 30px;
+	right: 5px;
+	padding: 10px;
+	z-index: 1000;
+	background: #f8f8f8;
+	border: solid 1px #b2b2b2;
+	opacity: 0.9;
 }
 
 #controls .control {
-    margin-bottom: 25px;
+	margin-bottom: 25px;
 }
 
 #controls .disabled {
-    color: #999;
+	color: #999;
 }
 
 /***********************************************************************************************************************
  * SLIDERS
  **********************************************************************************************************************/
 #controls .slider {
-    width: 100px;
-    margin: 5px 0px 0px 0px;
+	width: 100px;
+	margin: 5px 0px 0px 0px;
 }
 
 #controls .range {
-    margin-top: 2px;
-    color: #509dc0;
+	margin-top: 2px;
+	color: #509dc0;
 }
 
 #controls .range .left {
-    float: left;
+	float: left;
 }
 
 #controls .range .right {
-    float: right;
-    margin-right: 7px;
+	float: right;
+	margin-right: 7px;
 }
 
 #limit .ui-button-text-only .ui-button-text {
-    padding: 2px 3px;
+	padding: 2px 3px;
 }
 
 h2#township-name {
-    margin-top: 0px;
-    max-width: 100px;
-    text-align: center;
+	margin-top: 0px;
+	max-width: 100px;
+	text-align: center;
 }
 
 /***********************************************************************************************************************
  * TOWNSHIP VISIBILITY
  **********************************************************************************************************************/
 #controls .control.township-visibility {
-    margin-bottom: 15px;
+	margin-bottom: 15px;
 }
 
 .township-visibility .icon {
-    width: 12px;
-    height: 12px;
-    background: rgba(255, 0, 0, 0.50);
-    float: left;
-    border: solid 1px #FF0000;
-    margin-right: 2px;
+	width: 12px;
+	height: 12px;
+	background: rgba(255, 0, 0, 0.50);
+	float: left;
+	border: solid 1px #FF0000;
+	margin-right: 2px;
 }
 
 .township-visibility .icon.current {
-    background: rgba(0, 255, 0, 0.49);
-    border: solid 2px #00FF00;
+	background: rgba(0, 255, 0, 0.49);
+	border: solid 2px #00FF00;
 }
 
 .township-visibility input {
-    position: relative;
-    top: 2px;
+	position: relative;
+	top: 2px;
 }
 
 .township-visibility .label {
+	
 }
