@@ -5,7 +5,7 @@ function initialize() {
         center : { lat: -34.773204, lng: -58.348633 },
         zoom : 9,
         mapTypeId : google.maps.MapTypeId.HYBRID,
-        ftId : "1Jus0SKiGtttLllonNtWEXRvnyHd4rwybZkOYeVQ",
+        ftId : "1DaV-jpZgwaM5l1J45qBB51dYAldhHTdNFSJnWAE",
         ftLimitColumnName : "'Límite'",
         urbAreaFilename : "urbArea",
         urbFootprintFilename : "urbFootprint",
@@ -13,8 +13,8 @@ function initialize() {
         activeTownshipColor: "#00FF00"
     });
 
-    var ftClient = new FTClient("1Jus0SKiGtttLllonNtWEXRvnyHd4rwybZkOYeVQ");
-    ftClient.query(['Nombre','Zona'], null, " Zona asc", function(data) {
+    var ftClient = new FTClient("1DaV-jpZgwaM5l1J45qBB51dYAldhHTdNFSJnWAE");
+    ftClient.query(['Nombre','provincia'], null, " provincia asc", function(data) {
         var rows = data.table.rows;
 
         var townshipNames = new Array();
