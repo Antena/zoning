@@ -3,7 +3,7 @@ html,body {
 	padding: 0;
 	height: 100%;
 	font-family: "Helvetica Neue", Helvetica, sans-serif;
-	font-size: 10px;
+	font-size: 11px;
 }
 
 #map_canvas {
@@ -27,7 +27,7 @@ h1 {
  * HEADER
  **********************************************************************************************************************/
 #header {
-    padding: 0px 20px;
+    padding: 0px 25px;
     margin: 0px;
     height: 70px;
 }
@@ -49,6 +49,11 @@ h1 {
 	border: solid 1px #b2b2b2;
 }
 
+#search input {
+    width: 122px;
+    margin: 2px;
+}
+
 .ui-widget-overlay {
 	position: absolute;
 	top: 0;
@@ -66,6 +71,49 @@ h1 {
 
 .ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button, .ui-widget {
     font-family: "Helvetica Neue", Helvetica, sans-serif;
+}
+
+/***********************************************************************************************************************
+ * MAP KEYS
+ **********************************************************************************************************************/
+#map-key {
+    width: 127px;
+    position: absolute;
+    top: 150px;
+    left: 90px;
+    z-index: 1000;
+    background: #f8f8f8;
+    border: solid 1px #b2b2b2;
+    padding-left: 5px;
+}
+
+#map-key ul {
+    list-style: none;
+    padding-left: 0px;
+}
+
+#map-key ul li {
+    height: 20px;
+}
+
+#map-key .keyColor {
+    width: 15px;
+    height: 15px;
+    background: #000;
+    float: left;
+    margin-right: 4px;
+}
+
+#map-key .keyColor.dark-blue { background-color: #103FFB }
+#map-key .keyColor.light-blue { background-color: #1FB8FC }
+#map-key .keyColor.cyan { background-color: #2BFADD }
+#map-key .keyColor.bright-green { background-color: #28F72D }
+#map-key .keyColor.lime { background-color: #B7F832 }
+#map-key .keyColor.orange { background-color: #FDB82C }
+#map-key .keyColor.red { background-color: #FC2A1C }
+
+#map-key .keyLabel {
+    line-height: 15px;
 }
 
 /***********************************************************************************************************************
