@@ -127,7 +127,7 @@ h1 {
 	z-index: 1000;
 	background: #f8f8f8;
 	border: solid 1px #b2b2b2;
-	opacity: 0.9;
+    width: 120px;
 }
 
 #controls .control {
@@ -138,11 +138,15 @@ h1 {
 	color: #999;
 }
 
+h2#township-name {
+    margin-top: 0px;
+    text-align: center;
+}
+
 /***********************************************************************************************************************
  * SLIDERS
  **********************************************************************************************************************/
 #controls .slider {
-	width: 100px;
 	margin: 5px 0px 0px 0px;
 }
 
@@ -162,12 +166,6 @@ h1 {
 
 #limit .ui-button-text-only .ui-button-text {
 	padding: 2px 3px;
-}
-
-h2#township-name {
-	margin-top: 0px;
-	max-width: 100px;
-	text-align: center;
 }
 
 /***********************************************************************************************************************
