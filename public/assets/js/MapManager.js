@@ -124,11 +124,13 @@ var MapManager = function MapManager(options) {
         // Pan, zoom and display
         self.activeTownship = township;
         $("#township-name").text(township.getName()).show();
-        $("#metrics").show();
         self.getMap().fitBounds(township.getLatLngBounds());
         township.showUrbArea();
         township.showUrbFootprint();
         township.showNewDevelopment();
+        township.buildMetrics(self._calculateEdgeRank(name), self._calculateOpennessRank(name));
+        $("#metrics").show();
+
         this.ftStyles[1].where = "Nombre = '" + township.getName() + "'";
         this.ftLayer.setOptions( {query:this.ftQuery, styles: this.ftStyles } );
         resetControls(this);
@@ -162,5 +164,32 @@ var MapManager = function MapManager(options) {
     this.setHistoricalTime = function(value) {
         this.historicalTime = value;
         this.activeTownship.showHistoricalTime(value);
+    }
+
+    this._calculateEdgeRank = function(name) {
+        var values = [Math.random().toFixed(3), Math.random().toFixed(3), Math.random().toFixed(3), Math.random().toFixed(3), Math.random().toFixed(3)].sort().reverse();
+
+        return [
+            { rank:1, name:"Pilar", value:values[0], active: false, type: "township" },
+            { rank:2, name:"Salsipuedes", value:values[1], active: false, type: "township" },
+            { type: "elipsis" },
+            { rank:27, name: name, value:values[2], active: true, type: "township" },
+            { type: "elipsis" },
+            { rank:129, name:"Campana", value:values[3], active: false, type: "township" },
+            { rank:130, name:"Avellaneda", value:values[4], active: false, type: "township" }
+        ];
+    }
+
+    this._calculateOpennessRank = function(name) {
+        var values = [Math.random().toFixed(3), Math.random().toFixed(3), Math.random().toFixed(3), Math.random().toFixed(3), Math.random().toFixed(3)].sort().reverse();
+        return [
+            { rank:1, name:"Berazategui", value:values[0], active: false, type: "township" },
+            { rank:2, name:"Avellaneda", value:values[1], active: false, type: "township" },
+            { type: "elipsis" },
+            { rank:89, name: name, value:values[2], active: true, type: "township" },
+            { type: "elipsis" },
+            { rank:129, name:"Pilar", value:values[3], active: false, type: "township" },
+            { rank:130, name:"Río Ceballos", value:values[4], active: false, type: "township" }
+        ];
     }
 }

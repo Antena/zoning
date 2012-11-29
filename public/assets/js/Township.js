@@ -122,6 +122,33 @@ var Township = function Township(options) {
         return this.options.name;
     }
 
+    this.buildMetrics = function(edgeRank, opennessRank) {
+        var $edgeIndex = $('#edge-index .ranking').empty();
+        var $opennessIndex = $('#openness-index .ranking').empty();
+
+        // Edge Rank
+        for (var i=0; i<edgeRank.length; i++) {
+            var index = edgeRank[i];
+            if (index.type == "elipsis") {
+                $edgeIndex.append('<li><div class="elipsis">&#8942;</div></li>');
+            } else {
+                var divClass = index.active ? "rank active" : "rank";
+                $edgeIndex.append('<li><div class="' + divClass + '">' + index.rank + '</div>' + index.name + ' (' + index.value + ')</li>');
+            }
+        }
+
+        // Openness Rank
+        for (var i=0; i<opennessRank.length; i++) {
+            var index = opennessRank[i];
+            if (index.type == "elipsis") {
+                $opennessIndex.append('<li><div class="elipsis">&#8942;</div></li>');
+            } else {
+                var divClass = index.active ? "rank active" : "rank";
+                $opennessIndex.append('<li><div class="' + divClass + '">' + index.rank + '</div>' + index.name + ' (' + index.value + ')</li>');
+            }
+        }
+    }
+
     // UTILITY METHODS
     this._buildImagesUrlHead = function(name) {
         var head = "/assets/images/townships/";

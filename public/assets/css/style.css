@@ -127,7 +127,8 @@ h1 {
     margin-right: 4px;
 }
 
-#metrics div.activeTownship {
+#metrics div.rank.active {
+    background: #b9b443;
 }
 
 #metrics div.elipsis {
