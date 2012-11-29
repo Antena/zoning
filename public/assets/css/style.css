@@ -150,12 +150,13 @@ h1 {
 #map-key {
     width: 127px;
     position: absolute;
-    top: 110px;
+    top: 100px;
     right: 5px;
     z-index: 1000;
     background: #f8f8f8;
     border: solid 1px #b2b2b2;
     padding-left: 8px;
+    padding-top: 8px;
 }
 
 #map-key h3 {
@@ -196,7 +197,7 @@ h1 {
  **********************************************************************************************************************/
 #controls {
 	position: absolute;
-    top: 100px;
+    top: 90px;
     left: 90px;
 	padding: 10px;
 	z-index: 1000;
