@@ -164,6 +164,11 @@ var MapManager = function MapManager(options) {
     this.setHistoricalTime = function(value) {
         this.historicalTime = value;
         this.activeTownship.showHistoricalTime(value);
+
+        // Update metrics
+        var name = this.activeTownship.getName();
+        $("#metrics span.year").text(value ? "2001" : "1990");
+        this.activeTownship.buildMetrics(self._calculateEdgeRank(name), self._calculateOpennessRank(name));
     }
 
     this._calculateEdgeRank = function(name) {
