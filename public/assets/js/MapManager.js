@@ -124,6 +124,7 @@ var MapManager = function MapManager(options) {
         // Pan, zoom and display
         self.activeTownship = township;
         $("#township-name").text(township.getName());
+        $("#metrics").show();
         self.getMap().fitBounds(township.getLatLngBounds());
         township.showUrbArea();
         township.showUrbFootprint();
