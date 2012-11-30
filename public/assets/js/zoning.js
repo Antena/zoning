@@ -5,7 +5,7 @@ function initialize() {
         center : { lat: -34.773204, lng: -58.348633 },
         zoom : 9,
         mapTypeId : google.maps.MapTypeId.HYBRID,
-        ftId : "1DaV-jpZgwaM5l1J45qBB51dYAldhHTdNFSJnWAE",
+        ftId : "1EzMoDHgc6YCEelYE2Buxry8twXdBUSRRYAHpogs",
         ftLimitColumnName : "'Límite'",
         urbAreaFilename : "urbArea",
         urbFootprintFilename : "urbFootprint",
@@ -13,7 +13,7 @@ function initialize() {
         activeTownshipColor: "#00FF00"
     });
 
-    var ftClient = new FTClient("1DaV-jpZgwaM5l1J45qBB51dYAldhHTdNFSJnWAE");
+    var ftClient = new FTClient("1EzMoDHgc6YCEelYE2Buxry8twXdBUSRRYAHpogs");
     ftClient.query(['Nombre','provincia'], null, " provincia asc", function(data) {
         var rows = data.table.rows;
 
