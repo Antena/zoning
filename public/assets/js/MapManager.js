@@ -90,6 +90,7 @@ var MapManager = function MapManager(options) {
         self.ftClient.query(["Id", "Nombre", "N", "E", "S", "W"], "Nombre = '" + name + "'",null, function(data) {
 
             if (data.table.rows.length > 1) {
+            	console.log(name)
                 throw "ERROR: Query returned more than 1 township";
             }
 
@@ -107,8 +108,10 @@ var MapManager = function MapManager(options) {
             township.init();
             self.townships[name] = township;
 
-            if (success)
+            if (success){
+            	console.log(name);
                 success.call(township);
+            }
         })
     }
 
@@ -148,6 +151,7 @@ var MapManager = function MapManager(options) {
             }
         }
 
+        
         this.ftQuery.where = "Nombre IN ('" + visibleTownships.join("', '") + "')";
         this.ftLayer.setOptions( {query:this.ftQuery, styles: this.ftStyles } );
     }

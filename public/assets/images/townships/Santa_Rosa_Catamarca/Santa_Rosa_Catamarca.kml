@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document><Folder><name>staprj</name>
+<Schema name="staprj" id="staprj">
+	<SimpleField name="Name" type="string"></SimpleField>
+	<SimpleField name="Description" type="string"></SimpleField>
+	<SimpleField name="LOCALIDAD" type="string"></SimpleField>
+	<SimpleField name="PARTIDO" type="string"></SimpleField>
+	<SimpleField name="PROVINCIA" type="string"></SimpleField>
+	<SimpleField name="PAIS" type="string"></SimpleField>
+	<SimpleField name="TOT_1991" type="float"></SimpleField>
+	<SimpleField name="TOT_2001" type="float"></SimpleField>
+	<SimpleField name="VAR_2001" type="float"></SimpleField>
+	<SimpleField name="MUJ_2001" type="float"></SimpleField>
+	<SimpleField name="ID" type="float"></SimpleField>
+</Schema>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#staprj">
+		<SimpleData name="LOCALIDAD">SANTA ROSA</SimpleData>
+		<SimpleData name="PARTIDO">VALLE VIEJO</SimpleData>
+		<SimpleData name="PROVINCIA">CATAMARCA</SimpleData>
+		<SimpleData name="PAIS">ARGENTINA</SimpleData>
+		<SimpleData name="TOT_1991">4806</SimpleData>
+		<SimpleData name="TOT_2001">6682</SimpleData>
+		<SimpleData name="VAR_2001">-1</SimpleData>
+		<SimpleData name="MUJ_2001">-1</SimpleData>
+		<SimpleData name="ID">429</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-65.721166919955763,-28.450572029970434 -65.715608159955281,-28.447210979970137 -65.70971711995476,-28.431298979969885 -65.703886919954243,-28.432659959969552 -65.693495159953329,-28.440857969968935 -65.696357159953578,-28.44636695996908 -65.691527039953144,-28.448241029968806 -65.697859079953744,-28.46522501996909 -65.698199999953772,-28.465239959969118 -65.70260783995414,-28.460599019969369 -65.718164879955481,-28.452167999970264 -65.721166919955763,-28.450572029970434</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+</Folder></Document></kml>
