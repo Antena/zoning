@@ -118,6 +118,7 @@ function resetControls(mapManager) {
     var activeTownship = mapManager.getActiveTownship();
 
     $("#controls").removeClass("disabled");
+    $("#map-options").removeClass("disabled");
     enableSlider("slider-time");
     enableSlider("slider-urbArea");
     enableSlider("slider-urbFootprint");
