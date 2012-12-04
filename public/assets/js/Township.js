@@ -121,6 +121,10 @@ var Township = function Township(options) {
     this.getName = function() {
         return this.options.name;
     }
+    
+    this.getId = function() {
+        return this.options.id;
+    }
 
     this.buildMetrics = function(edgeRank, opennessRank) {
         var $edgeIndex = $('#edge-index .ranking').empty();
@@ -152,7 +156,7 @@ var Township = function Township(options) {
     // UTILITY METHODS
     this._buildImagesUrlHead = function(name) {
         var head = "/assets/images/townships/";
-        head += name.toLowerCase().replace(" ","_") + "/";
+        head += this.options.filename + "/";
         return head;
     }
 }
