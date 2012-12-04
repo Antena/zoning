@@ -85,6 +85,11 @@ h1 {
 	line-height: 1.5;
 }
 
+.ui-autocomplete {
+    max-height: 300px;
+    overflow: scroll;
+}
+
 .ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button, .ui-widget {
     font-family: "Helvetica Neue", Helvetica, sans-serif;
 }
