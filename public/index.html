@@ -15,6 +15,24 @@
     <script src="/assets/js/jquery-ui.js"></script>
 
     <script>
+        function adjustSizes() {
+            var mapKeyWidth = $("#map-key").outerWidth() +
+                    parseInt($("#map-key").css("margin-right")) +
+                    parseInt($("#map-key").css("margin-left"));
+
+            $("#map_canvas")
+                    .width($(window).width() - mapKeyWidth);
+            $("#map-key")
+                    .css("max-height", $("#map_canvas").outerHeight() - 85)
+                    .css("overflow", "scroll");
+        }
+        $(function() {
+            adjustSizes();
+            $(window).resize(function() {
+                adjustSizes();
+            });
+        })
+
         $(window).load(function () {
             initialize();
         });
@@ -22,6 +40,48 @@
 </head>
 
 <body>
+
+
+</div>
+<div id="controls" class="disabled">
+    <div id="search" class="ui-widget">
+        <label for="municipios"></label>
+        <input id="municipios" placeholder="Buscar municipio..." />
+    </div>
+    <h2 id="township-name" style="display: none;"></h2>
+    <div id="metrics" style="display: none;">
+        <div id="edge-index">
+            <h3>Edge Index Rank (<span class="year">1990</span>)</h3>
+            <ul class="ranking"></ul>
+        </div>
+        <div id="openness-index">
+            <h3>Openness Index Rank (<span class="year">1990</span>)</h3>
+            <ul class="ranking"></ul>
+        </div>
+    </div>
+</div>
+
+<div id="header">
+    <div id="title">
+        <h1>Mapa de zoning</h1>
+        <p>Mapa del uso de zonas y urbanización de la República Argentina</p>
+    </div>
+
+    <div id="map-options" class="disabled">
+        <h3>Visibilidad de los límites</h3>
+        <div class="control township-visibility">
+            <div class="icon current"></div><span class="label">Municipio actual</span>
+            <input type="checkbox" id="currentTownship" checked disabled>
+        </div>
+        <div class="control township-visibility">
+            <div class="icon"></div><span class="label">Otros municipios</span>
+            <input type="checkbox" id="otherTownship" checked disabled>
+        </div>
+    </div>
+</div>
+
+
+<div id="map_canvas"></div>
 <div id="map-key">
     <div class="control">
         <div id="slider-time" class="slider"></div>
@@ -132,45 +192,6 @@
         </li>
     </ul>
 </div>
-
-</div>
-<div id="controls" class="disabled">
-    <div id="search" class="ui-widget">
-        <label for="municipios"></label>
-        <input id="municipios" placeholder="Buscar municipio..." />
-    </div>
-    <h2 id="township-name" style="display: none;"></h2>
-    <div id="metrics" style="display: none;">
-        <div id="edge-index">
-            <h3>Edge Index Rank (<span class="year">1990</span>)</h3>
-            <ul class="ranking"></ul>
-        </div>
-        <div id="openness-index">
-            <h3>Openness Index Rank (<span class="year">1990</span>)</h3>
-            <ul class="ranking"></ul>
-        </div>
-    </div>
-</div>
-
-<div id="header">
-    <div id="title">
-        <h1>Mapa de zoning</h1>
-        <p>Mapa del uso de zonas y urbanización de la República Argentina</p>
-    </div>
-
-    <div id="map-options" class="disabled">
-        <h3>Visibilidad de los límites</h3>
-        <div class="control township-visibility">
-            <div class="icon current"></div><span class="label">Municipio actual</span>
-            <input type="checkbox" id="currentTownship" checked disabled>
-        </div>
-        <div class="control township-visibility">
-            <div class="icon"></div><span class="label">Otros municipios</span>
-            <input type="checkbox" id="otherTownship" checked disabled>
-        </div>
-    </div>
-</div>
-<div id="map_canvas"></div>
 
 <!--JS Scripts-->
 <script src="/assets/js/zoning.js"></script>
