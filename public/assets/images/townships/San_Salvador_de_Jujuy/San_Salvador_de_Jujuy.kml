@@ -1,61 +1,32 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <kml xmlns="http://www.opengis.net/kml/2.2">
-<Document><Folder><name>jujuycap_localidad</name>
-<Schema name="jujuycap_localidad" id="jujuycap_localidad">
+<Document><Folder><name>san_salvador</name>
+<Schema name="san_salvador" id="san_salvador">
 	<SimpleField name="Name" type="string"></SimpleField>
 	<SimpleField name="Description" type="string"></SimpleField>
-	<SimpleField name="PULOC18W_" type="float"></SimpleField>
-	<SimpleField name="PULOC18W_I" type="float"></SimpleField>
-	<SimpleField name="LATITUD" type="string"></SimpleField>
-	<SimpleField name="LONGITUD" type="string"></SimpleField>
-	<SimpleField name="XGK" type="float"></SimpleField>
-	<SimpleField name="YGK" type="float"></SimpleField>
-	<SimpleField name="CODPCIA" type="string"></SimpleField>
-	<SimpleField name="CODDEP_91" type="string"></SimpleField>
-	<SimpleField name="NOMDEP_91" type="string"></SimpleField>
-	<SimpleField name="CODAGLO_91" type="string"></SimpleField>
-	<SimpleField name="NOMLOC_91" type="string"></SimpleField>
-	<SimpleField name="TIPLOC_91" type="string"></SimpleField>
-	<SimpleField name="AGLO_91" type="string"></SimpleField>
-	<SimpleField name="NOMAGLO_91" type="string"></SimpleField>
-	<SimpleField name="CODDEP_01" type="string"></SimpleField>
-	<SimpleField name="NOMDEP_01" type="string"></SimpleField>
-	<SimpleField name="CODLOC_01" type="string"></SimpleField>
-	<SimpleField name="CODAGLO_01" type="string"></SimpleField>
-	<SimpleField name="NOMLOC_01" type="string"></SimpleField>
-	<SimpleField name="TIPLOC_01" type="string"></SimpleField>
-	<SimpleField name="AGLO_01" type="string"></SimpleField>
-	<SimpleField name="NOMAGLO_01" type="string"></SimpleField>
-	<SimpleField name="PRINEM" type="string"></SimpleField>
-	<SimpleField name="NOMMUNI_01" type="string"></SimpleField>
+	<SimpleField name="LOCALIDAD" type="string"></SimpleField>
+	<SimpleField name="PARTIDO" type="string"></SimpleField>
+	<SimpleField name="PROVINCIA" type="string"></SimpleField>
+	<SimpleField name="PAIS" type="string"></SimpleField>
+	<SimpleField name="TOT_1991" type="float"></SimpleField>
+	<SimpleField name="TOT_2001" type="float"></SimpleField>
+	<SimpleField name="VAR_2001" type="float"></SimpleField>
+	<SimpleField name="MUJ_2001" type="float"></SimpleField>
+	<SimpleField name="ID" type="float"></SimpleField>
 </Schema>
   <Placemark>
-	<ExtendedData><SchemaData schemaUrl="#jujuycap_localidad">
-		<SimpleData name="PULOC18W_">0</SimpleData>
-		<SimpleData name="PULOC18W_I">0</SimpleData>
-		<SimpleData name="LATITUD">24 11 46</SimpleData>
-		<SimpleData name="LONGITUD">65 18 06</SimpleData>
-		<SimpleData name="XGK">3570951.000000</SimpleData>
-		<SimpleData name="YGK">7325075.000000</SimpleData>
-		<SimpleData name="CODPCIA">38</SimpleData>
-		<SimpleData name="CODDEP_91">021</SimpleData>
-		<SimpleData name="NOMDEP_91">DR. MANUEL BELGRANO</SimpleData>
-		<SimpleData name="CODAGLO_91">0018</SimpleData>
-		<SimpleData name="NOMLOC_91">SAN SALVADOR DE JUJUY</SimpleData>
-		<SimpleData name="TIPLOC_91">2</SimpleData>
-		<SimpleData name="AGLO_91">3</SimpleData>
-		<SimpleData name="NOMAGLO_91">GRAN SAN SALVADOR DE JUJUY</SimpleData>
-		<SimpleData name="CODDEP_01">021</SimpleData>
-		<SimpleData name="NOMDEP_01">DR. MANUEL BELGRANO</SimpleData>
-		<SimpleData name="CODLOC_01">060</SimpleData>
-		<SimpleData name="CODAGLO_01">0018</SimpleData>
-		<SimpleData name="NOMLOC_01">SAN SALVADOR DE JUJUY</SimpleData>
-		<SimpleData name="TIPLOC_01">2</SimpleData>
-		<SimpleData name="AGLO_01">3</SimpleData>
-		<SimpleData name="NOMAGLO_01">GRAN SAN SALVADOR DE JUJUY</SimpleData>
-		<SimpleData name="PRINEM">0035</SimpleData>
-		<SimpleData name="NOMMUNI_01">SAN SALVADOR DE JUJUY</SimpleData>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#san_salvador">
+		<SimpleData name="LOCALIDAD">SAN SALVADOR DE JUJUY</SimpleData>
+		<SimpleData name="PARTIDO">DOCTOR MANUEL BELGRANO</SimpleData>
+		<SimpleData name="PROVINCIA">JUJUY</SimpleData>
+		<SimpleData name="PAIS">ARGENTINA</SimpleData>
+		<SimpleData name="TOT_1991">178748</SimpleData>
+		<SimpleData name="TOT_2001">231229</SimpleData>
+		<SimpleData name="VAR_2001">111430</SimpleData>
+		<SimpleData name="MUJ_2001">119799</SimpleData>
+		<SimpleData name="ID">9</SimpleData>
 	</SchemaData></ExtendedData>
-      <Point><coordinates>-65.3024656526798,-24.197948286611151</coordinates></Point>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-65.36831796,-24.16297698 -65.35946988,-24.16611798 -65.35443708,-24.15787704 -65.33999784,-24.16149297 -65.33905392,-24.15735999 -65.31667308,-24.16211001 -65.30977008,-24.163713 -65.30123592,-24.16726296 -65.29819104,-24.151419 -65.28906216,-24.15283596 -65.28981492,-24.16073697 -65.28630096,-24.16875102 -65.27400084,-24.174018 -65.26475892,-24.16452201 -65.252917079999989,-24.17630697 -65.26803888,-24.19639803 -65.24830512,-24.21389601 -65.26158516,-24.222069 -65.23999596,-24.24237102 -65.24676108,-24.26269104 -65.27685708,-24.25809204 -65.28761784,-24.21848997 -65.303307,-24.20795997 -65.311144919999975,-24.21401103 -65.31887592,-24.21004599 -65.31209208,-24.20372502 -65.319747839999977,-24.19788699 -65.328885,-24.20307702 -65.33464212,-24.19816896 -65.325144959999989,-24.19010397 -65.34020484,-24.18655599 -65.36116404,-24.17842899 -65.372751,-24.17414202 -65.38827384,-24.17236299 -65.39931792,-24.17751396 -65.40408684,-24.17133303 -65.394828,-24.16347297 -65.38965408,-24.15725496 -65.39856516,-24.15004398 -65.396808,-24.14615202 -65.36679912,-24.16071798 -65.36831796,-24.16297698</coordinates></LinearRing></outerBoundaryIs></Polygon>
   </Placemark>
 </Folder></Document></kml>

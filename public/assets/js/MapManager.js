@@ -65,10 +65,13 @@ var MapManager = function MapManager(options) {
         styles: this.ftStyles
     });
     google.maps.event.addListener(this.ftLayer, 'click', function(kmlEvent) {
+    	console.log(kmlEvent.row)
         if ($("#municipios").attr("value")) {
             $("#municipios").attr("value", "");
         }
         self.setActiveTownship(kmlEvent.row['Nombre'].value)
+        console.log(kmlEvent.row['Nombre'].value)
+        console.log(kmlEvent.row['Id'].value)
     });
 
     this.ftId = options.ftId;
