@@ -1,54 +1,36 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <kml xmlns="http://www.opengis.net/kml/2.2">
-<Document><Folder><name>presidenteperon_localidad</name>
-<Schema name="presidenteperon_localidad" id="presidenteperon_localidad">
+<Document><Folder><name>presidente_peron</name>
+<Schema name="presidente_peron" id="presidente_peron">
 	<SimpleField name="Name" type="string"></SimpleField>
 	<SimpleField name="Description" type="string"></SimpleField>
-	<SimpleField name="PULOC18W_" type="float"></SimpleField>
-	<SimpleField name="PULOC18W_I" type="float"></SimpleField>
-	<SimpleField name="LATITUD" type="string"></SimpleField>
-	<SimpleField name="LONGITUD" type="string"></SimpleField>
-	<SimpleField name="XGK" type="float"></SimpleField>
-	<SimpleField name="YGK" type="float"></SimpleField>
-	<SimpleField name="CODPCIA" type="string"></SimpleField>
-	<SimpleField name="CODDEP_91" type="string"></SimpleField>
-	<SimpleField name="NOMDEP_91" type="string"></SimpleField>
-	<SimpleField name="CODAGLO_91" type="string"></SimpleField>
-	<SimpleField name="NOMLOC_91" type="string"></SimpleField>
-	<SimpleField name="TIPLOC_91" type="string"></SimpleField>
-	<SimpleField name="AGLO_91" type="string"></SimpleField>
-	<SimpleField name="NOMAGLO_91" type="string"></SimpleField>
-	<SimpleField name="CODDEP_01" type="string"></SimpleField>
-	<SimpleField name="NOMDEP_01" type="string"></SimpleField>
-	<SimpleField name="CODLOC_01" type="string"></SimpleField>
-	<SimpleField name="CODAGLO_01" type="string"></SimpleField>
-	<SimpleField name="NOMLOC_01" type="string"></SimpleField>
-	<SimpleField name="TIPLOC_01" type="string"></SimpleField>
-	<SimpleField name="AGLO_01" type="string"></SimpleField>
-	<SimpleField name="NOMAGLO_01" type="string"></SimpleField>
-	<SimpleField name="PRINEM" type="string"></SimpleField>
-	<SimpleField name="NOMMUNI_01" type="string"></SimpleField>
+	<SimpleField name="AREA" type="float"></SimpleField>
+	<SimpleField name="PERIMETER" type="float"></SimpleField>
+	<SimpleField name="DEPARTA_" type="float"></SimpleField>
+	<SimpleField name="DEPARTA_ID" type="float"></SimpleField>
+	<SimpleField name="PROV" type="string"></SimpleField>
+	<SimpleField name="DEPTO" type="string"></SimpleField>
+	<SimpleField name="CLAVE" type="int"></SimpleField>
+	<SimpleField name="DEPARTA" type="string"></SimpleField>
+	<SimpleField name="CABECER" type="string"></SimpleField>
+	<SimpleField name="CODIGO" type="int"></SimpleField>
+	<SimpleField name="PROVINCIA" type="string"></SimpleField>
 </Schema>
   <Placemark>
-	<ExtendedData><SchemaData schemaUrl="#presidenteperon_localidad">
-		<SimpleData name="PULOC18W_">0</SimpleData>
-		<SimpleData name="PULOC18W_I">0</SimpleData>
-		<SimpleData name="LATITUD">34 54 56</SimpleData>
-		<SimpleData name="LONGITUD">58 22 44</SimpleData>
-		<SimpleData name="XGK">5648159.000000</SimpleData>
-		<SimpleData name="YGK">6135546.000000</SimpleData>
-		<SimpleData name="CODPCIA">06</SimpleData>
-		<SimpleData name="CODDEP_01">648</SimpleData>
-		<SimpleData name="NOMDEP_01">PRESIDENTE PERON</SimpleData>
-		<SimpleData name="CODLOC_01">010</SimpleData>
-		<SimpleData name="CODAGLO_01">0001</SimpleData>
-		<SimpleData name="NOMLOC_01">PRESIDENTE PERON</SimpleData>
-		<SimpleData name="TIPLOC_01">2</SimpleData>
-		<SimpleData name="AGLO_01">4</SimpleData>
-		<SimpleData name="NOMAGLO_01">GRAN BUENOS AIRES</SimpleData>
-		<SimpleData name="PRINEM">0648</SimpleData>
-		<SimpleData name="NOMMUNI_01">PRESIDENTE PERON</SimpleData>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#presidente_peron">
+		<SimpleData name="AREA">0.007333</SimpleData>
+		<SimpleData name="PERIMETER">0.445862</SimpleData>
+		<SimpleData name="DEPARTA_">389</SimpleData>
+		<SimpleData name="DEPARTA_ID">27426</SimpleData>
+		<SimpleData name="PROV">06</SimpleData>
+		<SimpleData name="DEPTO">648</SimpleData>
+		<SimpleData name="CLAVE">6648</SimpleData>
+		<SimpleData name="DEPARTA">Presidente Peron</SimpleData>
+		<SimpleData name="CABECER">Presidente Peron</SimpleData>
+		<SimpleData name="CODIGO">6648</SimpleData>
+		<SimpleData name="PROVINCIA">Buenos Aires</SimpleData>
 	</SchemaData></ExtendedData>
-      <Point><coordinates>-58.378806040081777,-34.91895139914422</coordinates></Point>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-58.39741503612693,-34.912098757804969 -58.39101294719552,-34.90896833980571 -58.386687750454762,-34.906853656840617 -58.383035700459395,-34.905068833356339 -58.383014841585279,-34.905058532001846 -58.377467414235483,-34.902309333045025 -58.365962110971388,-34.896604577397717 -58.365456606278187,-34.896352476782759 -58.365325644883029,-34.896294777949606 -58.357745596263989,-34.892607541644722 -58.347354528678061,-34.887555720524496 -58.343293013513666,-34.893157303102051 -58.343261738839523,-34.893141842264676 -58.313570344540345,-34.877506586110997 -58.318181138334545,-34.8711468705323 -58.315319266323996,-34.869556941637391 -58.295763140920961,-34.896267747067803 -58.280340830643098,-34.907715235109002 -58.277637951522621,-34.915187900914106 -58.298148034264308,-34.915664879583787 -58.319310985111159,-34.926128203415765 -58.3815075618366,-34.957226491781995 -58.428233707311776,-34.976839935564506 -58.448424017085635,-34.994722781364835 -58.449000883079087,-34.994145915371377 -58.469768058846419,-35.011451895178197 -58.469768058845823,-35.002798905275384 -58.467460594870801,-34.987800389443777 -58.466883728876525,-34.976263069573356 -58.46572999688879,-34.965302615696423 -58.463999398907802,-34.958380223774078 -58.463422532913754,-34.950304099864766 -58.468037460861517,-34.946266037910441 -58.473666857569427,-34.94200134343474 -58.483942764893328,-34.93419865187785 -58.490000189738467,-34.92911041500787 -58.492423159676463,-34.926445148075956 -58.47255480618243,-34.913603407401986 -58.452444155694536,-34.900277072740337 -58.442994572935284,-34.896158023844727 -58.432871111458056,-34.891451161025763 -58.424873044143816,-34.887893716712455 -58.418100062510717,-34.884782515901946 -58.414973162598592,-34.883426696990213 -58.414198905113878,-34.884582456548031 -58.416666303809393,-34.885816155895924 -58.39741503612693,-34.912098757804969</coordinates></LinearRing></outerBoundaryIs></Polygon>
   </Placemark>
 </Folder></Document></kml>

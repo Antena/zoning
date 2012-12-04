@@ -1,61 +1,36 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <kml xmlns="http://www.opengis.net/kml/2.2">
-<Document><Folder><name>brandsen_localidad</name>
-<Schema name="brandsen_localidad" id="brandsen_localidad">
+<Document><Folder><name>brprj</name>
+<Schema name="brprj" id="brprj">
 	<SimpleField name="Name" type="string"></SimpleField>
 	<SimpleField name="Description" type="string"></SimpleField>
-	<SimpleField name="PULOC18W_" type="float"></SimpleField>
-	<SimpleField name="PULOC18W_I" type="float"></SimpleField>
-	<SimpleField name="LATITUD" type="string"></SimpleField>
-	<SimpleField name="LONGITUD" type="string"></SimpleField>
-	<SimpleField name="XGK" type="float"></SimpleField>
-	<SimpleField name="YGK" type="float"></SimpleField>
-	<SimpleField name="CODPCIA" type="string"></SimpleField>
-	<SimpleField name="CODDEP_91" type="string"></SimpleField>
-	<SimpleField name="NOMDEP_91" type="string"></SimpleField>
-	<SimpleField name="CODAGLO_91" type="string"></SimpleField>
-	<SimpleField name="NOMLOC_91" type="string"></SimpleField>
-	<SimpleField name="TIPLOC_91" type="string"></SimpleField>
-	<SimpleField name="AGLO_91" type="string"></SimpleField>
-	<SimpleField name="NOMAGLO_91" type="string"></SimpleField>
-	<SimpleField name="CODDEP_01" type="string"></SimpleField>
-	<SimpleField name="NOMDEP_01" type="string"></SimpleField>
-	<SimpleField name="CODLOC_01" type="string"></SimpleField>
-	<SimpleField name="CODAGLO_01" type="string"></SimpleField>
-	<SimpleField name="NOMLOC_01" type="string"></SimpleField>
-	<SimpleField name="TIPLOC_01" type="string"></SimpleField>
-	<SimpleField name="AGLO_01" type="string"></SimpleField>
-	<SimpleField name="NOMAGLO_01" type="string"></SimpleField>
-	<SimpleField name="PRINEM" type="string"></SimpleField>
-	<SimpleField name="NOMMUNI_01" type="string"></SimpleField>
+	<SimpleField name="AREA" type="float"></SimpleField>
+	<SimpleField name="PERIMETER" type="float"></SimpleField>
+	<SimpleField name="DEPARTA_" type="float"></SimpleField>
+	<SimpleField name="DEPARTA_ID" type="float"></SimpleField>
+	<SimpleField name="PROV" type="string"></SimpleField>
+	<SimpleField name="DEPTO" type="string"></SimpleField>
+	<SimpleField name="CLAVE" type="int"></SimpleField>
+	<SimpleField name="DEPARTA" type="string"></SimpleField>
+	<SimpleField name="CABECER" type="string"></SimpleField>
+	<SimpleField name="CODIGO" type="int"></SimpleField>
+	<SimpleField name="PROVINCIA" type="string"></SimpleField>
 </Schema>
   <Placemark>
-	<ExtendedData><SchemaData schemaUrl="#brandsen_localidad">
-		<SimpleData name="PULOC18W_">0</SimpleData>
-		<SimpleData name="PULOC18W_I">0</SimpleData>
-		<SimpleData name="LATITUD">35 10 05</SimpleData>
-		<SimpleData name="LONGITUD">58 14 14</SimpleData>
-		<SimpleData name="XGK">5660589.000000</SimpleData>
-		<SimpleData name="YGK">6107310.000000</SimpleData>
-		<SimpleData name="CODPCIA">06</SimpleData>
-		<SimpleData name="CODDEP_91">119</SimpleData>
-		<SimpleData name="NOMDEP_91">BRANDSEN</SimpleData>
-		<SimpleData name="CODAGLO_91">0196</SimpleData>
-		<SimpleData name="NOMLOC_91">CORONEL BRANDSEN</SimpleData>
-		<SimpleData name="TIPLOC_91">1</SimpleData>
-		<SimpleData name="AGLO_91">0</SimpleData>
-		<SimpleData name="NOMAGLO_91">CORONEL BRANDSEN</SimpleData>
-		<SimpleData name="CODDEP_01">119</SimpleData>
-		<SimpleData name="NOMDEP_01">BRANDSEN</SimpleData>
-		<SimpleData name="CODLOC_01">050</SimpleData>
-		<SimpleData name="CODAGLO_01">0196</SimpleData>
-		<SimpleData name="NOMLOC_01">CORONEL BRANDSEN</SimpleData>
-		<SimpleData name="TIPLOC_01">1</SimpleData>
-		<SimpleData name="AGLO_01">0</SimpleData>
-		<SimpleData name="NOMAGLO_01">CORONEL BRANDSEN</SimpleData>
-		<SimpleData name="PRINEM">0119</SimpleData>
-		<SimpleData name="NOMMUNI_01">BRANDSEN</SimpleData>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#brprj">
+		<SimpleData name="AREA">0.112641</SimpleData>
+		<SimpleData name="PERIMETER">1.784496</SimpleData>
+		<SimpleData name="DEPARTA_">393</SimpleData>
+		<SimpleData name="DEPARTA_ID">27441</SimpleData>
+		<SimpleData name="PROV">06</SimpleData>
+		<SimpleData name="DEPTO">119</SimpleData>
+		<SimpleData name="CLAVE">6119</SimpleData>
+		<SimpleData name="DEPARTA">Brandsen</SimpleData>
+		<SimpleData name="CABECER">Brandsen</SimpleData>
+		<SimpleData name="CODIGO">6119</SimpleData>
+		<SimpleData name="PROVINCIA">Buenos Aires</SimpleData>
 	</SchemaData></ExtendedData>
-      <Point><coordinates>-58.237381894726965,-35.171451388713898</coordinates></Point>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-58.442437063446448,-35.219628804580175 -58.413381441996506,-35.193729467269677 -58.363668244978911,-35.14935638483604 -58.35515485023214,-35.141753026140513 -58.34283526786524,-35.14925585888404 -58.313606598756941,-35.12358093272141 -58.269242664373913,-35.084547723102574 -58.241199541153804,-35.059864122418205 -58.251801657368183,-35.051448143249836 -58.161989466042321,-34.972942059196313 -58.118464250659557,-35.001934563818502 -58.173717613155318,-35.051723834254254 -58.135544758166382,-35.081759751862513 -58.132729449272482,-35.083974897055484 -58.13473340082632,-35.08744354765625 -58.107127183368469,-35.108872377711037 -58.106682091823551,-35.109234040325077 -58.098061152377909,-35.102087658118116 -58.016523481562565,-35.16527669840103 -58.072077926153177,-35.215214251019781 -58.052870216297833,-35.22877541083426 -57.974372315495202,-35.16056866142749 -57.941180098846807,-35.18664847266907 -57.938454897658964,-35.184067310780343 -57.915209319860658,-35.200739001054686 -57.917639197010772,-35.203534416599574 -57.890922184515368,-35.224378076073869 -58.03552327727607,-35.344913302333779 -58.042762775613681,-35.350887185030821 -58.050043608101703,-35.343943744686534 -58.050099564716731,-35.343987878961585 -58.141139692117697,-35.421622961193918 -58.157279901687133,-35.409084087190308 -58.188016876049801,-35.385219286384427 -58.21835305366595,-35.411289005356515 -58.259329718317225,-35.3799309325642 -58.248911995208516,-35.369895628431784 -58.248982995614853,-35.369841802403933 -58.315479624155465,-35.318291819330085 -58.346359773236834,-35.29434070978963 -58.442437063446448,-35.219628804580175</coordinates></LinearRing></outerBoundaryIs></Polygon>
   </Placemark>
 </Folder></Document></kml>

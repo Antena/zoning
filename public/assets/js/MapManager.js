@@ -89,10 +89,10 @@ var MapManager = function MapManager(options) {
     this.addTownship = function(name, success) {
         var self = this;
 
-        self.ftClient.query(["Id", "Nombre", "N", "E", "S", "W", "edgeT0", "edgeT1", "openT0", "openT1"], "Nombre = '" + name + "'",null, function(data) {
+        self.ftClient.query(["Id", "Nombre", "N", "E", "S", "W", "edgeT0", "edgeT1", "openT0", "openT1", "filename"], "Nombre = '" + name + "'",null, function(data) {
 
             if (data.table.rows.length > 1) {
-                console.log(name)
+            	console.log(name)
                 throw "ERROR: Query returned more than 1 township";
             }
 
@@ -107,7 +107,8 @@ var MapManager = function MapManager(options) {
                 edge : {t0: row[6], t1: row[7]},
                 open : {t0: row[8], t1: row[9]},
                 mapManager: self,
-                showLimit: true
+                showLimit: true,
+                filename: row[10]
             });
             township.init();
             self.townships[name] = township;
@@ -148,17 +149,15 @@ var MapManager = function MapManager(options) {
 
     this.showHideLimit = function(name, value) {
         var self = this;
-        var visibleTownships = [];
 
         this.townships[name].options.showLimit = value;
-        for (var i in self.townships) {
-            if (self.townships[i].options.showLimit) {
-                visibleTownships.push(self.townships[i].getName());
-            }
+        
+        if(!value){
+        	this.ftQuery.where = "Id NOT EQUAL TO '" + self.townships[name].getId() + "'";
+        }else{
+        	this.ftQuery.where = "";
         }
-
-
-        this.ftQuery.where = "Nombre IN ('" + visibleTownships.join("', '") + "')";
+        
         this.ftLayer.setOptions( {query:this.ftQuery, styles: this.ftStyles } );
     }
 

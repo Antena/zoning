@@ -1,51 +1,32 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <kml xmlns="http://www.opengis.net/kml/2.2">
-<Document><Folder><name>juarezcelman_localidad</name>
-<Schema name="juarezcelman_localidad" id="juarezcelman_localidad">
+<Document><Folder><name>juarezcelman_prj</name>
+<Schema name="juarezcelman_prj" id="juarezcelman_prj">
 	<SimpleField name="Name" type="string"></SimpleField>
 	<SimpleField name="Description" type="string"></SimpleField>
-	<SimpleField name="PULOC18W_" type="float"></SimpleField>
-	<SimpleField name="PULOC18W_I" type="float"></SimpleField>
-	<SimpleField name="LATITUD" type="string"></SimpleField>
-	<SimpleField name="LONGITUD" type="string"></SimpleField>
-	<SimpleField name="XGK" type="float"></SimpleField>
-	<SimpleField name="YGK" type="float"></SimpleField>
-	<SimpleField name="CODPCIA" type="string"></SimpleField>
-	<SimpleField name="CODDEP_91" type="string"></SimpleField>
-	<SimpleField name="NOMDEP_91" type="string"></SimpleField>
-	<SimpleField name="CODAGLO_91" type="string"></SimpleField>
-	<SimpleField name="NOMLOC_91" type="string"></SimpleField>
-	<SimpleField name="TIPLOC_91" type="string"></SimpleField>
-	<SimpleField name="AGLO_91" type="string"></SimpleField>
-	<SimpleField name="NOMAGLO_91" type="string"></SimpleField>
-	<SimpleField name="CODDEP_01" type="string"></SimpleField>
-	<SimpleField name="NOMDEP_01" type="string"></SimpleField>
-	<SimpleField name="CODLOC_01" type="string"></SimpleField>
-	<SimpleField name="CODAGLO_01" type="string"></SimpleField>
-	<SimpleField name="NOMLOC_01" type="string"></SimpleField>
-	<SimpleField name="TIPLOC_01" type="string"></SimpleField>
-	<SimpleField name="AGLO_01" type="string"></SimpleField>
-	<SimpleField name="NOMAGLO_01" type="string"></SimpleField>
-	<SimpleField name="PRINEM" type="string"></SimpleField>
-	<SimpleField name="NOMMUNI_01" type="string"></SimpleField>
+	<SimpleField name="LOCALIDAD" type="string"></SimpleField>
+	<SimpleField name="PARTIDO" type="string"></SimpleField>
+	<SimpleField name="PROVINCIA" type="string"></SimpleField>
+	<SimpleField name="PAIS" type="string"></SimpleField>
+	<SimpleField name="TOT_1991" type="float"></SimpleField>
+	<SimpleField name="TOT_2001" type="float"></SimpleField>
+	<SimpleField name="VAR_2001" type="float"></SimpleField>
+	<SimpleField name="MUJ_2001" type="float"></SimpleField>
+	<SimpleField name="ID" type="float"></SimpleField>
 </Schema>
   <Placemark>
-	<ExtendedData><SchemaData schemaUrl="#juarezcelman_localidad">
-		<SimpleData name="PULOC18W_">0</SimpleData>
-		<SimpleData name="PULOC18W_I">0</SimpleData>
-		<SimpleData name="LATITUD">31 15 19</SimpleData>
-		<SimpleData name="LONGITUD">64 09 55</SimpleData>
-		<SimpleData name="XGK">6542094.000000</SimpleData>
-		<SimpleData name="YGK">4389006.000000</SimpleData>
-		<SimpleData name="CODPCIA">14</SimpleData>
-		<SimpleData name="CODDEP_91">021</SimpleData>
-		<SimpleData name="NOMDEP_91">COLON</SimpleData>
-		<SimpleData name="CODAGLO_91">2311</SimpleData>
-		<SimpleData name="NOMLOC_91">JUAREZ CELMAN</SimpleData>
-		<SimpleData name="TIPLOC_91">1</SimpleData>
-		<SimpleData name="AGLO_91">0</SimpleData>
-		<SimpleData name="NOMAGLO_91">JUAREZ CELMAN</SimpleData>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#juarezcelman_prj">
+		<SimpleData name="LOCALIDAD">JUAREZ CELMAN</SimpleData>
+		<SimpleData name="PARTIDO">COLON</SimpleData>
+		<SimpleData name="PROVINCIA">CORDOBA</SimpleData>
+		<SimpleData name="PAIS">ARGENTINA</SimpleData>
+		<SimpleData name="TOT_1991">245</SimpleData>
+		<SimpleData name="TOT_2001">742</SimpleData>
+		<SimpleData name="VAR_2001">-1</SimpleData>
+		<SimpleData name="MUJ_2001">-1</SimpleData>
+		<SimpleData name="ID">622</SimpleData>
 	</SchemaData></ExtendedData>
-      <Point><coordinates>-64.165248131720233,-31.25780176372086</coordinates></Point>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-64.19277,-31.25283695999941 -64.146108960000035,-31.25347001999943 -64.149230880000033,-31.267470959999418 -64.192406040000037,-31.267470959999404 -64.19277,-31.25283695999941</coordinates></LinearRing></outerBoundaryIs></Polygon>
   </Placemark>
 </Folder></Document></kml>

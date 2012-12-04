@@ -138,8 +138,12 @@ if ct is not None:
 #103FFB
 
 #arreglar los colores
-#azul,celestito,rojo,turquesa,vierde violento,naranja,verde mas oscuro
-colors = [(16,63,251),(2,184,255),(255,37,24),(0,246,43),(0,253,194),(255,184,41),(0,253,194),(3,146,144)]
+black=(255,255,255)
+orange=(255,184,41)
+red= (255,37,24)
+yellow=(183,248,48)
+greeny_shit=(0,253,194)
+colors = [(16,63,251),(2,184,255),greeny_shit,(0,246,43),yellow,orange,red,(3,146,144)]
 i=1
 for color in colors:
     (r,g,b)= color 
