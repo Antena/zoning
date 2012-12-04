@@ -22,11 +22,15 @@ function initialize() {
         for (var i=0; i<rows.length; i++) {
             var name = rows[i][0];
             var zone = rows[i][1];
-            
-            mapManager.addTownship(name);
+
+            var onFullLoad = i < rows.length-1 ? null : function() {
+                console.log("Municipios cargados...")
+                mapManager.calculateIndexRanks();
+            }
+            mapManager.addTownship(name, onFullLoad);
             townshipNames.push({label: name , category: zone});
         }
-        fillAutoComplete(townshipNames,mapManager);
+        fillAutoComplete(townshipNames, mapManager);
     });
 
     initControls(mapManager);

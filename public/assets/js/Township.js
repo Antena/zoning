@@ -13,6 +13,9 @@ var Township = function Township(options) {
     this.urbFootprint_t1 = null;
     this.newDevelopment = null;
 
+    this.edgeIndex = options.edge;
+    this.opennessIndex = options.open;
+
     this.urbAreaFilename = "urbArea";
     this.urbFootprintFilename = "urbFootprint";
     this.newDevelopmentFilenmae = "newDevelopment";
@@ -120,6 +123,14 @@ var Township = function Township(options) {
 
     this.getName = function() {
         return this.options.name;
+    }
+
+    this.getEdgeIndex = function() {
+        return this.edgeIndex;
+    }
+
+    this.getOpennessIndex = function() {
+        return this.opennessIndex;
     }
 
     this.buildMetrics = function(edgeRank, opennessRank) {

@@ -75,6 +75,8 @@ var MapManager = function MapManager(options) {
 
     this.townships = {};
     this.activeTownship = null;
+    this.edgeRank = {};
+    this.opennessRank = {};
 
     this.getMap = function() {
         return this.map;
@@ -87,10 +89,10 @@ var MapManager = function MapManager(options) {
     this.addTownship = function(name, success) {
         var self = this;
 
-        self.ftClient.query(["Id", "Nombre", "N", "E", "S", "W"], "Nombre = '" + name + "'",null, function(data) {
+        self.ftClient.query(["Id", "Nombre", "N", "E", "S", "W", "edgeT0", "edgeT1", "openT0", "openT1"], "Nombre = '" + name + "'",null, function(data) {
 
             if (data.table.rows.length > 1) {
-            	console.log(name)
+                console.log(name)
                 throw "ERROR: Query returned more than 1 township";
             }
 
@@ -102,6 +104,8 @@ var MapManager = function MapManager(options) {
                 e : row[3],
                 s : row[4],
                 w : row[5],
+                edge : {t0: row[6], t1: row[7]},
+                open : {t0: row[8], t1: row[9]},
                 mapManager: self,
                 showLimit: true
             });
@@ -109,7 +113,6 @@ var MapManager = function MapManager(options) {
             self.townships[name] = township;
 
             if (success){
-            	console.log(name);
                 success.call(township);
             }
         })
@@ -154,7 +157,7 @@ var MapManager = function MapManager(options) {
             }
         }
 
-        
+
         this.ftQuery.where = "Nombre IN ('" + visibleTownships.join("', '") + "')";
         this.ftLayer.setOptions( {query:this.ftQuery, styles: this.ftStyles } );
     }
@@ -175,30 +178,86 @@ var MapManager = function MapManager(options) {
         this.activeTownship.buildMetrics(self._calculateEdgeRank(name), self._calculateOpennessRank(name));
     }
 
-    this._calculateEdgeRank = function(name) {
-        var values = [Math.random().toFixed(3), Math.random().toFixed(3), Math.random().toFixed(3), Math.random().toFixed(3), Math.random().toFixed(3)].sort().reverse();
+    this.calculateIndexRanks = function() {
+        // calculate edge and openness ranks
+        this.edgeRank.t0 = $.map(self.townships, function(k, v) { return [{name:k.getName(), value:k.getEdgeIndex().t0}];})
+                .filter(function(element) { return element.value != ""; })
+                .sort(function(a, b) { return (b.value - a.value); });
+        this.edgeRank.t1 = $.map(self.townships, function(k, v) { return [{name:k.getName(), value:k.getEdgeIndex().t1}];})
+            .filter(function(element) { return element.value != ""; })
+            .sort(function(a, b) { return (b.value - a.value); });
+        this.opennessRank.t0 = $.map(self.townships, function(k, v) { return [{name:k.getName(), value:k.getOpennessIndex().t0}];})
+            .filter(function(element) { return element.value != ""; })
+            .sort(function(a, b) { return (b.value - a.value); });
+        this.opennessRank.t1 = $.map(self.townships, function(k, v) { return [{name:k.getName(), value:k.getOpennessIndex().t1}];})
+            .filter(function(element) { return element.value != ""; })
+            .sort(function(a, b) { return (b.value - a.value); });
+    }
 
-        return [
-            { rank:1, name:"Pilar", value:values[0], active: false, type: "township" },
-            { rank:2, name:"Salsipuedes", value:values[1], active: false, type: "township" },
-            { type: "elipsis" },
-            { rank:27, name: name, value:values[2], active: true, type: "township" },
-            { type: "elipsis" },
-            { rank:129, name:"Campana", value:values[3], active: false, type: "township" },
-            { rank:130, name:"Avellaneda", value:values[4], active: false, type: "township" }
-        ];
+    this._getTownshipRank = function(name, rank) {
+        var theRank = this.historicalTime ? rank.t0 : rank.t1;
+        return theRank.indexOf(theRank.filter(function(element) { return element.name == name })[0]);
+    }
+
+    this._getValueAtIndex = function(index, rank) {
+        var theRank = this.historicalTime ? rank.t0 : rank.t1;
+        return theRank[index];
+    }
+
+    this._getRank = function(rank) {
+        return this.historicalTime ? rank.t0 : rank.t1;
+    }
+
+    this._calculateEdgeRank = function(name) {
+
+        var length = this._getRank(this.edgeRank).length;
+        var hasData = this._getTownshipRank(name, this.edgeRank) > 0;
+        var rank = this._getTownshipRank(name, this.edgeRank);
+        var values = [];
+
+        for (var i= 0; i<5; i++) {
+            if (i < 2) {
+                var index = i;
+                values.push({rank: (index + 1), name: this._getValueAtIndex(index, this.edgeRank).name, value: this._getValueAtIndex(index, this.edgeRank).value.toFixed(3), active: false || index == rank  });
+            } else if (i == 2 && i != rank) {
+                values.push({ type: "elipsis" });
+                var pos = hasData && rank > 1 && rank < length - 2 ? rank : Math.floor(length/2);
+                values.push({rank: (pos), name: this._getValueAtIndex(pos-1, this.edgeRank).name, value: this._getValueAtIndex(pos-1, this.edgeRank).value.toFixed(3), active: false })
+                values.push({rank: (pos + 1), name: this._getValueAtIndex(pos, this.edgeRank).name, value: this._getValueAtIndex(pos, this.edgeRank).value.toFixed(3), active: true & hasData && rank > 1 && rank < length -2})
+                values.push({rank: (pos + 2), name: this._getValueAtIndex(pos+1, this.edgeRank).name, value: this._getValueAtIndex(pos+1, this.edgeRank).value.toFixed(3), active: false })
+                values.push({ type: "elipsis" });
+            } else {
+                var index = length - (5 - i);
+                values.push({rank: index+1, name: this._getValueAtIndex(index, this.edgeRank).name, value: this._getValueAtIndex(index, this.edgeRank).value.toFixed(3), active: false  || index == rank})
+            }
+        }
+
+        return values;
     }
 
     this._calculateOpennessRank = function(name) {
-        var values = [Math.random().toFixed(3), Math.random().toFixed(3), Math.random().toFixed(3), Math.random().toFixed(3), Math.random().toFixed(3)].sort().reverse();
-        return [
-            { rank:1, name:"Berazategui", value:values[0], active: false, type: "township" },
-            { rank:2, name:"Avellaneda", value:values[1], active: false, type: "township" },
-            { type: "elipsis" },
-            { rank:89, name: name, value:values[2], active: true, type: "township" },
-            { type: "elipsis" },
-            { rank:129, name:"Pilar", value:values[3], active: false, type: "township" },
-            { rank:130, name:"Río Ceballos", value:values[4], active: false, type: "township" }
-        ];
+        var length = this._getRank(this.opennessRank).length;
+        var hasData = this._getTownshipRank(name, this.opennessRank) > 0;
+        var rank = this._getTownshipRank(name, this.opennessRank);
+        var values = [];
+
+        for (var i= 0; i<5; i++) {
+            if (i < 2) {
+                var index = i;
+                values.push({rank: (index + 1), name: this._getValueAtIndex(index, this.opennessRank).name, value: this._getValueAtIndex(index, this.opennessRank).value.toFixed(3), active: false || index == rank  });
+            } else if (i == 2 && i != rank) {
+                values.push({ type: "elipsis" });
+                var pos = hasData && rank > 1 && rank < length - 2 ? rank : Math.floor(length/2);
+                values.push({rank: (pos), name: this._getValueAtIndex(pos-1, this.opennessRank).name, value: this._getValueAtIndex(pos-1, this.opennessRank).value.toFixed(3), active: false })
+                values.push({rank: (pos + 1), name: this._getValueAtIndex(pos, this.opennessRank).name, value: this._getValueAtIndex(pos, this.opennessRank).value.toFixed(3), active: true & hasData && rank > 1 && rank < length -2})
+                values.push({rank: (pos + 2), name: this._getValueAtIndex(pos+1, this.opennessRank).name, value: this._getValueAtIndex(pos+1, this.opennessRank).value.toFixed(3), active: false })
+                values.push({ type: "elipsis" });
+            } else {
+                var index = length - (5 - i);
+                values.push({rank: index+1, name: this._getValueAtIndex(index, this.opennessRank).name, value: this._getValueAtIndex(index, this.opennessRank).value.toFixed(3), active: false  || index == rank})
+            }
+        }
+
+        return values;
     }
 }
