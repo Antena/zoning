@@ -7,12 +7,14 @@
 
     <!--CSS Styles-->
     <link rel="stylesheet" href="/assets/css/jquery-ui-1.9.1.custom.min.css" />
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.custom.css"/>
     <link rel="stylesheet" href="/assets/css/style.css"/>
 
     <!--JS Scripts-->
     <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
     <script src="/assets/js/jquery-1.8.2.js"></script>
     <script src="/assets/js/jquery-ui.js"></script>
+    <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
 
     <script>
         function adjustSizes() {
@@ -35,6 +37,13 @@
 
         $(window).load(function () {
             initialize();
+            $("a[rel=popover]")
+                    .popover()
+                    .click(function(e) {
+                        e.preventDefault()
+                    });
+
+
         });
     </script>
 </head>
@@ -49,11 +58,25 @@
     <h2 id="township-name" style="display: none;"></h2>
     <div id="metrics" style="display: none;">
         <div id="edge-index">
-            <h3>Edge Index Rank (<span class="year">1990</span>)</h3>
+            <h3>Indicador de Fragmentación de Adyacencia (30x30m)
+                <a rel="popover"
+                   data-content="The Edge Index measures the frequency that built-up area pixels are found to be immediately adjacent to open space or water pixels  The index varies between 0 and 1, and the higher the value for this index, the larger the frequency that built-up pixels are found to be adjacent to open space pixels. Since pixels in the satellite images we used are 30-by-30 meters in size, the Edge Index is thus a good measure of the fragmentation of built-up areas at the scale of individual buildings, namely of the fragmentation of the open space in an around cities at the micro level. (Angel, Parent and Civco 2010)"
+                   data-original-title="Indicador de Fragmentación de Adyacencia">
+                    <i class="icon icon-info-sign" style="cursor: pointer;"></i>
+                </a>
+                <br/>[<span class="year">1990</span>]
+            </h3>
             <ul class="ranking"></ul>
         </div>
         <div id="openness-index">
-            <h3>Openness Index Rank (<span class="year">1990</span>)</h3>
+            <h3>Indicador de Fragmentación de Apertura (1km<sup>2</sup>)
+                <a rel="popover"
+                   data-content="The Openness Index measures the share of open space in a circle of 1 km2  around each built-up pixel. The radius of this circle, 586 meters, corresponds to a distance covered by a leisurely 10-minute walk. The Openness Index is thus an indicator of the amount of open space within walking distance of every urban location, or the amount of  open space “in the neighborhood”. In fact, it measures the average share of the area of that 1 km2  circle that is open and not built-up."
+                   data-original-title="Indicador de Fragmentación de Apertura">
+                    <i class="icon icon-info-sign" style="cursor: pointer;"></i>
+                </a>
+                <br/>[<span class="year">1990</span>]
+            </h3>
             <ul class="ranking"></ul>
         </div>
     </div>
@@ -61,12 +84,12 @@
 
 <div id="header">
     <div id="title">
-        <h1>Mapa de zoning</h1>
+        <h1>Mapa e Índices de Cobertura Terrestre</h1>
         <p>Mapa del uso de zonas y urbanización de la República Argentina</p>
     </div>
 
     <div id="map-options" class="disabled">
-        <h3>Visibilidad de los límites</h3>
+        <h3>Límites de las juridiscciones municipales</h3>
         <div class="control township-visibility">
             <div class="icon current"></div><span class="label">Municipio actual</span>
             <input type="checkbox" id="currentTownship" checked disabled>
