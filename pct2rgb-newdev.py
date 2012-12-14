@@ -60,7 +60,7 @@ def Usage():
 format = 'GTiff'
 src_filename = None
 dst_filename = None
-out_bands = 3
+out_bands = 4
 band_number = 1
 
 gdal.AllRegister()
@@ -119,10 +119,10 @@ if dst_driver is None:
 # ----------------------------------------------------------------------------
 # Build color table.
 
-lookup = [ Numeric.arrayrange(256), 
-           Numeric.arrayrange(256), 
-           Numeric.arrayrange(256), 
-           Numeric.ones(256)*255 ]
+lookup = [ Numeric.ones(256)*16, 
+           Numeric.ones(256)*63, 
+           Numeric.ones(256)*251, 
+           Numeric.ones(256)*0]
 
 
 ct = src_band.GetRasterColorTable()
@@ -138,6 +138,7 @@ if ct is not None:
 #setup para urbanArea
 #arreglar los colores
 #azul,celestito,rojo,turquesa,vierde violento,naranja,verde mas oscuro
+alpha=0
 black=(255,255,255)
 orange=(255,184,41)
 red= (255,37,24)
@@ -146,15 +147,24 @@ greeny_shit=(0,253,194)
 #colors = [(16,63,251),(2,184,255),(255,37,24),(0,246,43),(0,253,194),(255,184,41),(0,253,194),(3,146,144)]
 #colors = [(16,63,251),(2,184,255),black,(0,246,43),(0,253,194),(255,184,41),(0,253,194),(3,146,144)]
 #colors = [(16,63,251),(2,184,255),(255,37,24),(0,246,43),(0,253,194),orange,(0,253,194),(3,146,144)]
-colors = [(16,63,251),(2,184,255),greeny_shit,(0,246,43),yellow,orange,red,(3,146,144)]
+#colors = [red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red]
+#colors = [(16,63,251),(2,184,255),red,(0,246,43),yellow,orange,red,(3,146,144)]
+colors = [greeny_shit,yellow,red,yellow,yellow,yellow,yellow]
 i=1
 for color in colors:
     (r,g,b)= color 
     lookup[0][i]=r
     lookup[1][i]=g
     lookup[2][i]=b
+    lookup[3][i]=255
     i=i+1
 
+for i in range(len(colors)+1,255):
+    (r,g,b)= yellow 
+    lookup[0][i]=r
+    lookup[1][i]=g
+    lookup[2][i]=b
+    lookup[3][i]=1
 # ----------------------------------------------------------------------------
 # Create the working file.
 
@@ -189,6 +199,7 @@ for iY in range(src_ds.RasterYSize):
         min_data = min(min(src_data))
     if(max(max(src_data))>max_data):
         max_data = max(max(src_data))
+
     
 
     for iBand in range(out_bands):

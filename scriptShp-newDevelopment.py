@@ -56,28 +56,17 @@ def main():
 
 
 
-			cmd='''ogr2ogr ''' + outputkml +''' "'''  + sourceShp + '''" -f "KML"'''
+			#cmd='''ogr2ogr ''' + outputkml +''' "'''  + sourceShp + '''" -f "KML"'''
 			#print cmd
-					
-			p=commands.getoutput(cmd)
-			doc=libxml2.parseFile(outputkml)
-			ctxt = doc.xpathNewContext() 
-			ctxt.xpathRegisterNs('kml', "http://www.opengis.net/kml/2.2")
-			res = doc.xpathEval('//*')
-
-
-
- 			for r in res:
-				if  r.name == 'Polygon':
-					polyPoints = r.content
-					locationPolygon = '<Polygon><outerBoundaryIs><LinearRing><coordinates>' + r.content + '</coordinates></LinearRing></outerBoundaryIs></Polygon>'
-					polygonMap[name]=r.content
-
-			(n,s,e,w)=getImages(name,folder,outputPath)
-			(t0_edge,t0_open,t1_edge,t1_open)=getDataIndex(name,folder,outputPath)
 			
-			output.write(str(Rid) + ',' + realName)
-			output.write(',' + name + ',"' + locationPolygon + '","' + partido+ '","' + provincia + '","' + aglomerado + '",'+ str(n) +',' + str(s) +',' + str(e) + ',' + str(w) +',' + t0_edge + ',' + t0_open +',' + t1_edge +',' + t1_open + ' \n')
+			
+			
+			outputPath="/Users/dnul/RepoAntena/zoning/public/assets/images/townships/" + name 
+			(n,s,e,w)=getImages(name,folder,outputPath)
+			#(t0_edge,t0_open,t1_edge,t1_open)=getDataIndex(name,folder,outputPath)
+			
+			#output.write(str(Rid) + ',' + realName)
+			#output.write(',' + name + ',"' + locationPolygon + '","' + partido+ '","' + provincia + '","' + aglomerado + '",'+ str(n) +',' + str(s) +',' + str(e) + ',' + str(w) +',' + t0_edge + ',' + t0_open +',' + t1_edge +',' + t1_open + ' \n')
 			Rid=Rid+1
 
 
@@ -142,8 +131,8 @@ def getImages(name,folder,outputFolder):
 	global urb_footprint_t0_counter
 	global urb_footprint_t1_counter
 
-	imageNames=['urbArea_t0.img','urbArea_t1.img','urbFootprint_t0.img','urbFootprint_t1.img','New_Development_t0_t1.img']
-	imageNamesPng=['urbArea_t0.png','urbArea_t1.png','urbFootprint_t0.png','urbFootprint_t1.png','newDevelopment.png']
+	imageNames=['New_Development_t0_t1.img']
+	imageNamesPng=['newDevelopment.png']
 	
 	for image in imageNames:
 		cmd = '''find ''' + folder + '''  -name ''' + image
@@ -159,10 +148,12 @@ def getImages(name,folder,outputFolder):
 		#convert images
 		outputImagePng = outputFolder+ '/' + imageNamesPng[imageNames.index(image)]
 
-		#print outputImagePng
+
+		print outputImagePng
 		filename_img=  output
 		cmd = ''' python pct2rgb.py -of PNG ''' +  output + ''' ''' + outputImagePng
 		output= commands.getoutput(cmd)
+		print output
 
 		#get coordinates
 		(e,w,n,s)=getCoordinates(filename_img)
