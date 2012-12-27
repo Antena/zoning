@@ -24,6 +24,8 @@ var Township = function Township(options) {
     var swCoordinate = new google.maps.LatLng(options.s, options.w);
     this.latLngBounds = new google.maps.LatLngBounds(swCoordinate, neCoordinate);
 
+    this.polygons = null;
+
     this.init = function() {
         var self = this;
 
@@ -101,6 +103,7 @@ var Township = function Township(options) {
         this.urbFootprint_t0.setMap(null);
         this.urbFootprint_t1.setMap(null);
         this.newDevelopment.setMap(null);
+        this.hidePolygons();
     }
 
     this.showHistoricalTime = function(value) {
@@ -124,7 +127,7 @@ var Township = function Township(options) {
     this.getName = function() {
         return this.options.name;
     }
-    
+
     this.getId = function() {
         return this.options.id;
     }
@@ -135,6 +138,75 @@ var Township = function Township(options) {
 
     this.getOpennessIndex = function() {
         return this.opennessIndex;
+    }
+
+    this.addPolygons = function(ftClient, show) {
+        var self = this;
+        if (!self.polygons) {
+            ftClient.query(["Tipo", "Polygon"], "'Municipio Id' = " + self.getId(), null, function(data) {
+                self.polygons = [];
+                var rows = data.table.rows;
+                for (var i=0; i<rows.length; i++) {
+                    var row = rows[i];
+                    if (row[1].type == "GeometryCollection") {
+                        for (var j=0; j<row[1].geometries.length; j++) {
+                            self.polygons.push(self.createPolygon(row[0], row[1].geometries[j].coordinates));
+                        }
+                    } else {
+                        self.polygons.push(self.createPolygon(row[0], row[1].coordinates));
+                    }
+                }
+                if (show)
+                    self.showPolygons();
+            });
+        } else if (show) {
+            self.showPolygons();
+        }
+    }
+
+    this.createPolygon = function(name, coordinates) {
+        var self = this;
+        var polygon = new google.maps.Polygon({
+            paths: self._coordinatesToLatLng(coordinates),
+            strokeColor: "#333333",
+            strokeOpacity: 0.5,
+            strokeWeight: 1,
+            fillColor: self.mapManager.zoningColors[name].color,
+            fillOpacity: 0.5,
+            zoningType: name,
+            zOrder: 1000
+        });
+        google.maps.event.addListener(polygon, "mousemove", function(event) {
+            self.mapManager.zoningColors[this.zoningType].marker.setPosition(event.latLng);
+            self.mapManager.zoningColors[this.zoningType].marker.setVisible(true);
+        });
+        google.maps.event.addListener(polygon, "mouseout", function(event) {
+            self.mapManager.zoningColors[this.zoningType].marker.setVisible(false);
+        });
+
+        return polygon;
+    }
+
+    this.showPolygons = function() {
+        var self = this;
+        self.polygons.map(function(polygon) {
+            polygon.setMap(self.map);
+        });
+    }
+
+    this._coordinatesToLatLng = function(coordinates) {
+        var array = [];
+        for (var i=0; i<coordinates.length; i++) {
+            array.push(new google.maps.LatLng(coordinates[i][1], coordinates[i][0]));
+        }
+        return array;
+    }
+
+    this.hidePolygons = function() {
+        var self = this;
+        self.polygons.map(function(polygon) {
+            polygon.setMap(null);
+        })
     }
 
     this.buildMetrics = function(edgeRank, opennessRank) {

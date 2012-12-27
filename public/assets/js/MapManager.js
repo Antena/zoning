@@ -35,6 +35,7 @@ var MapManager = function MapManager(options) {
     };
     this.map = new google.maps.Map(document.getElementById(options.containerDivId), googleMapOptions);
     this.ftClient = new FTClient(options.ftId);
+    this.zoningFtClient = new FTClient(options.zoningFtId);
 
     this.historicalTime = 0;
 
@@ -78,6 +79,50 @@ var MapManager = function MapManager(options) {
     this.edgeRank = {};
     this.opennessRank = {};
 
+    this.baseMarkerOptions = {
+        position: new google.maps.LatLng(0,0),
+        draggable: false,
+        raiseOnDrag: false,
+        map: self.map,
+        labelAnchor: new google.maps.Point(30, 20),
+        labelClass: "labels", // the CSS class for the label
+        labelStyle: {opacity: 1.0},
+        icon: "http://placehold.it/1x1",
+        visible: false
+    };
+
+    this.markerWithLabel = function(label) {
+        return new MarkerWithLabel(jQuery.extend({ labelContent:label }, this.baseMarkerOptions));
+    }
+
+    this.zoningColors = {
+        'Uso especifico' : { color : 'rgb(110,110,110)', marker: self.markerWithLabel('Uso especifico') },
+        'Residencial de baja densidad' : { color : 'rgb(190,210,255)', marker: self.markerWithLabel('Residencial de baja densidad') },
+        'Residencial de media densidad' : { color : 'rgb(115,178,255)', marker: self.markerWithLabel('Residencial de media densidad') },
+        'Residencial de media densidad / mixto' : { color : 'rgb(215,158,158)', marker: self.markerWithLabel('Residencial de media densidad / mixto') },
+        'Residencial de alta densidad' : { color : 'rgb(0,92,230)', marker: self.markerWithLabel('Residencial de alta densidad') },
+        'Residencial mixto' : { color : 'rgb(252,197,230)', marker: self.markerWithLabel('Residencial mixto') },
+        'Industrial mixta' : { color : 'rgb(232,190,255)', marker: self.markerWithLabel('Industrial mixta') },
+        'Industrial exclusiva' : { color : 'rgb(223,115,255)', marker: self.markerWithLabel('Industrial exclusiva') },
+        'Agropecuario intensivo' : { color : 'rgb(137,205,102)', marker: self.markerWithLabel('Agropecuario intensivo') },
+        'Agropecuario extensivo' : { color : 'rgb(211,255,190)', marker: self.markerWithLabel('Agropecuario extensivo') },
+        'S/D' : { color : 'rgb(137,68,68)', marker: self.markerWithLabel('S/D') },
+        'Corredor comercial principal' : { color : '#CD6666', marker: self.markerWithLabel('Corredor comercial principal') },
+        'Corredor comercial secundario' : { color : '#FFDBFC', marker: self.markerWithLabel('Corredor comercial secundario') },
+        'Corredor de servicio rural' : { color : '#267300', marker: self.markerWithLabel('Corredor de servicio rural') },
+        'Esparcimiento / espacio verde' : { color : 'rgb(170,255,0)', marker: self.markerWithLabel('Esparcimiento / espacio verde') },
+        'Servicio de ruta' : { color : '#a80084', marker: self.markerWithLabel('Servicio de ruta') },
+        'Zona de proteccion' : { color : '#e39e00', marker: self.markerWithLabel('Zona de proteccion') },
+        'Zona de recuperacion' : { color : '#f6c567', marker: self.markerWithLabel('Zona de recuperacion') },
+        'Zona de regulacion especial' : { color : '#d2d2d2', marker: self.markerWithLabel('Zona de regulacion especial') },
+        'Zona de reserva' : { color : '#FCEBD7', marker: self.markerWithLabel('Zona de reserva') },
+        'Equipamiento' : { color : 'rgb(178,178,178)', marker: self.markerWithLabel() },
+        'Urbanizacion privada' : { color : 'rgb(104,104,104)', marker: self.markerWithLabel('Urbanizacion privada') },
+        'Centralidad de primer rango' : { color : 'rgb(255,0,0)', marker: self.markerWithLabel('Centralidad de primer rango') },
+        'Centralidad de segundo rango' : { color : 'rgb(255,127,127)', marker: self.markerWithLabel('Centralidad de segundo rango') },
+        'Centralidad de tercer rango' : { color : 'rgb(255,167,127)', marker: self.markerWithLabel('Centralidad de tercer rango') }
+    }
+
     this.getMap = function() {
         return this.map;
     }
@@ -92,7 +137,7 @@ var MapManager = function MapManager(options) {
         self.ftClient.query(["Id", "Nombre", "N", "E", "S", "W", "edgeT0", "edgeT1", "openT0", "openT1", "filename"], "Nombre = '" + name + "'",null, function(data) {
 
             if (data.table.rows.length > 1) {
-            	console.log(name)
+                console.log(name)
                 throw "ERROR: Query returned more than 1 township";
             }
 
@@ -135,6 +180,7 @@ var MapManager = function MapManager(options) {
         township.showUrbArea();
         township.showUrbFootprint();
         township.showNewDevelopment();
+        township.addPolygons(self.zoningFtClient, true);
         township.buildMetrics(self._calculateEdgeRank(name), self._calculateOpennessRank(name));
         $("#metrics").show();
 
@@ -151,13 +197,13 @@ var MapManager = function MapManager(options) {
         var self = this;
 
         this.townships[name].options.showLimit = value;
-        
+
         if(!value){
-        	this.ftQuery.where = "Id NOT EQUAL TO '" + self.townships[name].getId() + "'";
+            this.ftQuery.where = "Id NOT EQUAL TO '" + self.townships[name].getId() + "'";
         }else{
-        	this.ftQuery.where = "";
+            this.ftQuery.where = "";
         }
-        
+
         this.ftLayer.setOptions( {query:this.ftQuery, styles: this.ftStyles } );
     }
 
@@ -180,8 +226,8 @@ var MapManager = function MapManager(options) {
     this.calculateIndexRanks = function() {
         // calculate edge and openness ranks
         this.edgeRank.t0 = $.map(self.townships, function(k, v) { return [{name:k.getName(), value:k.getEdgeIndex().t0}];})
-                .filter(function(element) { return element.value != ""; })
-                .sort(function(a, b) { return (b.value - a.value); });
+            .filter(function(element) { return element.value != ""; })
+            .sort(function(a, b) { return (b.value - a.value); });
         this.edgeRank.t1 = $.map(self.townships, function(k, v) { return [{name:k.getName(), value:k.getEdgeIndex().t1}];})
             .filter(function(element) { return element.value != ""; })
             .sort(function(a, b) { return (b.value - a.value); });
