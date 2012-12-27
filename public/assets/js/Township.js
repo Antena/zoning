@@ -166,6 +166,7 @@ var Township = function Township(options) {
 
     this.createPolygon = function(name, coordinates) {
         var self = this;
+        // console.log(self.mapManager.zoningColors[name].color);
         var polygon = new google.maps.Polygon({
             paths: self._coordinatesToLatLng(coordinates),
             strokeColor: "#333333",
@@ -173,8 +174,7 @@ var Township = function Township(options) {
             strokeWeight: 1,
             fillColor: self.mapManager.zoningColors[name].color,
             fillOpacity: 0.5,
-            zoningType: name,
-            zOrder: 1000
+            zoningType: name
         });
         google.maps.event.addListener(polygon, "mousemove", function(event) {
             self.mapManager.zoningColors[this.zoningType].marker.setPosition(event.latLng);
@@ -196,8 +196,17 @@ var Township = function Township(options) {
 
     this._coordinatesToLatLng = function(coordinates) {
         var array = [];
-        for (var i=0; i<coordinates.length; i++) {
-            array.push(new google.maps.LatLng(coordinates[i][1], coordinates[i][0]));
+        var coords = null;
+        if(coordinates[0].length >2){
+            coords=coordinates[0];
+        }else{
+            coords=coordinates;
+        }
+        
+        for (var i=0; i<coords.length; i++) {
+            // console.log(parseFloat(coords[i][1]) + ' ' + parseFloat(coords[i][0]) );
+            // console.log(new google.maps.LatLng(parseFloat(coords[i][1]), parseFloat(coords[i][0])));
+            array.push(new google.maps.LatLng(parseFloat(coords[i][1]), parseFloat(coords[i][0])));
         }
         return array;
     }

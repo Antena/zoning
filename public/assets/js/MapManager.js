@@ -81,7 +81,7 @@ var MapManager = function MapManager(options) {
 
     this.baseMarkerOptions = {
         position: new google.maps.LatLng(0,0),
-        draggable: false,
+        draggable: true,
         raiseOnDrag: false,
         map: self.map,
         labelAnchor: new google.maps.Point(30, 20),
