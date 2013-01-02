@@ -6,7 +6,8 @@ function initialize() {
         zoom : 9,
         mapTypeId : google.maps.MapTypeId.HYBRID,
         ftId : "1sDkG07dVNJlVrUtxGXxSg3BfSRA0WSqvP5yQFB0",
-        zoningFtId: "1sy91HbRS_Jq4lauDRNGtZ45_EBXB5wNDG47cyEo",
+        // zoningFtId: "1sy91HbRS_Jq4lauDRNGtZ45_EBXB5wNDG47cyEo"
+        zoningFtId: "1Mpj6N0cJB-PFtAyPHQsjcqsyIoWGjaatOpO6K3Y",
         ftLimitColumnName : "'limite'",
         urbAreaFilename : "urbArea",
         urbFootprintFilename : "urbFootprint",
