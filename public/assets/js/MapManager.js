@@ -48,14 +48,16 @@ var MapManager = function MapManager(options) {
         {
             polygonOptions: {
                 fillColor: "#FF0000",
-                fillOpacity: 0.5
+                fillOpacity: 0.5,
+                strokeOpacity: 0.8
             }
         },
         {
             where: "Nombre = ''",
             polygonOptions: {
                 fillColor: options.activeTownshipColor,
-                fillOpacity: 0.5
+                fillOpacity: 0.01,
+                strokeOpacity: 0.8
             }
         }
     ];
@@ -210,6 +212,7 @@ var MapManager = function MapManager(options) {
     this.showHideNonActiveLimits = function(value) {
         var self = this;
         this.ftStyles[0].polygonOptions.fillOpacity = value ? 0.5 : 0.01;
+        this.ftStyles[0].polygonOptions.strokeOpacity = value ? 0.5 : 0.01;
         this.ftLayer.setOptions( {query:this.ftQuery, styles: this.ftStyles } );
     }
 

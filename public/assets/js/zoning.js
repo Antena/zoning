@@ -96,7 +96,10 @@ function initControls(mapManager) {
     $("#currentTownship").change(function(event) {
         var checked = $(this).attr("checked") ? true : false;
         var township = mapManager.getActiveTownship();
-        mapManager.showHideLimit(township.getName(), checked);
+        if (checked)
+            township.showPolygons();
+        else
+            township.hidePolygons();
     });
 
     // Other Township checkbox
