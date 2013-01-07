@@ -189,9 +189,11 @@ var Township = function Township(options) {
 
     this.showPolygons = function() {
         var self = this;
-        self.polygons.map(function(polygon) {
-            polygon.setMap(self.map);
-        });
+        if (self.polygons) {
+            self.polygons.map(function(polygon) {
+                polygon.setMap(self.map);
+            });
+        }
     }
 
     this._coordinatesToLatLng = function(coordinates) {
@@ -213,9 +215,11 @@ var Township = function Township(options) {
 
     this.hidePolygons = function() {
         var self = this;
-        self.polygons.map(function(polygon) {
-            polygon.setMap(null);
-        })
+        if (self.polygons) {
+            self.polygons.map(function(polygon) {
+                polygon.setMap(null);
+            })
+        }
     }
 
     this.buildMetrics = function(edgeRank, opennessRank) {

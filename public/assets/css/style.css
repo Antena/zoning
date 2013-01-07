@@ -267,8 +267,8 @@ h1 {
 }
 
 .township-visibility .icon.current {
-	background: rgba(0, 255, 0, 0.49);
-	border: solid 1px #00FF00;
+	background: rgb(88, 76, 77);
+	border: solid 1px #7e7b7f;
 }
 
 .disabled .township-visibility .icon {
