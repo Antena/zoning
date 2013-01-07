@@ -25,6 +25,7 @@ var Township = function Township(options) {
     this.latLngBounds = new google.maps.LatLngBounds(swCoordinate, neCoordinate);
 
     this.polygons = null;
+    this.polygonsOpacity = 0.5;
 
     this.init = function() {
         var self = this;
@@ -170,10 +171,10 @@ var Township = function Township(options) {
         var polygon = new google.maps.Polygon({
             paths: self._coordinatesToLatLng(coordinates),
             strokeColor: "#333333",
-            strokeOpacity: 0.5,
+            strokeOpacity: self.polygonsOpacity,
             strokeWeight: 1,
             fillColor: self.mapManager.zoningColors[name].color,
-            fillOpacity: 0.5,
+            fillOpacity: self.polygonsOpacity,
             zoningType: name
         });
         google.maps.event.addListener(polygon, "mousemove", function(event) {
@@ -194,6 +195,23 @@ var Township = function Township(options) {
                 polygon.setMap(self.map);
             });
         }
+    }
+
+
+    this.setPolygonsOpacity = function(opacity) {
+        var self = this;
+        if (self.polygons) {
+            self.polygons.map(function(polygon) {
+                polygon.setOptions({
+                     fillOpacity:opacity,
+                     strokeOpacity:opacity   
+                });
+            });
+        }
+    }
+
+    this.getPolygonsOpacity = function(){
+        return this.polygonsOpacity;
     }
 
     this._coordinatesToLatLng = function(coordinates) {

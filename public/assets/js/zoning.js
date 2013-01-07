@@ -92,6 +92,20 @@ function initControls(mapManager) {
         }
     });
 
+
+        // zoning slider
+    $("#slider-zoning").slider({
+        max: 10,
+        min: 0,
+        value: 3,
+        disabled: true,
+        animate: "fast",
+        slide: function(event, ui) {
+            var township = mapManager.getActiveTownship();
+            township.setPolygonsOpacity(ui.value/10);
+        }
+    });
+
     // Current Township checkbox
     $("#currentTownship").change(function(event) {
         var checked = $(this).attr("checked") ? true : false;
@@ -132,6 +146,7 @@ function resetControls(mapManager) {
     enableSlider("slider-urbArea");
     enableSlider("slider-urbFootprint");
     enableSlider("slider-newDevelopment");
+    enableSlider("slider-zoning");
     enableCheckbox("currentTownship", true);
     enableCheckbox("otherTownship", false);
 
@@ -139,6 +154,8 @@ function resetControls(mapManager) {
     $("#slider-urbArea").slider("value", activeTownship.getUrbArea().getOpacity()*100);
     $("#slider-urbFootprint").slider("value", activeTownship.getUrbFootprint().getOpacity()*100);
     $("#slider-newDevelopment").slider("value", activeTownship.getNewDevelopment().getOpacity()*100);
+    $("#slider-newDevelopment").slider("value", activeTownship.getNewDevelopment().getOpacity()*100);
+    $("#slider-zoning").slider("value", activeTownship.getPolygonsOpacity()*10);
 }
 
 function fillAutoComplete(townshipNames,mapManager){
