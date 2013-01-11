@@ -167,11 +167,9 @@ var Township = function Township(options) {
 
     this.createPolygon = function(name, coordinates) {
         var self = this;
-        // console.log(self.mapManager.zoningColors[name].color);
         var polygon = new google.maps.Polygon({
             paths: self._coordinatesToLatLng(coordinates),
-            strokeColor: "#333333",
-            strokeOpacity: self.polygonsOpacity,
+            strokeOpacity: 0,
             strokeWeight: 1,
             fillColor: self.mapManager.zoningColors[name].color,
             fillOpacity: self.polygonsOpacity,
