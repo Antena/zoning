@@ -175,6 +175,8 @@ var MapManager = function MapManager(options) {
             self.showHideLimit(self.activeTownship.getName(), true);
         }
 
+        var showZoning=$("#zonif").attr("checked")?true:false;
+
         // Pan, zoom and display
         self.activeTownship = township;
         $("#township-name").text(township.getName()).show();
@@ -182,7 +184,7 @@ var MapManager = function MapManager(options) {
         township.showUrbArea();
         township.showUrbFootprint();
         township.showNewDevelopment();
-        township.addPolygons(self.zoningFtClient, true);
+        township.addPolygons(self.zoningFtClient, showZoning);
         township.buildMetrics(self._calculateEdgeRank(name), self._calculateOpennessRank(name));
         $("#metrics").show();
 

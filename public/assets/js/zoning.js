@@ -107,6 +107,13 @@ function initControls(mapManager) {
         mapManager.showHideNonActiveLimits(checked);
     });
 
+    // Other Township checkbox
+    $("#zonif").change(function(event) {
+        var checked = $(this).attr("checked") ? true : false;
+        var activeTownship = mapManager.getActiveTownship();
+        activeTownship.showHidePolygons(checked);
+    });
+
     this.firstTime=true;
 }
 
@@ -138,6 +145,7 @@ function resetControls(mapManager) {
     enableSlider("slider-newDevelopment");
     enableCheckbox("currentTownship", true);
     enableCheckbox("otherTownship", false);
+    enableCheckbox("zonif", false);
 
 
     $("#slider-limit").slider("value", 1);

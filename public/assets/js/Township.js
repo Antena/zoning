@@ -158,10 +158,10 @@ var Township = function Township(options) {
                     }
                 }
                 if (show)
-                    self.showPolygons();
+                    self.showHidePolygons(true);
             });
         } else if (show) {
-            self.showPolygons();
+            self.showHidePolygons(true);
         }
     }
 
@@ -186,11 +186,23 @@ var Township = function Township(options) {
         return polygon;
     }
 
-    this.showPolygons = function() {
+    this.showHidePolygons = function(value) {
         var self = this;
         if (self.polygons) {
             self.polygons.map(function(polygon) {
-                polygon.setMap(self.map);
+                if(value){
+                    polygon.setOptions({
+                        fillOpacity:self.polygonsOpacity,
+                    });
+                    polygon.setMap(self.map);
+                }else{
+                    polygon.setOptions({
+                        fillOpacity:0.01,
+                    });
+                    polygon.setMap(self.map);
+                }
+
+                    
             });
         }
     }
