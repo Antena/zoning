@@ -121,6 +121,8 @@ function initControls(mapManager) {
         var checked = $(this).attr("checked") ? true : false;
         mapManager.showHideNonActiveLimits(checked);
     });
+
+    this.firstTime=true;
 }
 
 function enableSlider(sliderDivId) {
@@ -131,10 +133,13 @@ function enableSlider(sliderDivId) {
 
 function enableCheckbox(checkboxId, reset) {
     var $checkbox = $("#"+checkboxId);
+    
     $checkbox.removeAttr("disabled");
     var checked = $checkbox.attr("checked") ? true : false;
-    if (reset && !checked)
+    if (reset && !checked){
         $checkbox.attr("checked", true);
+    }
+
 }
 
 function resetControls(mapManager) {
@@ -150,12 +155,19 @@ function resetControls(mapManager) {
     enableCheckbox("currentTownship", true);
     enableCheckbox("otherTownship", false);
 
+
     $("#slider-limit").slider("value", 1);
     $("#slider-urbArea").slider("value", activeTownship.getUrbArea().getOpacity()*100);
     $("#slider-urbFootprint").slider("value", activeTownship.getUrbFootprint().getOpacity()*100);
     $("#slider-newDevelopment").slider("value", activeTownship.getNewDevelopment().getOpacity()*100);
     $("#slider-newDevelopment").slider("value", activeTownship.getNewDevelopment().getOpacity()*100);
     $("#slider-zoning").slider("value", activeTownship.getPolygonsOpacity()*10);
+
+    if(this.firstTime){
+        $("#otherTownship").removeAttr("checked");
+        this.firstTime = false;
+        mapManager.showHideNonActiveLimits(false);
+    }
 }
 
 function fillAutoComplete(townshipNames,mapManager){
@@ -176,7 +188,12 @@ function fillAutoComplete(townshipNames,mapManager){
     });
 
     $("#municipios").catcomplete({
-        source: townshipNames,
+        source: function( request, response ) {
+          var matcher = new RegExp($.ui.autocomplete.escapeRegex( request.term ), "igm" );
+          response( $.grep( townshipNames, function( item ){
+              return matcher.test( item.label ) || matcher.test(item.category);
+          }) );
+      },
         select: function(event,ui){
             mapManager.setActiveTownship(ui.item.value);
             $(this).blur();
