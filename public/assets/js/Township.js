@@ -25,7 +25,7 @@ var Township = function Township(options) {
     this.latLngBounds = new google.maps.LatLngBounds(swCoordinate, neCoordinate);
 
     this.polygons = null;
-    this.polygonsOpacity = 0.5;
+    this.polygonsOpacity = 0.3;
 
     this.init = function() {
         var self = this;
@@ -34,31 +34,31 @@ var Township = function Township(options) {
         this.urbArea_t0 = new google.maps.GroundOverlay(
             this._buildImagesUrlHead(options.name) + this.urbAreaFilename + "_t0.png",
             this.latLngBounds,
-            { opacity: 0.5 }
+            { opacity: 0 }
         );
         this.urbArea_t1 = new google.maps.GroundOverlay(
             this._buildImagesUrlHead(options.name) + this.urbAreaFilename + "_t1.png",
             this.latLngBounds,
-            { opacity: 0.5 }
+            { opacity: 0 }
         );
 
         // Overlay : urbFootprint t0
         this.urbFootprint_t0 = new google.maps.GroundOverlay(
             this._buildImagesUrlHead(options.name) + this.urbFootprintFilename + "_t0.png",
             this.latLngBounds,
-            { opacity: 0.5 }
+            { opacity: 0 }
         );
         this.urbFootprint_t1 = new google.maps.GroundOverlay(
             this._buildImagesUrlHead(options.name) + this.urbFootprintFilename + "_t1.png",
             this.latLngBounds,
-            { opacity: 0.5 }
+            { opacity: 0 }
         );
 
         // Overlay : newDevelopment
         this.newDevelopment = new google.maps.GroundOverlay(
             this._buildImagesUrlHead(options.name) + this.newDevelopmentFilenmae + ".png",
             this.latLngBounds,
-            { opacity: 0.5 }
+            { opacity: 1 }
         );
     }
 
@@ -202,7 +202,6 @@ var Township = function Township(options) {
             self.polygons.map(function(polygon) {
                 polygon.setOptions({
                      fillOpacity:opacity,
-                     strokeOpacity:opacity   
                 });
             });
         }

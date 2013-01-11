@@ -6,7 +6,6 @@ function initialize() {
         zoom : 9,
         mapTypeId : google.maps.MapTypeId.HYBRID,
         ftId : "1sDkG07dVNJlVrUtxGXxSg3BfSRA0WSqvP5yQFB0",
-        // zoningFtId: "1sy91HbRS_Jq4lauDRNGtZ45_EBXB5wNDG47cyEo"
         zoningFtId: "1Mpj6N0cJB-PFtAyPHQsjcqsyIoWGjaatOpO6K3Y",
         ftLimitColumnName : "'limite'",
         urbAreaFilename : "urbArea",
@@ -57,7 +56,7 @@ function initControls(mapManager) {
     $("#slider-urbArea").slider({
         max: 100,
         min: 0,
-        value: 50,
+        value: 0,
         disabled: true,
         animate: "fast",
         slide: function(event, ui) {
@@ -70,7 +69,7 @@ function initControls(mapManager) {
     $("#slider-urbFootprint").slider({
         max: 100,
         min: 0,
-        value: 50,
+        value: 0,
         disabled: true,
         animate: "fast",
         slide: function(event, ui) {
@@ -83,26 +82,12 @@ function initControls(mapManager) {
     $("#slider-newDevelopment").slider({
         max: 100,
         min: 0,
-        value: 50,
+        value: 100,
         disabled: true,
         animate: "fast",
         slide: function(event, ui) {
             var township = mapManager.getActiveTownship();
             township.getNewDevelopment().setOpacity(ui.value/100);
-        }
-    });
-
-
-        // zoning slider
-    $("#slider-zoning").slider({
-        max: 10,
-        min: 0,
-        value: 3,
-        disabled: true,
-        animate: "fast",
-        slide: function(event, ui) {
-            var township = mapManager.getActiveTownship();
-            township.setPolygonsOpacity(ui.value/10);
         }
     });
 
@@ -146,7 +131,6 @@ function resetControls(mapManager) {
     enableSlider("slider-urbArea");
     enableSlider("slider-urbFootprint");
     enableSlider("slider-newDevelopment");
-    enableSlider("slider-zoning");
     enableCheckbox("currentTownship", true);
     enableCheckbox("otherTownship", false);
 
