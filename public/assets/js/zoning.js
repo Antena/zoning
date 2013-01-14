@@ -16,7 +16,7 @@ function initialize() {
 
     var ftClient = new FTClient("1sDkG07dVNJlVrUtxGXxSg3BfSRA0WSqvP5yQFB0");
     ftClient.query(['Nombre','provincia'], null, " provincia asc", function(data) {
-        var rows = data.table.rows;
+        var rows = data.rows;
 
         var townshipNames = new Array();
 

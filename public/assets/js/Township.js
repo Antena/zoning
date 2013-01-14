@@ -146,7 +146,7 @@ var Township = function Township(options) {
         if (!self.polygons) {
             ftClient.query(["Tipo", "Polygon"], "'Municipio Id' = " + self.getId(), null, function(data) {
                 self.polygons = [];
-                var rows = data.table.rows;
+                var rows = data.rows;
                 for (var i=0; i<rows.length; i++) {
                     var row = rows[i];
                     if (row[1].type == "GeometryCollection") {
@@ -154,7 +154,7 @@ var Township = function Township(options) {
                             self.polygons.push(self.createPolygon(row[0], row[1].geometries[j].coordinates));
                         }
                     } else {
-                        self.polygons.push(self.createPolygon(row[0], row[1].coordinates));
+                        self.polygons.push(self.createPolygon(row[0], row[1].geometry.coordinates));
                     }
                 }
                 if (show)

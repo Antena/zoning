@@ -138,12 +138,12 @@ var MapManager = function MapManager(options) {
 
         self.ftClient.query(["Id", "Nombre", "N", "E", "S", "W", "edgeT0", "edgeT1", "openT0", "openT1", "filename"], "Nombre = '" + name + "'",null, function(data) {
 
-            if (data.table.rows.length > 1) {
+            if (data.rows.length > 1) {
                 console.log(name)
                 throw "ERROR: Query returned more than 1 township";
             }
 
-            var row = data.table.rows[0];
+            var row = data.rows[0];
             var township = new Township({
                 id : row[0],
                 name : row[1],
