@@ -272,9 +272,9 @@ var MapManager = function MapManager(options) {
             } else if (i == 2 && i != rank) {
                 values.push({ type: "elipsis" });
                 var pos = hasData && rank > 1 && rank < length - 2 ? rank : Math.floor(length/2);
-                values.push({rank: (pos), name: this._getValueAtIndex(pos-1, this.edgeRank).name, value: this._getValueAtIndex(pos-1, this.edgeRank).value.toFixed(3), active: false })
-                values.push({rank: (pos + 1), name: this._getValueAtIndex(pos, this.edgeRank).name, value: this._getValueAtIndex(pos, this.edgeRank).value.toFixed(3), active: true & hasData && rank > 1 && rank < length -2})
-                values.push({rank: (pos + 2), name: this._getValueAtIndex(pos+1, this.edgeRank).name, value: this._getValueAtIndex(pos+1, this.edgeRank).value.toFixed(3), active: false })
+                values.push({rank: (pos), name: this._getValueAtIndex(pos-1, this.edgeRank).name, value: !isNaN(this._getValueAtIndex(pos-1, this.edgeRank).value) ? this._getValueAtIndex(pos-1, this.edgeRank).value.toFixed(3) : null, active: false })
+                values.push({rank: (pos + 1), name: this._getValueAtIndex(pos, this.edgeRank).name, value: !isNaN(this._getValueAtIndex(pos, this.edgeRank).value) ? this._getValueAtIndex(pos, this.edgeRank).value.toFixed(3) : null, active: true & hasData && rank > 1 && rank < length -2})
+                values.push({rank: (pos + 2), name: this._getValueAtIndex(pos+1, this.edgeRank).name, value: !isNaN(this._getValueAtIndex(pos+1, this.edgeRank).value) ? this._getValueAtIndex(pos+1, this.edgeRank).value.toFixed(3) : null, active: false })
                 values.push({ type: "elipsis" });
             } else {
                 var index = length - (5 - i);
@@ -298,13 +298,13 @@ var MapManager = function MapManager(options) {
             } else if (i == 2 && i != rank) {
                 values.push({ type: "elipsis" });
                 var pos = hasData && rank > 1 && rank < length - 2 ? rank : Math.floor(length/2);
-                values.push({rank: (pos), name: this._getValueAtIndex(pos-1, this.opennessRank).name, value: this._getValueAtIndex(pos-1, this.opennessRank).value.toFixed(3), active: false })
-                values.push({rank: (pos + 1), name: this._getValueAtIndex(pos, this.opennessRank).name, value: this._getValueAtIndex(pos, this.opennessRank).value.toFixed(3), active: true & hasData && rank > 1 && rank < length -2})
-                values.push({rank: (pos + 2), name: this._getValueAtIndex(pos+1, this.opennessRank).name, value: this._getValueAtIndex(pos+1, this.opennessRank).value.toFixed(3), active: false })
+                values.push({rank: (pos), name: this._getValueAtIndex(pos-1, this.opennessRank).name, value: !isNaN(this._getValueAtIndex(pos-1, this.opennessRank).value) ? this._getValueAtIndex(pos-1, this.opennessRank).value.toFixed(3) : null, active: false })
+                values.push({rank: (pos + 1), name: this._getValueAtIndex(pos, this.opennessRank).name, value: !isNaN(this._getValueAtIndex(pos, this.opennessRank).value) ? this._getValueAtIndex(pos, this.opennessRank).value.toFixed(3) : null, active: true & hasData && rank > 1 && rank < length -2})
+                values.push({rank: (pos + 2), name: this._getValueAtIndex(pos+1, this.opennessRank).name, value: !isNaN(this._getValueAtIndex(pos+1, this.opennessRank).value) ? this._getValueAtIndex(pos+1, this.opennessRank).value.toFixed(3) : null, active: false })
                 values.push({ type: "elipsis" });
             } else {
                 var index = length - (5 - i);
-                values.push({rank: index+1, name: this._getValueAtIndex(index, this.opennessRank).name, value: this._getValueAtIndex(index, this.opennessRank).value.toFixed(3), active: false  || index == rank})
+                values.push({rank: index+1, name: this._getValueAtIndex(index, this.opennessRank).name, value: !isNaN(this._getValueAtIndex(index, this.opennessRank).value) ? this._getValueAtIndex(index, this.opennessRank).value.toFixed(3) : null, active: false  || index == rank})
             }
         }
 
