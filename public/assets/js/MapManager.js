@@ -268,7 +268,7 @@ var MapManager = function MapManager(options) {
         for (var i= 0; i<5; i++) {
             if (i < 2) {
                 var index = i;
-                values.push({rank: (index + 1), name: this._getValueAtIndex(index, this.edgeRank).name, value: this._getValueAtIndex(index, this.edgeRank).value.toFixed(3), active: false || index == rank  });
+                values.push({rank: (index + 1), name: this._getValueAtIndex(index, this.edgeRank).name, value: !isNaN(this._getValueAtIndex(index, this.edgeRank).value) ? this._getValueAtIndex(index, this.edgeRank).value.toFixed(3) : null, active: false || index == rank  });
             } else if (i == 2 && i != rank) {
                 values.push({ type: "elipsis" });
                 var pos = hasData && rank > 1 && rank < length - 2 ? rank : Math.floor(length/2);
@@ -294,7 +294,7 @@ var MapManager = function MapManager(options) {
         for (var i= 0; i<5; i++) {
             if (i < 2) {
                 var index = i;
-                values.push({rank: (index + 1), name: this._getValueAtIndex(index, this.opennessRank).name, value: this._getValueAtIndex(index, this.opennessRank).value.toFixed(3), active: false || index == rank  });
+                values.push({rank: (index + 1), name: this._getValueAtIndex(index, this.opennessRank).name, value: !isNaN(this._getValueAtIndex(index, this.opennessRank).value) ? this._getValueAtIndex(index, this.opennessRank).value.toFixed(3) : null, active: false || index == rank  });
             } else if (i == 2 && i != rank) {
                 values.push({ type: "elipsis" });
                 var pos = hasData && rank > 1 && rank < length - 2 ? rank : Math.floor(length/2);
